@@ -26,11 +26,18 @@
       }
    }
 
+   &__search{
+      display: flex;
+      flex-direction: row;
+   }
+
+   &__notification{}
+
+   &__miniProfile{}
+
 }
 
 .search{
-   display: flex;
-   flex-direction: row;
    &__icon{
    
    }
