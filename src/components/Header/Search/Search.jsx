@@ -1,11 +1,12 @@
 import React from 'react';
 import style from "./../Header.module.scss";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const Search = () => {
    return(
       <div className={`${style.header__search} ${style.search}`}>
-         <div className={style.search__icon}></div>
+         <FontAwesomeIcon className={`${style.search__icon}`} icon={faMagnifyingGlass} />
          <input className={style.search__input} type="text" placeholder="Start typing to search..." />
       </div>
    )
