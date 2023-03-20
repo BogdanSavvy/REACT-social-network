@@ -1,11 +1,27 @@
-.container{
+.nav{
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   background-color: #02315E;
+   &__container{
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      
+   }
 
-}
+   &__menuList{
+      padding: 30px 20px;
+      width: 300px;
+   }
 
-.menu{
-
-}
-
-.link{
+   &__menuLink{
+      font-size: 25px;
+      &:not(:last-child){
+         margin-bottom: 20px;
+      }
+      a{color: #fff;}
+   }
 
 }

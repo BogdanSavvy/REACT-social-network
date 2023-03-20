@@ -1,18 +1,20 @@
 
 .header {
    width: 100%;
-   height: 100px;
    position: fixed;
    top: 0;
    left: 0;
-   background-color: rgb(26, 24, 43);
+   background-color: #00457E;
+   z-index: 100000;
+
 
    &__container{
-      padding: 0 50px;
+      height: 100px;
       display: flex;
-      flex-direction: row;
       align-items: center;
-   
+      flex-direction: row;
+      padding: 0 50px;
+      column-gap: 40px;
    }
 
    &__logo{
@@ -30,48 +32,65 @@
    &__search{
       display: flex;
       flex-direction: row;
+      flex: 1 1 auto;
+      margin-left: 40px;
    }
 
-   &__notification{}
+   &__notification{
+      display: flex;
+      flex-direction: row;
+      gap:20px;
+   }
 
-   &__miniProfile{}
+   &__miniProfile{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+
+   }
 
 }
 
 .search{
    &__icon{
-   
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-right: 15px;
    }
    
    &__input{
       background-color: transparent;
-      border-bottom: 1px solid #ffffffaf;
+      font-size: 16px;
+      width: 100%;
+      transition: all 0.4s ease-in-out 0s;
+      &:focus{
+         color: #fff;
+         border-bottom: 1px solid #ffffffaf;
+         transition: all 0.4s ease-in-out 0s;
+      }
    }
 }
 
 .notification{
-   display: flex;
-   flex-direction: row;
-   gap:30px;
 
    &__messeges{
-      width: 70px;
-      height: 70px;
+      width: 35px;
+      height: 35px;
       background-color: #fff;
    }
 
    &__bell{
-      width: 70px;
-      height: 70px;
+      width: 35px;
+      height: 35px;
       background-color: #fff;
    }
 }
 
 .miniProfile{
-   display: flex;
-   flex-direction: row;
-   gap: 20px;
-   align-items: center;
+   
    &__avatar{
       width: 50px;
       height: 50px;
