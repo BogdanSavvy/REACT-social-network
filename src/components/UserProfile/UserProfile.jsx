@@ -28,10 +28,10 @@ const UserProfile = () => {
                   </ul>
                </div>
             </section>
-            <Post messege="WTF" />
-            <Post messege="is" />
-            <Post messege="going on" />
-            <Post messege="THIS DESIGN IS TRASH!" />
+            <Post messege="WTF" time="25 min ago" />
+            <Post messege="is" time="1 hour ago" />
+            <Post messege="going on" time="1h 10min ago" />
+            <Post messege="THIS DESIGN IS TRASH!" time="Tommorow" />
          </div>
       </div>
    )
