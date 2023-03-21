@@ -1,4 +1,4 @@
-import Body from './components/Body/Body';
+import UserProfile from './components/UserProfile/UserProfile';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import "./scss/null.scss"
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <NavBar />
       <div className="main__container">
-        <Body />
+        <UserProfile />
       </div>
     </div>
   );
