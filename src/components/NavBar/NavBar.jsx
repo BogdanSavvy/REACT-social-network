@@ -17,10 +17,10 @@ const NavBar = () => {
                <NavLink to='/profile'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHouse} /> Home </NavLink>
             </li>
             <li className={`${style.nav__menuLink}`}>
-               <NavLink to='/messages'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faEnvelope} /> Messages </NavLink>
+               <NavLink to='/news'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faNewspaper} /> News </NavLink>
             </li>
             <li className={`${style.nav__menuLink}`}>
-               <NavLink to='/news'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faNewspaper} /> News </NavLink>
+               <NavLink to='/messages'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faEnvelope} /> Messages </NavLink>
             </li>
             <li className={`${style.nav__menuLink}`}>
                <NavLink to='/music'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faMusic} /> Music </NavLink>

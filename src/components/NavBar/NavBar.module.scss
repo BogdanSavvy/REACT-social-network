@@ -6,6 +6,7 @@
    background-color: #02315E;
    padding-top: 100px;
    z-index: 2;
+   justify-content: center;
 
    &__menuList{
       padding: 30px 20px;
@@ -19,7 +20,7 @@
       &:not(:last-child){
          margin-bottom: 20px;
       }
-      a{color: #fff;}
+      a{color: #fff; justify-self: center;}
       &:hover{
          margin-left: 15px;
          transition: all 0.4s ease 0s;
@@ -27,7 +28,10 @@
    }
 
    &__icon{
-
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #ffffff81;
    }
 
 }

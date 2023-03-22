@@ -1,8 +1,56 @@
 .page{
    width: 100%;
-   background-color: darkcyan;
-   font-size: 50px;
-   text-align: center;
-   padding-top: 500px;
-   span{color: red;}
+   padding-top: 100px;
+   &__container{
+      display: flex;
+      flex-direction: row;
+   }
+   &__dialogsList{
+      flex: 0 1 25%;
+      display: flex;
+      flex-direction: column;
+      background-color: #8ddd0b;
+   }
+   &__dialogWindow{
+      flex: 0 1 75%;
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+.dialogsList{
+
+   &__item{
+      flex: 1 1 auto;
+      font-size: 16px;
+      line-height: 1.5;
+      padding: 10px;
+   }
+}
+
+.dialogWindow{
+
+   &__messages{
+      flex: 1 1 auto;
+      width: 100%;
+      height: 500px;
+      background-color: #0bddb0;
+   }
+   &__input{
+      position: relative;
+      form{
+        
+      }
+      input{ 
+         width: 100%;
+         min-height: 150px;
+      }
+      button{
+         padding: 10px;
+         background-color: rgb(255, 0, 0);
+         position: absolute;
+         bottom: 0;
+         right: 0;
+      }
+   }
 }
