@@ -1,4 +1,3 @@
-import React from "react";
 import style from './Header.module.scss';
 import Logo from "./Logo/Logo";
 import Notification from "./Notification/Notification";
@@ -13,7 +12,7 @@ const Header = () => {
             <Logo />
             <Search />
             <Notification />
-            <MiniProfile />
+            <MiniProfile name="Amogus" />
          </div>
       </header>
    )

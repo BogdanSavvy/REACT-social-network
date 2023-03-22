@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../UserProfile.module.scss"
+import style from "../UserProfile.module.scss";
 
 const Post = (props) => {
    return(
@@ -14,10 +14,10 @@ const Post = (props) => {
                </div>
             </div>
             <div className={`${style.post__body}`}>{ props.messege }</div>
-            <div className={`${style.post__action}`}><a href="#">Some button`s in future</a></div>
+            <div className={`${style.post__action}`}><button>Some button`s in future</button></div>
          </div>
       </section>
    )
 }
 
-export default Post
+export default Post;
