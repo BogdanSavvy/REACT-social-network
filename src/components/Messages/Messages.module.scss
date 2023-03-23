@@ -4,13 +4,29 @@
       display: flex;
       flex-direction: row;
    }
+
    &__dialogsList{
       flex: 1 1 25%;
       display: flex;
       flex-direction: column;
+      max-height: 870px;
+      overflow-y: scroll;
       background-color: #8ddd0b;
       border-right: 1px solid #000;
+      //!--------------"Scroll_Style"---------------
+      &::-webkit-scrollbar{
+         background-color: transparent;
+         width: 5px;
+         position: absolute;
+         top: 0;
+         right: 0;
+      }
+      &::-webkit-scrollbar-thumb{
+         background-color: #ffffff;
+         border-radius: 5px;
+      }
    }
+
    &__dialogWindow{
       flex: 1 1 75%;
       display: flex;
@@ -19,8 +35,6 @@
 }
 
 .dialogsList{
-   max-height: 870px;
-   overflow-y: scroll;
    &__branch{
       line-height: 1.5;
       padding: 10px;
@@ -51,7 +65,6 @@
 }
 
 .dialogWindow{
-
    &__messages{
       width: 100%;
       background-color: #0bddb0;
@@ -59,6 +72,18 @@
       flex: 0 0 700px;
       padding: 15px;
       overflow-y: scroll;
+      //!--------------"Scroll_Style"---------------
+      &::-webkit-scrollbar{
+         background-color: transparent;
+         width: 5px;
+         position: absolute;
+         top: 0;
+         right: 0;
+      }
+      &::-webkit-scrollbar-thumb{
+         background-color: #ffffff;
+         border-radius: 5px;
+      }
    }
    &__sent{
       font-size: 16px;
@@ -74,6 +99,7 @@
          display: inline-block;
       }
    }
+
    &__input{
       position: relative;
       form{
