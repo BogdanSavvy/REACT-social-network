@@ -13,26 +13,47 @@ const NavBar = () => {
    return (
       <nav className={`${style.nav}`}>
          <ul className={`${style.nav__menuList}`}>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='/profile'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHouse} /> Home </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/profile'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHouse} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='/profile'> Home </NavLink>
             </li>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='/news'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faNewspaper} /> News </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/news'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faNewspaper} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='/news'> News </NavLink>
             </li>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='/messages'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faEnvelope} /> Messages </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/messages'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faEnvelope} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='/messages'> Messages </NavLink>
             </li>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='/music'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faMusic} /> Music </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/music'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faMusic} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='/music'> Music </NavLink>
             </li>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='groups'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faUsersLine} /> Group`s </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/groups'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faUsersLine} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='groups'> Group`s </NavLink>
             </li>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='friends'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHandshake} /> Friend`s </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/friends'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHandshake} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='friends'> Friend`s </NavLink>
             </li>
-            <li className={`${style.nav__menuLink}`}>
-               <NavLink to='setings'> <FontAwesomeIcon className={`${style.nav__icon}`} icon={faGears} /> Settings </NavLink>
+            <li className={`${style.nav__menuItem}`}>
+               <NavLink className={`${style.nav__iconBox}`} to='/settings'>
+                  <FontAwesomeIcon className={`${style.nav__icon}`} icon={faGears} />
+               </NavLink>
+               <NavLink className={`${style.nav__link}`} to='settings'> Settings </NavLink>
             </li>
          </ul>
       </nav>

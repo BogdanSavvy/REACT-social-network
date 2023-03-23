@@ -7,31 +7,46 @@
    padding-top: 100px;
    z-index: 2;
    justify-content: center;
+   width: 90px;
+   transition: width 0.3s ease-out 0s;
+   &:hover{
+      width: 300px;   
+      transition: width 0.3s ease-out 0s;
+   }
 
    &__menuList{
       padding: 30px 20px;
-      width: 300px;
    }
 
-   &__menuLink{
-      font-size: 25px;
+   &__menuItem{
+      font-size: 22px;
       line-height: 1.5;
       transition: all 0.4s ease 0s;
+      display: flex;
+      flex-direction: row;
       &:not(:last-child){
          margin-bottom: 20px;
       }
-      a{color: #fff; justify-self: center;}
-      &:hover{
-         margin-left: 15px;
-         transition: all 0.4s ease 0s;
-      }
+   }
+   &__iconBox{
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      background-color: #ffffff81;
+      display: flex;
+      align-items: center;
+      justify-content: center;
    }
 
    &__icon{
       color: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: #ffffff81;
+      font-size: 25px;
+   }
+
+   &__link{
+      color: #fff;
+      padding-left: 10px;
+      display: none;
    }
 
 }
