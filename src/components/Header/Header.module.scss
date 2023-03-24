@@ -7,7 +7,6 @@
    background-color: #00457E;
    z-index: 100000;
 
-
    &__container{
       height: 100px;
       display: flex;
@@ -47,7 +46,6 @@
       flex-direction: row;
       gap: 20px;
       align-items: center;
-
    }
 
 }
@@ -57,7 +55,6 @@
    &__icon{
       font-size: 25px;
       color: #fff;
-
    }
    
    &__input{
@@ -98,7 +95,7 @@
 }
 
 .miniProfile{
-   
+   z-index: 2;
    &__avatar{
       img{
       width: 50px;
@@ -111,5 +108,4 @@
       color: #fff;
       font-size: 16px;
    }
-   &__list{}
 }
