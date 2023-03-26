@@ -1,18 +1,19 @@
 .page{
    &__container{
       padding-top: 100px;
+      margin: 0 -160px 0 -70px;
       display: flex;
       flex-direction: row;
    }
 
    &__dialogsList{
-      flex: 1 1 25%;
+      flex: 0 1 25%;
       display: flex;
       flex-direction: column;
-      max-height: 870px;
+      max-height: 868.5px;
       overflow-y: scroll;
-      background-color: #8ddd0b;
-      border-right: 1px solid #000;
+      background-color: #575faf;
+      border-right: 1px solid #ffffff4f;
       //!--------------"Scroll_Style"---------------
       &::-webkit-scrollbar{
          background-color: transparent;
@@ -28,17 +29,18 @@
    }
 
    &__dialogWindow{
-      flex: 1 1 75%;
+      flex: 0 1 75%;
       display: flex;
       flex-direction: column;
    }
 }
 
 .dialogsList{
+   color: #ffffff;
    &__branch{
       line-height: 1.5;
       padding: 10px;
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid #ffffff4f;
    }
    &__branchWho{
       display: flex;
@@ -60,16 +62,15 @@
    }
    &__lastMessage{
       font-size: 14px;
-      span{color: #fa036a;}
+      span{color: rgb(211, 132, 15);font-weight: 600;}
    }
 }
 
 .dialogWindow{
    &__messages{
       width: 100%;
-      background-color: #0bddb0;
-      min-height: 300px;
-      flex: 0 0 700px;
+      background-color: #3a49d362;
+      flex: 1 1 689.5px;
       padding: 15px;
       overflow-y: scroll;
       //!--------------"Scroll_Style"---------------
@@ -106,17 +107,23 @@
          padding: 20px;
          background-color: #2d3fdf;
       }
-      input{ 
+      textarea{ 
          width: 100%;
          min-height: 130px;
          border-radius: 20px;
+         padding: 10px 20px;
+         resize: none;
       }
       button{
-         padding: 10px;
-         background-color: rgb(255, 0, 0);
+         font-size: 16px;
+         color: #ffffff;
+         text-align: center;
+         padding: 14px 16px;
+         background-color: rgb(206, 42, 124);
          position: absolute;
-         bottom: 10px;
-         right: 10px;
+         border-radius: 40%;
+         bottom: 25px;
+         right: 25px;
       }
    }
 }

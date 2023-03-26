@@ -75,21 +75,25 @@
 }
 
 .notification {
-
+   a{color: #fff;}
+   &__messeges, &__bell{
+      transition: all 0.2s ease;
+      &:hover{
+         transition: all 0.2s ease;
+         color: rgb(22, 139, 185);
+      }
+   }
    &__messeges {
       width: 35px;
       height: 35px;
-
    }
 
    &__bell {
       width: 35px;
       height: 35px;
-
    }
 
    &__icon {
-      color: #fff;
       font-size: 30px;
       background-color: transparent;
       cursor: pointer;

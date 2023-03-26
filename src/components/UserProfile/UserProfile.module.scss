@@ -181,7 +181,13 @@
       flex-direction: row;
       gap: 20px; 
       justify-content: flex-end;
-      button{padding: 5px; border-radius: 5px;}
+      button{
+         padding: 7px; 
+         border-radius: 5px;
+         background-color: transparent;
+         font-size: 19px;
+         color: #ffff;
+      }
    }
 
    &__name{

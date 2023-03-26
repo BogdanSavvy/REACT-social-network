@@ -10,7 +10,7 @@ const Branch = (props) => {
             </div>
             <div className={`${style.dialogsList__userName}`}>{props.name} {props.surname}</div>
          </div>
-         <div className={`${style.dialogsList__lastMessage}`}><span>Last message:</span> {props.lastSent}</div>
+         <div className={`${style.dialogsList__lastMessage}`}><span>Last message: </span> {props.lastSent}</div>
       </div>
    )
 };
@@ -20,6 +20,9 @@ const DialogList = (props) => {
    return (
       <div className={`${style.page__dialogsList} ${style.dialogsList}`}>
          <Branch name='Andre' surname='Boyarskiy' lastSent='Чінаааа, ком цу моне' />
+         <Branch name='User' surname='NOname' lastSent='Someone message' />
+         <Branch name='User' surname='NOname' lastSent='Someone message' />
+         <Branch name='User' surname='NOname' lastSent='Someone message' />
          <Branch name='User' surname='NOname' lastSent='Someone message' />
          <Branch name='User' surname='NOname' lastSent='Someone message' />
          <Branch name='User' surname='NOname' lastSent='Someone message' />

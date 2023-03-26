@@ -2,6 +2,10 @@ import style from '../UserProfile.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faSquareShareNodes } from '@fortawesome/free-solid-svg-icons';
 
 
 const Post = (props) => {
@@ -18,9 +22,10 @@ const Post = (props) => {
             </div>
             <div className={`${style.post__body}`}>{ props.messege }</div>
             <div className={`${style.post__action}`}>
-               <button>like</button>
-               <button>comment</button>
-               <button>repost</button>
+               <button><FontAwesomeIcon className={`${style.post__like}`} icon={faHeart} /></button>
+               <button><FontAwesomeIcon className={`${style.post__comment}`} icon={faCommentDots} /></button>
+               <button><FontAwesomeIcon className={`${style.post__repost}`} icon={faShareFromSquare} /></button>
+               <button><FontAwesomeIcon className={`${style.post__share}`} icon={faSquareShareNodes} /></button>
             </div>
          </div>
       </div>

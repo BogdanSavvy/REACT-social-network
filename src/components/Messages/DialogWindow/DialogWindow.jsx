@@ -1,5 +1,9 @@
 import style from '../Messages.module.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+
+
 const DialogWindow = (props) => {
    return (
       <div className={`${style.page__dialogWindow} ${style.dialogWindow}`}>
@@ -26,8 +30,8 @@ const DialogWindow = (props) => {
          </div>
          <div className={`${style.dialogWindow__input}`}>
             <form action="">
-               <input type="text" />
-               <button type='submit'>Send</button>
+               <textarea type="text" />
+               <button type='submit'><FontAwesomeIcon icon={faPaperPlane} /></button>
             </form>
          </div>
       </div>
