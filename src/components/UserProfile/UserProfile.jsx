@@ -7,7 +7,7 @@ import VideoTab from "./VideoTab/VideoTab";
 import style from "./UserProfile.module.scss";
 
 
-const UserProfile = () => {
+const UserProfile = (props) => {
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>

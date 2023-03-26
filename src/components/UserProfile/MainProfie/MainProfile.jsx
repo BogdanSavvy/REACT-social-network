@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import style from "../UserProfile.module.scss";
 
 
-const MainProfile = () => {
+const MainProfile = (props) => {
    return (
       <section className={`${style.page__profile} ${style.profile}`}>
          <div className={`${style.profile__image}`}>

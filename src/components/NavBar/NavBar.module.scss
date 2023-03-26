@@ -2,20 +2,20 @@
    position: fixed;
    top: 0;
    left: 0;
+   display: flex;
+   flex-direction: column;
    height: 100%;
    background-color: #02315E;
    padding-top: 100px;
    z-index: 2;
-   justify-content: center;
    width: 90px;
+   //width:300px;
    transition: width 0.3s ease-out 0s;
-   &:hover{
-      width: 300px;   
-      transition: width 0.3s ease-out 0s;
-   }
 
    &__menuList{
       padding: 30px 20px;
+      flex: 1 1 auto;
+      a{color: #fff;}
    }
 
    &__menuItem{
@@ -23,7 +23,8 @@
       line-height: 1.5;
       transition: all 0.4s ease 0s;
       display: flex;
-      flex-direction: row;
+      align-items: center;
+      flex-direction: row; 
       &:not(:last-child){
          margin-bottom: 20px;
       }
@@ -36,17 +37,51 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all 0.3s ease;
+      &:hover{
+         color: rgb(15, 132, 179);
+         transition: all 0.3s ease;
+      }
    }
 
    &__icon{
-      color: #fff;
       font-size: 25px;
    }
 
    &__link{
-      color: #fff;
       padding-left: 10px;
+      transition: all 0.3s ease;
       display: none;
+      &:hover{
+         color: rgb(15, 132, 179);
+         transition: all 0.3s ease;
+         padding-left: 15px;
+      }
    }
+
+   &__button{
+      display: inline-flex;
+      justify-content: flex-end;
+      align-content: center;
+      padding: 10px;
+
+      button{
+         color: #094e8f;
+         font-size: 16px;
+         border-radius: 50%;
+         width: 35px;
+         height: 35px;
+         opacity: 0.9;
+         transition: all 0.4s ease;
+         &:hover{
+            color: rgb(15, 132, 179);
+            transition: all 0.2s ease;
+            font-size: 19px;
+         }
+      }
+   }
+}
+
+.open{
 
 }

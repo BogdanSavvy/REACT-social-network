@@ -1,6 +1,6 @@
 import style from '../Messages.module.scss';
 
-const DialogWindow = () => {
+const DialogWindow = (props) => {
    return (
       <div className={`${style.page__dialogWindow} ${style.dialogWindow}`}>
          <div className={`${style.dialogWindow__messages}`}>

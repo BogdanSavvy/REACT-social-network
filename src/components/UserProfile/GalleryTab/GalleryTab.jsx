@@ -1,7 +1,7 @@
 import style from '../UserProfile.module.scss';
 
 
-const GalleryTab = () => {
+const GalleryTab = (props) => {
    return (
       <section className={`${style.page__gallery} ${style.gallery}`}>
          <div className={`${style.gallery__container}`}>

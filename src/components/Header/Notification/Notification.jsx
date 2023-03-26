@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
 
-const Notification = () => {
+const Notification = (props) => {
    return(
       <div className={`${style.header__notification} ${style.notification}`}>
          <a href="#" className={style.notification__messeges}>

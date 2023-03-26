@@ -1,8 +1,46 @@
-import Post from "./Post/Post";
-import PostCreator from "./PostCreator/PostCreator";
+import style from '../UserProfile.module.scss';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShare } from '@fortawesome/free-solid-svg-icons';
 
 
-const PostsTab = () => {
+const Post = (props) => {
+   return(
+      <div className={`${style.page__postsBox} ${style.postsBox}`}>
+         <div className={`${style.postsBox__post} ${style.post}`}>
+            <div className={`${style.post__top}`}>
+               <div className={`${style.post__avatar}`}>
+                  <img src="https://img.itch.zone/aW1nLzU5MDA5MTAucG5n/original/gj0AMk.png" alt="ava" />
+               </div>
+               <div className={`${style.post__name}`}>
+                  <span>Amogus Amongasovich,</span>  posted { props.time }
+               </div>
+            </div>
+            <div className={`${style.post__body}`}>{ props.messege }</div>
+            <div className={`${style.post__action}`}>
+               <button>like</button>
+               <button>comment</button>
+               <button>repost</button>
+            </div>
+         </div>
+      </div>
+   )
+};
+
+
+const PostCreator = (props) => {
+   return(
+      <div className={`${style.page__postCreator} ${style.postCreator}`}>
+         <form action="#" className={`${style.postCreator__form}`}>
+            <input type="text" placeholder="Start typing to create new post..." />
+            <button type="submit"><FontAwesomeIcon icon={faShare} /></button>
+         </form>
+      </div>
+   )
+};
+
+
+const PostsTab = (props) => {
    return (
       <>
          <PostCreator />
@@ -12,7 +50,7 @@ const PostsTab = () => {
          <Post messege="THIS DESIGN IS TRASH!" time="Tommorow" />
       </>
    )
-}
+};
 
 
 export default PostsTab;

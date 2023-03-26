@@ -8,8 +8,9 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons'
 import { faUsersLine } from '@fortawesome/free-solid-svg-icons'
 import { faHandshake } from '@fortawesome/free-solid-svg-icons'
 import { faGears } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-const NavBar = () => {
+const NavBar = (props) => {
    return (
       <nav className={`${style.nav}`}>
          <ul className={`${style.nav__menuList}`}>
@@ -56,6 +57,9 @@ const NavBar = () => {
                <NavLink className={`${style.nav__link}`} to='settings'> Settings </NavLink>
             </li>
          </ul>
+         <div className={`${style.nav__button}`}>
+            <button><FontAwesomeIcon icon={faChevronRight} /></button>
+         </div>
       </nav>
    )
 }

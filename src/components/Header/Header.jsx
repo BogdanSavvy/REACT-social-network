@@ -5,7 +5,7 @@ import MiniProfile from "./MiniProfile/MiniProfile";
 import Search from "./Search/Search";
 
 
-const Header = () => {
+const Header = (props) => {
    return(
       <header className={style.header}>
          <div className={style.header__container}>
