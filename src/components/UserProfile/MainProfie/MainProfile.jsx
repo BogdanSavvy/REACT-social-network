@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
 import style from "../UserProfile.module.scss";
+
+import { NavLink } from "react-router-dom";
 
 
 const MainProfile = (props) => {
@@ -13,20 +14,20 @@ const MainProfile = (props) => {
                <img src="https://img.itch.zone/aW1nLzU5MDA5MTAucG5n/original/gj0AMk.png" alt="that was be avatar )" />
             </div>
             <div className={`${style.info__description}`}>
-               <div className={`${style.info__name}`}>Amogus Amongasovich</div>
-               <div className={`${style.info__status}`}>Hey world, always say: "Chinaaaaa!"</div>
+               <h2 className={`${style.info__name}`}>Amogus Amongasovich</h2>
+               <p className={`${style.info__status}`}>Hey world, always say: "Chinaaaaa!"</p>
             </div>
          </div>
          <div className={`${style.profile__tabs} ${style.tabs}`}>
             <ul className={`${style.tabs__list}`}>
                <li className={`${style.tabs__link}`}>
-                  <NavLink to='/'>Posts</NavLink>
+                  <NavLink to='posts/'>Posts</NavLink>
                </li>
                <li className={`${style.tabs__link}`}>
-                  <NavLink to='/'>Gallery</NavLink>
+                  <NavLink to='gallery/'>Gallery</NavLink>
                </li>
                <li className={`${style.tabs__link}`}>
-                  <NavLink to='/'>Videos</NavLink>
+                  <NavLink to='videos/'>Videos</NavLink>
                </li>
             </ul>
          </div>

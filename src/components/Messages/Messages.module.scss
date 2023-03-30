@@ -36,7 +36,7 @@
 }
 
 .dialogsList{
-   color: #ffffff;
+   color: #fff;
    &__branch{
       line-height: 1.5;
       padding: 10px;
@@ -59,12 +59,33 @@
    }
    &__userName{
       font-size: 16px;
+      a{color: #fff ;}
    }
    &__lastMessage{
       font-size: 14px;
       span{color: rgb(211, 132, 15);font-weight: 600;}
    }
+   &__lastVisit{
+      font-size: 12px;
+      font-weight: 500;
+      position: relative;
+      &::after{
+         content: '';
+         position: absolute;
+         top: calc(50% - 3px);
+         right: -10px;
+         width: 6px;
+         height: 6px;
+         background-color: #fff;
+         border-radius: 50%;
+      }
+   }
 }
+
+//? classes to "dialogsList__lastVisit"
+.online{ color: #8add0d; &::after{background-color: #8add0d;}}
+.offline{ color: red; &::after{background-color: red;}}
+//________________________________
 
 .dialogWindow{
    &__messages{
@@ -73,6 +94,8 @@
       flex: 1 1 689.5px;
       padding: 15px;
       overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
       //!--------------"Scroll_Style"---------------
       &::-webkit-scrollbar{
          background-color: transparent;
@@ -89,17 +112,34 @@
    &__sent{
       font-size: 16px;
       line-height: 1.5;
-      max-width: 250px;
+      display: inline-block;
       &:not(:last-child){
          margin-bottom: 10px;
       }
       p{
          padding: 15px;
-         background-color: rgb(206, 42, 124);
-         border-radius: 20px 20px 20px 0px;
-         display: inline-block;
+         color: #fff;
       }
    }
+
+//?_________classes to "dialogWindow__sent"_____________________
+
+.user{
+   display: inline-flex;
+   p{
+      background-color: rgb(206, 42, 124);
+      border-radius: 20px 20px 20px 0px;
+   }
+}
+.me{ 
+   display: flex;
+   justify-content: flex-end;
+   p{
+      background-color: rgb(223, 59, 209);
+      border-radius: 20px 20px 0px 20px;
+   }
+}
+//?____________________________________________________________________
 
    &__input{
       position: relative;

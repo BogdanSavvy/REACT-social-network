@@ -1,7 +1,9 @@
-import style from './../Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
+
+import style from './../Header.module.scss';
+
 
 const Notification = (props) => {
    return(

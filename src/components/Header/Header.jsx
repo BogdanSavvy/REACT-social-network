@@ -1,8 +1,9 @@
-import style from './Header.module.scss';
 import Logo from "./Logo/Logo";
 import Notification from "./Notification/Notification";
 import MiniProfile from "./MiniProfile/MiniProfile";
 import Search from "./Search/Search";
+
+import style from './Header.module.scss';
 
 
 const Header = (props) => {

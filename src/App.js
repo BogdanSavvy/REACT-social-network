@@ -16,23 +16,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
       <div className="wrapper">
         <Header />
         <NavBar />
         <div className="main-container">
           <Routes>
-            <Route path='/profile' Component={ UserProfile } />
-            <Route path='/messages' Component={ Messages } />
-            <Route path='/news' Component={ News } />
-            <Route path='/music' Component={ Music } />
-            <Route path='/groups' Component={ Groups } />
-            <Route path='/friends' Component={ Friends } />
-            <Route path='/settings' Component={ Settings } />
+            <Route path='/profile/*' Component = { UserProfile } />
+            <Route path='/messages/*' Component = { Messages } />
+            <Route path='/news' Component = { News } />
+            <Route path='/music' Component = { Music } />
+            <Route path='/groups' Component = { Groups } />
+            <Route path='/friends' Component = { Friends } />
+            <Route path='/settings' Component = { Settings } />
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
