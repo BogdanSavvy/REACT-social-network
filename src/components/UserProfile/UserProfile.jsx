@@ -11,7 +11,7 @@ const UserProfile = (props) => {
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>
-            <MainProfile />
+            <MainProfile name='Amogus Amongasovich' status='Hey world, always say: "Chinaaaaa!' />
             <Routes>
                <Route path="/posts" element={ <PostsTab /> } />
                <Route path="/gallery" element={ <GalleryTab /> } />

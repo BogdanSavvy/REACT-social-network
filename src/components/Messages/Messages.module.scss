@@ -7,12 +7,12 @@
    }
 
    &__dialogsList{
-      flex: 0 1 25%;
+      flex: 0 0 25%;
       display: flex;
       flex-direction: column;
       max-height: 868.5px;
       overflow-y: scroll;
-      background-color: #575faf;
+      background-color: #3843be;
       border-right: 1px solid #ffffff4f;
       //!--------------"Scroll_Style"---------------
       &::-webkit-scrollbar{
@@ -76,7 +76,6 @@
          right: -10px;
          width: 6px;
          height: 6px;
-         background-color: #fff;
          border-radius: 50%;
       }
    }
@@ -85,12 +84,13 @@
 //? classes to "dialogsList__lastVisit"
 .online{ color: #8add0d; &::after{background-color: #8add0d;}}
 .offline{ color: red; &::after{background-color: red;}}
-//________________________________
+//?__________________________________________
 
 .dialogWindow{
    &__messages{
       width: 100%;
-      background-color: #3a49d362;
+      background: url("../../images/chat/01.jpg");
+      //background-color: #3a49d362;
       flex: 1 1 689.5px;
       padding: 15px;
       overflow-y: scroll;
@@ -117,8 +117,9 @@
          margin-bottom: 10px;
       }
       p{
-         padding: 15px;
+         padding: 15px 20px;
          color: #fff;
+         max-width: 500px;
       }
    }
 
@@ -127,7 +128,7 @@
 .user{
    display: inline-flex;
    p{
-      background-color: rgb(206, 42, 124);
+      background-color: rgb(140, 42, 206);
       border-radius: 20px 20px 20px 0px;
    }
 }
@@ -145,7 +146,7 @@
       position: relative;
       form{
          padding: 20px;
-         background-color: #2d3fdf;
+         background-color: #3843be;
       }
       textarea{ 
          width: 100%;

@@ -14,14 +14,17 @@ const MainProfile = (props) => {
                <img src="https://img.itch.zone/aW1nLzU5MDA5MTAucG5n/original/gj0AMk.png" alt="that was be avatar )" />
             </div>
             <div className={`${style.info__description}`}>
-               <h2 className={`${style.info__name}`}>Amogus Amongasovich</h2>
-               <p className={`${style.info__status}`}>Hey world, always say: "Chinaaaaa!"</p>
+               <h2 className={`${style.info__name}`}> {props.name} </h2>
+               <p className={`${style.info__status}`}> {props.status} </p>
             </div>
          </div>
          <div className={`${style.profile__tabs} ${style.tabs}`}>
             <ul className={`${style.tabs__list}`}>
                <li className={`${style.tabs__link}`}>
                   <NavLink to='posts/'>Posts</NavLink>
+               </li>
+               <li className={`${style.tabs__link}`}>
+                  <NavLink to='activity/'>Activity</NavLink>
                </li>
                <li className={`${style.tabs__link}`}>
                   <NavLink to='gallery/'>Gallery</NavLink>
