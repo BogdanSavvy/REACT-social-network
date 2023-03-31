@@ -89,7 +89,7 @@
 .dialogWindow{
    &__messages{
       width: 100%;
-      background: url("../../images/chat/01.jpg");
+      background: url("../../images/chat/01.jpg") center / cover;
       //background-color: #3a49d362;
       flex: 1 1 689.5px;
       padding: 15px;
@@ -150,7 +150,7 @@
       }
       textarea{ 
          width: 100%;
-         min-height: 130px;
+         min-height: 100px;
          border-radius: 20px;
          padding: 10px 20px;
          resize: none;

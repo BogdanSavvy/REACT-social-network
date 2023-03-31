@@ -9,14 +9,14 @@ import { faSquareShareNodes } from '@fortawesome/free-solid-svg-icons';
 
 // immitation of Data to Posts
 let postsData = [
-   { message: 'WTF', time: '25min ago', },
-   { message: 'is', time: '2 days ago', },
-   { message: 'going on', time: '1 hour ago', },
-   { message: 'THIS DESIGN IS TRASH!', time: '22min ago', },
-   { message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
-   { message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
-   { message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
-   { message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
+   { name: 'Amogus Amongasovich', message: 'WTF', time: '25min ago', },
+   { name: 'Amogus Amongasovich', message: 'is', time: '2 days ago', },
+   { name: 'Amogus Amongasovich', message: 'going on', time: '1 hour ago', },
+   { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
+   { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
+   { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
+   { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
+   { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
 ];
 //____________________________________________________________
 
@@ -29,7 +29,7 @@ const Post = (props) => {
                   <img src="https://img.itch.zone/aW1nLzU5MDA5MTAucG5n/original/gj0AMk.png" alt="ava" />
                </div>
                <div className={`${style.post__name}`}>
-                  <span>Amogus Amongasovich,</span>  posted {props.time}.
+                  <span>{props.name},</span>  posted {props.time}.
                </div>
             </div>
             <div className={`${style.post__body}`}>{props.message}</div>
@@ -59,7 +59,7 @@ const PostCreator = (props) => {
 
 const PostsTab = (props) => {
    
-   let newPost = postsData.map( el => <Post message={el.message} time={el.time} />);
+   let newPost = postsData.map( el => <Post name={el.name} message={el.message} time={el.time} />);
 
    return (
       <>

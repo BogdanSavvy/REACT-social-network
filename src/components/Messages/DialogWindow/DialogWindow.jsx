@@ -4,20 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 let sentMessagesData = [
-   {id: '1', message: 'Hello', sender: 'user', },
-   {id: '2', message: 'how', sender: 'user', },
-   {id: '3', message: 'are you??', sender: 'user', },
-   {id: '4', message: 'test message', sender: 'user', },
-   {id: '7', message: 'test message', sender: 'me', },
-   {id: '5', message: 'test message', sender: 'user', },
-   {id: '6', message: 'test message', sender: 'user', },
-   {id: '7', message: 'test message', sender: 'me', },
-   {id: '7', message: 'test message', sender: 'me', },
-   {id: '6', message: 'test message', sender: 'user', },
-   {id: '7', message: 'test message', sender: 'me', },
-   {id: '7', message: 'test message', sender: 'me', },
-   {id: '6', message: 'test message', sender: 'user', },
-   {id: '8', message: 'test message', sender: 'me', },
+   { id: 1, message: 'Hello', sender: 'user', },
+   { id: 2, message: 'how', sender: 'user', },
+   { id: 3, message: 'are you??', sender: 'user', },
+   { id: 4, message: 'test message', sender: 'user', },
+   { id: 7, message: 'test message', sender: 'me', },
+   { id: 5, message: 'test message', sender: 'user', },
+   { id: 6, message: 'test message', sender: 'user', },
+   { id: 7, message: 'test message', sender: 'me', },
+   { id: 7, message: 'test message', sender: 'me', },
+   { id: 6, message: 'test message', sender: 'user', },
+   { id: 7, message: 'test message', sender: 'me', },
+   { id: 7, message: 'test message', sender: 'me', },
+   { id: 6, message: 'test message', sender: 'user', },
+   { id: 8, message: 'test message', sender: 'me', },
 ];
 
 const SentMessage = (props) => {
@@ -38,7 +38,7 @@ const DialogWindow = (props) => {
             {newMessage}
          </div>
          <div className={`${style.dialogWindow__input}`}>
-            <form action="">
+            <form action="#">
                <textarea type="text" />
                <button type='submit'><FontAwesomeIcon icon={faPaperPlane} /></button>
             </form>

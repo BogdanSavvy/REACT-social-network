@@ -7,6 +7,7 @@ import Music from './components/Music/Music';
 import Groups from './components/Groups/Groups';
 import Friends from './components/Friends/Friends';
 import Settings from './components/Settings/Settings';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 import "./scss/null.scss"
 import './App.css';
@@ -24,10 +25,10 @@ function App() {
             <Route path='/profile/*' Component = { UserProfile } />
             <Route path='/messages/*' Component = { Messages } />
             <Route path='/news' Component = { News } />
-            <Route path='/music' Component = { Music } />
-            <Route path='/groups' Component = { Groups } />
-            <Route path='/friends' Component = { Friends } />
-            <Route path='/settings' Component = { Settings } />
+            <Route path='/music' Component = { NotFoundPage } />
+            <Route path='/groups' Component = { NotFoundPage } />
+            <Route path='/friends' Component = { NotFoundPage } />
+            <Route path='/settings' Component = { NotFoundPage } />
           </Routes>
         </div>
       </div>

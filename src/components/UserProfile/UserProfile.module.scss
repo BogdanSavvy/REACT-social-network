@@ -79,7 +79,7 @@
          position: absolute;
          bottom: -20%;
          left: 0;
-         width: 60px;
+         width: 100px;
          height: 2px;
          background-color: #ffff;
       }
@@ -89,6 +89,18 @@
       font-size: 22px;
       line-height: 1.5;
       color: #fafafa;
+      position: relative;
+      padding-left: 18px;
+      &::before{
+         content: '';
+         position: absolute;
+         top: calc(50% - 5px);
+         left: 0;
+         width: 10px;
+         height: 10px;
+         border-radius: 50%;
+         background-color: #fafafa;
+      }
    }
 
 }
@@ -193,7 +205,8 @@
    &__name{
       span{font-size: 16px; color: #fff;}
       font-size: 14px;
+      font-weight: 600;
       line-height: 1.5;
-      color: #df0000;
+      color: #df00a7;
    }
 }
