@@ -1,5 +1,6 @@
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
+import Home from './components/Home/Home';
 import UserProfile from './components/UserProfile/UserProfile';
 import Messages from './components/Messages/Messages';
 import News from './components/News/News';
@@ -22,6 +23,7 @@ function App() {
         <NavBar />
         <div className="main-container">
           <Routes>
+            <Route path='/home/' Component = { Home } />
             <Route path='/profile/*' Component = { UserProfile } />
             <Route path='/messages/*' Component = { Messages } />
             <Route path='/news' Component = { News } />

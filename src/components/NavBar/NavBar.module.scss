@@ -11,6 +11,7 @@
    width: 90px;
    //width:300px;
    transition: width 0.3s ease-out 0s;
+   overflow: hidden;
 
    &__menuList{
       padding: 30px 20px;
@@ -25,6 +26,7 @@
       display: flex;
       align-items: center;
       flex-direction: row; 
+      column-gap: 25px;
       &:not(:last-child){
          margin-bottom: 20px;
       }
@@ -32,6 +34,7 @@
    &__iconBox{
       width: 45px;
       height: 45px;
+      padding: 15px;
       border-radius: 10px;
       background-color: #ffffff81;
       display: flex;
@@ -49,9 +52,7 @@
    }
 
    &__link{
-      padding-left: 10px;
-      transition: all 0.3s ease;
-      display: none;
+      transition: all 0.3s ease 0.1s;
       &:hover{
          color: rgb(15, 132, 179);
          transition: all 0.3s ease;
@@ -72,7 +73,7 @@
          width: 35px;
          height: 35px;
          opacity: 0.9;
-         transition: all 0.4s ease;
+         transition: all 0.4s ease ;
          &:hover{
             color: rgb(15, 132, 179);
             transition: all 0.2s ease;
@@ -80,7 +81,7 @@
          }
          &:focus{
             transform: scaleX(-1);
-            transition: all 0.4s ease;
+            transition: all 0.4s ease ;
          }
       }
    }

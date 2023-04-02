@@ -17,10 +17,10 @@ const NavBar = (props) => {
       <nav className={`${style.nav}`}>
          <ul className={`${style.nav__menuList}`}>
             <li className={`${style.nav__menuItem}`}>
-               <NavLink className={`${style.nav__iconBox}`} to='/profile'>
+               <NavLink className={`${style.nav__iconBox}`} to='/home'>
                   <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHouse} />
                </NavLink>
-               <NavLink className={`${style.nav__link}`} to='/profile'> Home </NavLink>
+               <NavLink className={`${style.nav__link}`} to='/home'> Home </NavLink>
             </li>
             <li className={`${style.nav__menuItem}`}>
                <NavLink className={`${style.nav__iconBox}`} to='/news'>
