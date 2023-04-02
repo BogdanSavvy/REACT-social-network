@@ -13,27 +13,27 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import "./scss/null.scss"
 import './App.css';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 
-function App() {
+const App = (props) => {
   return (
-      <div className="wrapper">
-        <Header />
-        <NavBar />
-        <div className="main-container">
-          <Routes>
-            <Route path='/home/' Component = { Home } />
-            <Route path='/profile/*' Component = { UserProfile } />
-            <Route path='/messages/*' Component = { Messages } />
-            <Route path='/news' Component = { News } />
-            <Route path='/music' Component = { NotFoundPage } />
-            <Route path='/groups' Component = { NotFoundPage } />
-            <Route path='/friends' Component = { NotFoundPage } />
-            <Route path='/settings' Component = { NotFoundPage } />
-          </Routes>
-        </div>
+    <div className="wrapper">
+      <Header />
+      <NavBar />
+      <div className="main-container">
+        <Routes>
+          <Route path='/home/' Component={Home} />
+          <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} />} />
+          <Route path='/messages/*' element={<Messages mesgData={props.state.messagesP} />} />
+          <Route path='/news' Component={News} />
+          <Route path='/music' Component={NotFoundPage} />
+          <Route path='/groups' Component={NotFoundPage} />
+          <Route path='/friends' Component={NotFoundPage} />
+          <Route path='/settings' Component={NotFoundPage} />
+        </Routes>
       </div>
+    </div>
   );
 }
 
