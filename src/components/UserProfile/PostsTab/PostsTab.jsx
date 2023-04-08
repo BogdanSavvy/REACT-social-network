@@ -10,7 +10,7 @@ const PostsTab = (props) => {
 
    return (
       <>
-         <PostCreator />
+         <PostCreator addPost={props.addPost} />
          {newPost}
       </>
    )

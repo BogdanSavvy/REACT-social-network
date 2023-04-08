@@ -5,14 +5,14 @@
 let state = {
    profileP:{
       postsData:[
-         { name: 'Amogus Amongasovich', message: 'WTF', time: '25min ago', },
-         { name: 'Amogus Amongasovich', message: 'is', time: '2 days ago', },
-         { name: 'Amogus Amongasovich', message: 'going on', time: '1 hour ago', },
-         { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
-         { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
-         { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
-         { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
-         { name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
+         { id: 1, name: 'Amogus Amongasovich', message: 'WTF', time: '25min ago', },
+         { id: 2, name: 'Amogus Amongasovich', message: 'is', time: '2 days ago', },
+         { id: 3, name: 'Amogus Amongasovich', message: 'going on', time: '1 hour ago', },
+         { id: 4, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
+         { id: 5, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
+         { id: 6, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
+         { id: 7, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
+         { id: 8, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
       ],
    },
    messagesP:{
@@ -50,6 +50,17 @@ let state = {
       ],
    }
 };
+
+export const addPost = (postMessage) => {
+   
+   let newPost = {
+         id:9, 
+         name: 'Amogus Amongasovich',
+         message: postMessage,
+         time: 'now',
+      };
+      state.profileP.postsData.push(newPost);
+}
 
 export default state;
 

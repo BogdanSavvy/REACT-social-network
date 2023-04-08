@@ -24,7 +24,7 @@ const App = (props) => {
       <div className="main-container">
         <Routes>
           <Route path='/home/' Component={Home} />
-          <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} />} />
+          <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} addPost={props.addPost} />} />
           <Route path='/messages/*' element={<Messages mesgData={props.state.messagesP} />} />
           <Route path='/news' Component={News} />
           <Route path='/music' Component={NotFoundPage} />
