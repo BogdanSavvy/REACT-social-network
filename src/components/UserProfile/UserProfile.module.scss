@@ -9,6 +9,7 @@
 
    &__profile{
       border-radius: 25px;
+      border-top: 2px solid #fff;
       overflow: hidden;
       background-color: #7d85cc91;
       margin-bottom: 20px;
@@ -27,12 +28,19 @@
       margin-bottom: 20px;
    }
 
+   &__gallery, &__video, &__activity{
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #7d85cc91;
+      margin-bottom: 20px;
+      border-top: 2px solid #50e2f5a4;
+      border-bottom: 2px solid #50e2f5a4;
+   }
+
 }
-
+//?________________________Profile-Styles_________________________________________
 .profile{
-
    &__image{
-      border-bottom: 2px solid #fff;    
       position: relative;
       img{
          width: 100%;
@@ -40,18 +48,17 @@
          object-fit: cover;
       }
    }
-
    &__info{
       display: flex;
       flex-direction: row;
       gap: 40px;
    }
-
    &__tabs{
-      border-top: 2px solid #ffffff;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border: 2px solid #ffffff;
    }
 }
-
 .info{
    &__avatar{
       transform: translate(0,-40%);
@@ -104,7 +111,6 @@
    }
 
 }
-
 .tabs{
   
    &__list{
@@ -130,7 +136,9 @@
    }
 
 }
+//?________________________________________________________________________________
 
+//*________________________Posts-Styles________________________________________
 .postsBox{
 
    &__post{
@@ -143,7 +151,6 @@
       flex-direction: column;
    }
 }
-
 .postCreator{
 
    &__form{
@@ -166,7 +173,6 @@
       }
    }
 }
-
 .post{
 
    &__top{
@@ -210,3 +216,154 @@
       color: #df00a7;
    }
 }
+//*____________________________________________________________________________
+
+
+//!________________________Gallery-Styles________________________________________
+.gallery{
+   &__container{
+      display: flex;
+      flex-direction: row;
+      gap: 35px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+   }
+   &__title{
+      font-size: 30px;
+      color: #fafafa;
+      font-weight: 600;
+      line-height: 140%;
+      margin-bottom: 25px;
+   }
+   &__photosBox{
+      flex: 0 0 20%;
+      padding: 10px;
+      background-color: #ffffff75;
+   }
+
+   &__item{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      img{
+         border-radius: 10px;
+         overflow: hidden;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+
+      }
+   }
+
+   &__subtitle{
+      font-size: 18px;
+      line-height: 145%;
+      font-weight: 500;
+   }
+
+   &__description{
+      font-size: 16px;
+      line-height: 145%;
+      max-width: 200px;
+      word-wrap: break-word;
+   }
+
+   &__addPhoto{
+      flex: 0 1 20%;
+      font-size: 35px;
+      line-height: 150%;
+      color: #504f4f;
+      text-align: center;
+      padding: 130px 15px;
+      background-color: #ffffff75;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+      &:hover{
+         transition: all 0.4s ease;
+         transform: scale(1.05);
+         background-color: #ffffffa2;
+      }
+   }
+   &__icon{
+      font-size: 45px;
+   }
+}
+//!______________________________________________________________________________
+
+
+//________________________Video-Styles__________________________________________
+.video{
+   &__container{
+      display: flex;
+      flex-direction: row;
+      gap: 35px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+   }
+   &__title{
+      font-size: 30px;
+      color: #fafafa;
+      font-weight: 600;
+      line-height: 140%;
+      margin-bottom: 25px;
+   }
+   &__videoBox{
+      flex: 0 0 30.3333%;
+      padding: 10px;
+      background-color: #ffffff75;
+   }
+
+   &__item{
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+   }
+
+   &__subtitle{
+      font-size: 20px;
+      line-height: 145%;
+      font-weight: 500;
+   }
+
+   &__description{
+      font-size: 16px;
+      line-height: 145%;
+   }
+
+   &__addVideo{
+      flex: 0 1 30.333%;
+      font-size: 35px;
+      line-height: 150%;
+      color: #504f4f;
+      text-align: center;
+      padding: 110px 15px;
+      background-color: #ffffff75;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+      &:hover{
+         transition: all 0.4s ease;
+         transform: scale(1.05);
+         background-color: #ffffffa2;
+      }
+   }
+   &__icon{
+      font-size: 45px;
+   }
+}
+//______________________________________________________________________________
+
+
+//todo______________________________Activity-Styles__________________________________
+.activity{
+   font-size: 45px;
+   color: #fff;
+   text-align: center;
+   padding: 20px;
+}
+//todo_______________________________________________________________________________

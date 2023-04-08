@@ -1,7 +1,7 @@
 import style from '../../UserProfile.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquareShareNodes } from '@fortawesome/free-solid-svg-icons';
