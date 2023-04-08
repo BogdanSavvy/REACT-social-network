@@ -1,5 +1,7 @@
 //imitation of Data
 
+import { reRender } from "../render";
+
 //*P = Page;
 
 let state = {
@@ -52,7 +54,7 @@ let state = {
 };
 
 export const addPost = (postMessage) => {
-   
+
    let newPost = {
          id:9, 
          name: 'Amogus Amongasovich',
@@ -60,6 +62,7 @@ export const addPost = (postMessage) => {
          time: 'now',
       };
       state.profileP.postsData.push(newPost);
+      reRender(state);
 }
 
 export default state;
