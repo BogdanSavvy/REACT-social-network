@@ -5,8 +5,8 @@ import { reRender } from "../render";
 //*P = Page;
 
 let state = {
-   profileP:{
-      postsData:[
+   profileP: {
+      postsData: [
          { id: 1, name: 'Amogus Amongasovich', message: 'WTF', time: '25min ago', },
          { id: 2, name: 'Amogus Amongasovich', message: 'is', time: '2 days ago', },
          { id: 3, name: 'Amogus Amongasovich', message: 'going on', time: '1 hour ago', },
@@ -17,8 +17,8 @@ let state = {
          { id: 8, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
       ],
    },
-   messagesP:{
-      branchesData:[
+   messagesP: {
+      branchesData: [
          { id: 1, name: 'Andre', surname: 'Boyarskiy', lastSent: 'Чінаааа, ком цу моне', visit: 'online', avatar: 'https://i1.sndcdn.com/artworks-H0ChiM7OzvRmfGEG-6E4BLQ-t500x500.jpg', },
          { id: 2, name: 'Sanya', surname: 'Beliy', lastSent: 'Є 50 грн на карті чуваче?', visit: 'offline', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnpcyfx8RcGbp0s9tuXQq8uvNwjliC27cQ2ERdWPhkjIklGUvKRL4JC-tD_FhHgC3T-m4&usqp=CAU', },
          { id: 3, name: 'Kebbabka', surname: 'Vinnitskaya', lastSent: 'Дай хлорки курвааа!!', visit: 'online', avatar: 'https://proza.ru/pics/2017/06/23/1559.jpg', },
@@ -41,30 +41,39 @@ let state = {
          { id: 4, message: 'test message', sender: 'user', },
          { id: 7, message: 'test message', sender: 'me', },
          { id: 5, message: 'test message', sender: 'user', },
-         { id: 6, message: 'test message', sender: 'user', },
-         { id: 7, message: 'test message', sender: 'me', },
-         { id: 7, message: 'test message', sender: 'me', },
-         { id: 6, message: 'test message', sender: 'user', },
-         { id: 7, message: 'test message', sender: 'me', },
-         { id: 7, message: 'test message', sender: 'me', },
-         { id: 6, message: 'test message', sender: 'user', },
-         { id: 8, message: 'test message', sender: 'me', },
+         // { id: 6, message: 'test message', sender: 'user', },
+         // { id: 7, message: 'test message', sender: 'me', },
+         // { id: 7, message: 'test message', sender: 'me', },
+         // { id: 6, message: 'test message', sender: 'user', },
+         // { id: 7, message: 'test message', sender: 'me', },
+         // { id: 7, message: 'test message', sender: 'me', },
+         // { id: 6, message: 'test message', sender: 'user', },
+         // { id: 8, message: 'test message', sender: 'me', },
       ],
    }
 };
-
+//!Function that adds a post to the ProfilePage
 export const addPost = (postMessage) => {
-
    let newPost = {
-         id:9, 
-         name: 'Amogus Amongasovich',
-         message: postMessage,
-         time: 'now',
-      };
-      state.profileP.postsData.push(newPost);
-      reRender(state);
+      id: 9,
+      name: 'Amogus Amongasovich',
+      message: postMessage,
+      time: 'now',
+   };
+   state.profileP.postsData.unshift(newPost);
+   reRender(state);
+}
+//!Function that adds a new Message in Dialog
+export const sendMessage = (message) => {
+
+   let newMessage = {
+      id: 9, 
+      message: message, 
+      sender: 'me',
+   }
+   state.messagesP.sentMessagesData.push(newMessage);
+   reRender(state);
 }
 
 export default state;
 
- 

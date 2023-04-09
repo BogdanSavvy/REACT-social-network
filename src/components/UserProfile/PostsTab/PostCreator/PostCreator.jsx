@@ -6,13 +6,13 @@ import React from 'react';
 
 
 const PostCreator = (props) => {
-   
+
    let postEl = React.createRef();
 
    let addPost = () => {
       let txt = postEl.current.value;
       props.addPost(txt);
-      postEl.current.value = ''; 
+      postEl.current.value = '';
    }
 
    return (
