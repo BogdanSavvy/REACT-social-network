@@ -11,7 +11,9 @@ const PostCreator = (props) => {
 
    let addPost = () => {
       let txt = postEl.current.value;
-      props.addPost(txt);
+      if (txt === ''){
+         alert ('Text area is empty :(');
+      } else props.addPost(txt);
       postEl.current.value = '';
    }
 

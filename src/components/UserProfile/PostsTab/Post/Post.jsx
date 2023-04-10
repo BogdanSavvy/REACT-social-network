@@ -13,7 +13,7 @@ const Post = (props) => {
          <div className={`${style.postsBox__post} ${style.post}`}>
             <div className={`${style.post__top}`}>
                <div className={`${style.post__avatar}`}>
-                  <img src="https://img.itch.zone/aW1nLzU5MDA5MTAucG5n/original/gj0AMk.png" alt="ava" />
+                  <img src={props.ava} alt="ava" />
                </div>
                <div className={`${style.post__name}`}>
                   <span>{props.name},</span>  posted {props.time}.

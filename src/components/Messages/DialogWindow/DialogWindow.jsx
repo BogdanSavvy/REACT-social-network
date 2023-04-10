@@ -13,7 +13,9 @@ const DialogWindow = (props) => {
 
    let sendMessage = () => {
       let txt = dialogEl.current.value;
-      props.sendMessage(txt);
+      if (txt === ''){
+         alert ('You cant send "nothing"')
+      } else props.sendMessage(txt);
       dialogEl.current.value = '';
    }
 

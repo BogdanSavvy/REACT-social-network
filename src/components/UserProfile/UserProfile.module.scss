@@ -1,87 +1,95 @@
-.body{
+@import "../../scss/null.scss";
 
-   &__page{
+.body {
+
+   &__page {
       padding: 115px 15px 10px;
    }
 }
 
-.page{
+.page {
 
-   &__profile{
+   &__profile {
       border-radius: 25px;
-      border-top: 2px solid #fff;
       overflow: hidden;
-      background-color: #7d85cc91;
+      background-color: $darkTh_content;
       margin-bottom: 20px;
    }
 
-   &__postsBox{
-      &:not(:last-child){
-         margin-bottom: 25px; 
+   &__postsBox {
+      &:not(:last-child) {
+         margin-bottom: 25px;
       }
    }
 
-   &__postCreator{
-      background-color: #7d85cc91;
+   &__postCreator {
+      background-color: $darkTh_content;
       border-radius: 25px;
       padding: 25px;
       margin-bottom: 20px;
    }
 
-   &__gallery, &__video, &__activity{
+   &__gallery,
+   &__video,
+   &__activity {
       border-radius: 25px;
       overflow: hidden;
-      background-color: #7d85cc91;
+      background-color: $darkTh_content;
       margin-bottom: 20px;
-      border-top: 2px solid #50e2f5a4;
-      border-bottom: 2px solid #50e2f5a4;
    }
 
 }
+
 //?________________________Profile-Styles_________________________________________
-.profile{
-   &__image{
+.profile {
+   &__image {
       position: relative;
-      img{
+
+      img {
          width: 100%;
          height: 350px;
          object-fit: cover;
       }
    }
-   &__info{
+
+   &__info {
       display: flex;
       flex-direction: row;
       gap: 40px;
    }
-   &__tabs{
-      border-bottom-left-radius: 25px;
-      border-bottom-right-radius: 25px;
-      border: 2px solid #ffffff;
+
+   &__tabs {
+      //border-bottom-left-radius: 25px;
+      //border-bottom-right-radius: 25px;
+      border-top: 1px solid #ffffff;
    }
 }
-.info{
-   &__avatar{
-      transform: translate(0,-40%);
+
+.info {
+   &__avatar {
+      transform: translate(0, -40%);
       padding-left: 100px;
-      img{
+      img {
          width: 250px;
          height: 250px;
       }
    }
 
-   &__description{
+   &__description {
       padding-top: 15px;
    }
 
-   &__name{
+   &__name {
       font-size: 30px;
       line-height: 1.5;
       color: azure;
       position: relative;
-      &:not(:last-child){
+
+      &:not(:last-child) {
          margin-bottom: 15px;
       }
-      &::after{
+
+      &::after {
          content: '';
          position: absolute;
          bottom: -20%;
@@ -92,13 +100,14 @@
       }
    }
 
-   &__status{
+   &__status {
       font-size: 22px;
       line-height: 1.5;
       color: #fafafa;
       position: relative;
       padding-left: 18px;
-      &::before{
+
+      &::before {
          content: '';
          position: absolute;
          top: calc(50% - 5px);
@@ -111,9 +120,10 @@
    }
 
 }
-.tabs{
-  
-   &__list{
+
+.tabs {
+
+   &__list {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -123,65 +133,80 @@
       min-height: 50px;
    }
 
-   &__link{
-      a{
+   &__link {
+      a {
          color: #ffff;
          font-size: 18px;
          line-height: 1.4;
          letter-spacing: 0.3px;
-         &:hover{
-            text-decoration: underline;
+         transition: 0.3s ease;
+
+         &:hover {
+            transition: 0.3s ease;
+            color: $Dlink_hover;
          }
       }
    }
 
 }
+
 //?________________________________________________________________________________
 
 //*________________________Posts-Styles________________________________________
-.postsBox{
+.postsBox {
 
-   &__post{
+   &__post {
       width: 100%;
       min-height: 200px;
-      background-color: #7d85cca6;
+      background-color: $darkTh_content;
       border-radius: 25px;
       padding: 25px;
       display: flex;
       flex-direction: column;
    }
 }
-.postCreator{
 
-   &__form{
+.postCreator {
+
+   &__form {
       position: relative;
-      input{
+
+      input {
          padding: 15px;
          width: 100%;
          min-height: 150px;
          border-radius: 25px;
       }
-      button{
+
+      button {
          font-size: 16px;
-         color: #fff;  
+         color: #fff;
          position: absolute;
          bottom: 10px;
          right: 10px;
          border-radius: 50%;
-         padding: 10px 12px; 
-         background-color: #7d85cca6;
+         padding: 10px 12px;
+         background-color: $darkTh_content;
+         transition: 0.4s ease;
+         &:hover {
+            transition: 0.4s ease;
+            color: $Dlink_hover;
+            transform: rotate(360deg);
+         }
       }
    }
 }
-.post{
 
-   &__top{
+.post {
+
+   &__top {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 25px;
       padding-bottom: 20px;
-      img{
+
+      img {
          width: 60px;
          height: 60px;
          border-radius: 50%;
@@ -189,39 +214,59 @@
       }
    }
 
-   &__body{
+   &__body {
       flex: 1 1 auto;
       font-size: 17px;
+      color: $darkTh_txt;
    }
 
-   &__action{
+   &__action {
       display: flex;
       flex-direction: row;
-      gap: 20px; 
+      gap: 20px;
       justify-content: flex-end;
-      button{
-         padding: 7px; 
+      button {
+         padding: 7px;
          border-radius: 5px;
          background-color: transparent;
          font-size: 19px;
-         color: #ffff;
+         color: $darkTh_txt;
+      }
+   }
+   &__like{
+      transition: 0.3s ease;
+      &:hover{
+         transition: 0.3s ease;
+         color: #e62214;
+      }
+   }
+   &__comment,&__repost,&__share{
+      transition: 0.3s ease;
+      &:hover{
+         transition: 0.3s ease;
+         color: $Dlink_hover;
       }
    }
 
-   &__name{
-      span{font-size: 16px; color: #fff;}
+   &__name {
+      span {
+         font-size: 16px;
+         color: $darkTh_txt;
+      }
+
       font-size: 14px;
       font-weight: 600;
       line-height: 1.5;
-      color: #df00a7;
+      color: $Dlink_active;
    }
 }
+
 //*____________________________________________________________________________
 
 
 //!________________________Gallery-Styles________________________________________
-.gallery{
-   &__container{
+.gallery {
+   &__container {
       display: flex;
       flex-direction: row;
       gap: 35px;
@@ -230,25 +275,28 @@
       justify-content: center;
       padding: 30px 15px;
    }
-   &__title{
+
+   &__title {
       font-size: 30px;
       color: #fafafa;
       font-weight: 600;
       line-height: 140%;
       margin-bottom: 25px;
    }
-   &__photosBox{
+
+   &__photosBox {
       flex: 0 0 20%;
       padding: 10px;
       background-color: #ffffff75;
    }
 
-   &__item{
+   &__item {
       justify-content: center;
       display: flex;
       flex-direction: column;
       row-gap: 10px;
-      img{
+
+      img {
          border-radius: 10px;
          overflow: hidden;
          width: 100%;
@@ -258,20 +306,20 @@
       }
    }
 
-   &__subtitle{
+   &__subtitle {
       font-size: 18px;
       line-height: 145%;
       font-weight: 500;
    }
 
-   &__description{
+   &__description {
       font-size: 16px;
       line-height: 145%;
       max-width: 200px;
       word-wrap: break-word;
    }
 
-   &__addPhoto{
+   &__addPhoto {
       flex: 0 1 20%;
       font-size: 35px;
       line-height: 150%;
@@ -281,22 +329,25 @@
       background-color: #ffffff75;
       border-radius: 15px;
       transition: all 0.4s ease;
-      &:hover{
+
+      &:hover {
          transition: all 0.4s ease;
          transform: scale(1.05);
          background-color: #ffffffa2;
       }
    }
-   &__icon{
+
+   &__icon {
       font-size: 45px;
    }
 }
+
 //!______________________________________________________________________________
 
 
 //________________________Video-Styles__________________________________________
-.video{
-   &__container{
+.video {
+   &__container {
       display: flex;
       flex-direction: row;
       gap: 35px;
@@ -305,38 +356,40 @@
       justify-content: center;
       padding: 30px 15px;
    }
-   &__title{
+
+   &__title {
       font-size: 30px;
       color: #fafafa;
       font-weight: 600;
       line-height: 140%;
       margin-bottom: 25px;
    }
-   &__videoBox{
+
+   &__videoBox {
       flex: 0 0 30.3333%;
       padding: 10px;
       background-color: #ffffff75;
    }
 
-   &__item{
+   &__item {
       justify-content: center;
       display: flex;
       flex-direction: column;
       row-gap: 10px;
    }
 
-   &__subtitle{
+   &__subtitle {
       font-size: 20px;
       line-height: 145%;
       font-weight: 500;
    }
 
-   &__description{
+   &__description {
       font-size: 16px;
       line-height: 145%;
    }
 
-   &__addVideo{
+   &__addVideo {
       flex: 0 1 30.333%;
       font-size: 35px;
       line-height: 150%;
@@ -346,24 +399,28 @@
       background-color: #ffffff75;
       border-radius: 15px;
       transition: all 0.4s ease;
-      &:hover{
+
+      &:hover {
          transition: all 0.4s ease;
          transform: scale(1.05);
          background-color: #ffffffa2;
       }
    }
-   &__icon{
+
+   &__icon {
       font-size: 45px;
    }
 }
+
 //______________________________________________________________________________
 
 
 //todo______________________________Activity-Styles__________________________________
-.activity{
+.activity {
    font-size: 45px;
-   color: #fff;
+   color: $darkTh_txt;
    text-align: center;
    padding: 20px;
 }
+
 //todo_______________________________________________________________________________

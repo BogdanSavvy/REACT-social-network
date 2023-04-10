@@ -6,15 +6,18 @@ import { reRender } from "../render";
 
 let state = {
    profileP: {
+      adminData:[
+         {name: 'Pepe Frog', surname: 'Frog', status: 'It should be status', ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', bgImg: 'https://wallpapers.com/images/featured/fc0xi68rw21ini90.jpg',},
+      ],
       postsData: [
-         { id: 1, name: 'Amogus Amongasovich', message: 'WTF', time: '25min ago', },
-         { id: 2, name: 'Amogus Amongasovich', message: 'is', time: '2 days ago', },
-         { id: 3, name: 'Amogus Amongasovich', message: 'going on', time: '1 hour ago', },
-         { id: 4, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
-         { id: 5, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
-         { id: 6, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
-         { id: 7, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
-         { id: 8, name: 'Amogus Amongasovich', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
+         { id: 1, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'WTF', time: '25min ago', },
+         { id: 2, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'is', time: '2 days ago', },
+         { id: 3, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'going on', time: '1 hour ago', },
+         { id: 4, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
+         { id: 5, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
+         { id: 6, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
+         { id: 7, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
+         { id: 8, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
       ],
    },
    messagesP: {
@@ -39,23 +42,16 @@ let state = {
          { id: 2, message: 'how', sender: 'user', },
          { id: 3, message: 'are you??', sender: 'user', },
          { id: 4, message: 'test message', sender: 'user', },
-         { id: 7, message: 'test message', sender: 'me', },
-         { id: 5, message: 'test message', sender: 'user', },
-         // { id: 6, message: 'test message', sender: 'user', },
-         // { id: 7, message: 'test message', sender: 'me', },
-         // { id: 7, message: 'test message', sender: 'me', },
-         // { id: 6, message: 'test message', sender: 'user', },
-         // { id: 7, message: 'test message', sender: 'me', },
-         // { id: 7, message: 'test message', sender: 'me', },
-         // { id: 6, message: 'test message', sender: 'user', },
-         // { id: 8, message: 'test message', sender: 'me', },
+         { id: 5, message: 'test message', sender: 'me', },
+         { id: 6, message: 'test message', sender: 'user', },
       ],
    }
 };
 //!Function that adds a post to the ProfilePage
 export const addPost = (postMessage) => {
    let newPost = {
-      id: 9,
+      id: 7,
+      ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg',
       name: 'Amogus Amongasovich',
       message: postMessage,
       time: 'now',

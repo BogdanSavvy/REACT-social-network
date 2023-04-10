@@ -13,7 +13,7 @@ const Header = (props) => {
             <Logo />
             <Search />
             <Notification />
-            <MiniProfile name="Amogus" />
+            <MiniProfile name="Pepe" />
          </div>
       </header>
    )

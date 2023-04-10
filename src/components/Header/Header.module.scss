@@ -1,9 +1,10 @@
+@import "../../scss/null.scss";
 .header {
    width: 100%;
    position: fixed;
    top: 0;
    left: 0;
-   background-color: #00457E;
+   background-color: $darkTh_content;
    z-index: 100000;
 
    &__container {
@@ -27,7 +28,7 @@
 
       span {
          font-weight: 700;
-         color: rgb(0, 68, 255);
+         color: $Dlink_active;
       }
    }
 
@@ -55,7 +56,12 @@
 
    &__icon {
       font-size: 25px;
-      color: #fff;
+      color: $darkTh_txt;
+      transition: all 0.3s ease;
+      &:hover{
+         transition: all 0.3s ease;
+         color: $Dlink_hover;
+      }
    }
 
    &__input {
@@ -63,11 +69,11 @@
       background-color: transparent;
       font-size: 16px;
       line-height: 1.5;
-      width: 100%;
-      transition: all 0.4s ease-in-out 0s;
-
+      width: 80%;
+      transition: all 0.4s ease-in-out;
+      color: $darkTh_txt;
       &:focus {
-         color: #fff;
+         color: $darkTh_txt;
          border-bottom: 1px solid #ffffffaf;
          transition: all 0.4s ease-in-out 0s;
       }
@@ -76,7 +82,7 @@
 
 .notification {
    a {
-      color: #fff;
+      color: $darkTh_txt;
    }
 
    &__messeges,
@@ -85,7 +91,7 @@
 
       &:hover {
          transition: all 0.2s ease;
-         color: #168bb9;
+         color: $Dlink_hover;
       }
    }
 
@@ -118,11 +124,11 @@
 
    &__text { 
       a {
-         color: #fff;
+         color: $darkTh_txt;
          transition: all 0.3s ease;
          &:hover {
             text-decoration: underline;
-            color: #168bb9;
+            color: $Dlink_hover;
             transition: all 0.3s ease;
          }
       }

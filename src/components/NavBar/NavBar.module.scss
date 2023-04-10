@@ -1,3 +1,4 @@
+@import "../../scss/null.scss";
 .nav{
    position: fixed;
    top: 0;
@@ -5,13 +6,19 @@
    display: flex;
    flex-direction: column;
    height: 100%;
-   background-color: #02315E;
+   background-color: $darkTh_nav;
    padding-top: 100px;
    z-index: 2;
    width: 90px;
-   //width:300px;
    transition: width 0.3s ease-out 0s;
    overflow: hidden;
+   &_open{
+      width:300px;
+      button{
+         transform: scaleX(-1);
+         transition: all 0.4s ease ;
+      }
+   }
 
    &__menuList{
       padding: 30px 20px;
@@ -42,7 +49,7 @@
       justify-content: center;
       transition: all 0.3s ease;
       &:hover{
-         color: rgb(15, 132, 179);
+         color: $Dlink_hover;
          transition: all 0.3s ease;
       }
    }
@@ -54,7 +61,7 @@
    &__link{
       transition: all 0.3s ease 0.1s;
       &:hover{
-         color: rgb(15, 132, 179);
+         color: $Dlink_hover;
          transition: all 0.3s ease;
          padding-left: 15px;
       }
@@ -67,7 +74,7 @@
       padding: 10px;
 
       button{
-         color: #094e8f;
+         color: $darkTh_content;
          font-size: 16px;
          border-radius: 50%;
          width: 35px;
@@ -75,14 +82,13 @@
          opacity: 0.9;
          transition: all 0.4s ease ;
          &:hover{
-            color: rgb(15, 132, 179);
-            transition: all 0.2s ease;
-            font-size: 20px;
-         }
-         &:focus{
-            transform: scaleX(-1);
-            transition: all 0.4s ease ;
+            color: $Dlink_hover;
+            transition: all 0.4s ease;
+            font-size: 18px;
          }
       }
    }
+}
+.active{
+   a{color: $Dlink_active;}
 }

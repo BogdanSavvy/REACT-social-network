@@ -9,10 +9,12 @@ import { Route, Routes } from "react-router-dom";
 
 
 const UserProfile = (props) => {
+   let adminProf = props.profData.adminData.map( el => <MainProfile name={el.name} status={el.status} ava={el.ava} bgImg={el.bgImg} />);
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>
-            <MainProfile name='Amogus Amongasovich' status='Hey world, always say: "Chinaaaaa!' />
+            {/* <MainProfile admin={props.profData.adminData}  /> */}
+            {adminProf}
             <Routes>
                <Route path="/posts" element={<PostsTab postsData={props.profData.postsData} addPost={props.addPost} />} />
                <Route path="/activity" element={<Activity />} />

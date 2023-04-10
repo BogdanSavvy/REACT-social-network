@@ -4,7 +4,7 @@
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:10px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%; background-color: #21D4FD;background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);} 
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:10px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%; background-color: #091222} 
 input,button,textarea{font-family:inherit;}
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
@@ -28,14 +28,18 @@ body{
       border-radius: 5px;
    }
 }
+//*dark_theme colors
+$darkTh_bg: #071021;
+$darkTh_content: #1f2632;
+$darkTh_nav: #131c2c;
+$Dlink_hover: #1f7bdd;
+$Dlink_active: #2a8ffb;
+$darkTh_txt: #fcfcfc;
 
-// background-color: #00DBDE; background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-
-//* Ukraine gradient
-// background-color: #52ACFF; background-image: linear-gradient(90deg, #52ACFF 25%, #FFE32C 100%);
-
-
-
-// background-color: #21D4FD;background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);
-
-
+//*light_theme colors
+$lightTh_bg: #f1f3f6;
+$lightTh_content: #ffff;
+$lightTh_nav: #FCFCFC;
+$Llink_hover: #EA4B1E;
+$Llink_active: #FB582A;
+$lightTm_txt: #071021;

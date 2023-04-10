@@ -4,10 +4,10 @@ import Home from './components/Home/Home';
 import UserProfile from './components/UserProfile/UserProfile';
 import Messages from './components/Messages/Messages';
 import News from './components/News/News';
-import Music from './components/Music/Music';
-import Groups from './components/Groups/Groups';
-import Friends from './components/Friends/Friends';
-import Settings from './components/Settings/Settings';
+// import Music from './components/Music/Music';
+// import Groups from './components/Groups/Groups';
+// import Friends from './components/Friends/Friends';
+// import Settings from './components/Settings/Settings';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 import "./scss/null.scss"
@@ -23,7 +23,7 @@ const App = (props) => {
       <NavBar />
       <div className="main-container">
         <Routes>
-          <Route path='/home/' Component={Home} />
+          <Route path='/' Component={Home} />
           <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} addPost={props.addPost} />} />
           <Route path='/messages/*' element={<Messages mesgData={props.state.messagesP} sendMessage={props.sendMessage} />} />
           <Route path='/news' Component={News} />

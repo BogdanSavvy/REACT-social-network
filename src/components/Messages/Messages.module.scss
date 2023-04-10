@@ -1,3 +1,4 @@
+@import "../../scss/null.scss";
 .page{
    &__container{
       padding-top: 100px;
@@ -12,7 +13,7 @@
       flex-direction: column;
       max-height: 868.5px;
       overflow-y: scroll;
-      background-color: #3843be;
+      background-color: $darkTh_bg;
       border-right: 1px solid #ffffff4f;
       //!--------------"Scroll_Style"---------------
       &::-webkit-scrollbar{
@@ -59,11 +60,11 @@
    }
    &__userName{
       font-size: 16px;
-      a{color: #fff ;}
+      a{color: $darkTh_txt;}
    }
    &__lastMessage{
       font-size: 14px;
-      span{color: rgb(211, 132, 15);font-weight: 600;}
+      span{color: $Dlink_active;font-weight: 600;}
    }
    &__lastVisit{
       font-size: 12px;
@@ -83,14 +84,13 @@
 
 //? classes to "dialogsList__lastVisit"
 .online{ color: #8add0d; &::after{background-color: #8add0d;}}
-.offline{ color: red; &::after{background-color: red;}}
+.offline{ color: #e62214; &::after{background-color: #e62214;}}
 //?__________________________________________
 
 .dialogWindow{
    &__messages{
       width: 100%;
-      background: url("../../images/chat/01.jpg") center / cover;
-      //background-color: #3a49d362;
+      background-color: $darkTh_bg;
       flex: 1 1 689.5px;
       padding: 15px;
       overflow-y: scroll;
@@ -146,7 +146,7 @@
       position: relative;
       form{
          padding: 15px;
-         background-color: transparent;
+         background-color: $darkTh_bg;
       }
       textarea{ 
          width: 100%;
@@ -156,7 +156,7 @@
          padding: 13px 50px 13px 20px;
          resize: none;
          background-color: transparent;
-         border: 4px solid #fff;
+         border: 2px solid #fff;
       }
       button{
          font-size: 16px;

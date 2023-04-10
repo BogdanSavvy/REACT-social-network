@@ -6,7 +6,7 @@ import PostCreator from './PostCreator/PostCreator'
 
 const PostsTab = (props) => {
    
-   let newPost = props.postsData.map( el => <Post name={el.name} message={el.message} time={el.time} />);
+   let newPost = props.postsData.map( el => <Post ava={el.ava} name={el.name} message={el.message} time={el.time} />);
 
    return (
       <>
