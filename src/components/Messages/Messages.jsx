@@ -8,12 +8,15 @@ const Messages = (props) => {
    return (
       <section className={`${style.page}`}>
          <div className={`${style.page__container}`}>
-            <DialogList branchesData={props.mesgData.branchesData} />
-            <DialogWindow sentMessagesData={props.mesgData.sentMessagesData} sendMessage={props.sendMessage} />
+            <DialogList branchesData={props.messgData.branchesData} />
+            <DialogWindow sentMessagesData={props.messgData.sentMessagesData}
+                           newMessageTxt={props.messgData.newMessageTxt}
+                           sendMessage={props.sendMessage}
+                           updateMessageTxt={props.updateMessageTxt} />
          </div>
       </section>
    )
-}
+};
 
 
 export default Messages;

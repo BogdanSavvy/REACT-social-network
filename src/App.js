@@ -24,8 +24,8 @@ const App = (props) => {
       <div className="main-container">
         <Routes>
           <Route path='/' Component={Home} />
-          <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} addPost={props.addPost} />} />
-          <Route path='/messages/*' element={<Messages mesgData={props.state.messagesP} sendMessage={props.sendMessage} />} />
+          <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} addPost={props.addPost} updatePostTxt={props.updatePostTxt} />} />
+          <Route path='/messages/*' element={<Messages messgData={props.state.messagesP} sendMessage={props.sendMessage} updateMessageTxt={props.updateMessageTxt} />} />
           <Route path='/news' Component={News} />
           <Route path='/music' Component={NotFoundPage} />
           <Route path='/groups' Component={NotFoundPage} />
@@ -34,8 +34,8 @@ const App = (props) => {
         </Routes>
       </div>
     </div>
-  );
-}
+  )
+};
 
 
 export default App;

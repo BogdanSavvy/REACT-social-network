@@ -171,11 +171,12 @@
    &__form {
       position: relative;
 
-      input {
-         padding: 15px;
+      textarea {
+         padding: 20px 15px;
          width: 100%;
          min-height: 150px;
          border-radius: 25px;
+         resize: none;
       }
 
       button {

@@ -147,14 +147,17 @@
       form{
          padding: 15px;
          background-color: $darkTh_bg;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         column-gap: 20px;
       }
-      textarea{ 
-         width: 100%;
+      input{ 
+         width: 95%;
          font-size: 16px;
          color: #fff;
          border-radius: 20px;
          padding: 13px 50px 13px 20px;
-         resize: none;
          background-color: transparent;
          border: 2px solid #fff;
       }
@@ -165,10 +168,7 @@
          padding: 14px 16px;
          background-color: rgb(206, 42, 124);
          border-radius: 40%;
-         position: absolute;
-         bottom: 0px;
-         right: 0px;
-         transform: translate(calc(-50% - 5px), calc(-50% - 5px));
+         
       }
    }
 }

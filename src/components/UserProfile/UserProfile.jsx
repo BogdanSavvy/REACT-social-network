@@ -16,7 +16,10 @@ const UserProfile = (props) => {
             {/* <MainProfile admin={props.profData.adminData}  /> */}
             {adminProf}
             <Routes>
-               <Route path="/posts" element={<PostsTab postsData={props.profData.postsData} addPost={props.addPost} />} />
+               <Route path="/posts" element={<PostsTab postsData={props.profData.postsData} 
+                                    newPostTxt={props.profData.newPostTxt} 
+                                    updatePostTxt={props.updatePostTxt} 
+                                    addPost={props.addPost} />} />
                <Route path="/activity" element={<Activity />} />
                <Route path="/gallery" element={<GalleryTab />} />
                <Route path="/videos" element={<VideoTab />} />

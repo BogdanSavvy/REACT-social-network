@@ -1,24 +1,20 @@
 //imitation of Data
-
-import { reRender } from "../render";
-
 //*P = Page;
 
 let state = {
    profileP: {
-      adminData:[
-         {name: 'Pepe Frog', surname: 'Frog', status: 'It should be status', ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', bgImg: 'https://wallpapers.com/images/featured/fc0xi68rw21ini90.jpg',},
+      adminData: [
+         { name: 'Pepe Frog', surname: 'Frog', status: 'It should be status', ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', bgImg: 'https://wallpapers.com/images/featured/fc0xi68rw21ini90.jpg', },
       ],
       postsData: [
          { id: 1, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'WTF', time: '25min ago', },
          { id: 2, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'is', time: '2 days ago', },
          { id: 3, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'going on', time: '1 hour ago', },
-         { id: 4, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
+         { id: 4, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH! THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!THIS DESIGN IS TRASH!', time: '22min ago', },
          { id: 5, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
-         { id: 6, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '15min ago', },
-         { id: 7, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '35min ago', },
-         { id: 8, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
+         { id: 6, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
       ],
+      newPostTxt: '',
    },
    messagesP: {
       branchesData: [
@@ -45,31 +41,49 @@ let state = {
          { id: 5, message: 'test message', sender: 'me', },
          { id: 6, message: 'test message', sender: 'user', },
       ],
+      newMessageTxt: '',
    }
 };
 //!Function that adds a post to the ProfilePage
-export const addPost = (postMessage) => {
+export const addPost = () => {
    let newPost = {
       id: 7,
       ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg',
       name: 'Amogus Amongasovich',
-      message: postMessage,
+      message: state.profileP.newPostTxt,
       time: 'now',
    };
    state.profileP.postsData.unshift(newPost);
    reRender(state);
-}
-//!Function that adds a new Message in Dialog
-export const sendMessage = (message) => {
+};
 
+export const updatePostTxt = (newTxt) => {
+   state.profileP.newPostTxt = newTxt;
+   reRender(state);
+};
+
+//!Function that adds a new Message in Dialog
+export const sendMessage = () => {
    let newMessage = {
-      id: 9, 
-      message: message, 
+      id: 7,
+      message: state.messagesP.newMessageTxt,
       sender: 'me',
    }
    state.messagesP.sentMessagesData.push(newMessage);
    reRender(state);
-}
+};
 
+export const updateMessageTxt = (newTxt) => {
+   state.messagesP.newMessageTxt = newTxt;
+   reRender(state);
+};
+
+//!Observes when the state has changed
+let reRender = () => {
+   //plug
+}
+export const subscribe = (observer) => {
+   reRender = observer;
+}
 export default state;
 
