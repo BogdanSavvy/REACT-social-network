@@ -64,7 +64,8 @@
    }
    &__lastMessage{
       font-size: 14px;
-      span{color: $Dlink_active;font-weight: 600;}
+      color: $darkTh_txt;
+      span{color: $Dlink_active; font-weight: 600;}
    }
    &__lastVisit{
       font-size: 12px;

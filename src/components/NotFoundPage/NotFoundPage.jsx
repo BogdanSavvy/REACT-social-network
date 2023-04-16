@@ -12,7 +12,7 @@ const NotFoundPage = () => {
          <div className={`${style.page__container}`}>
             <h2 className={`${style.page__error}`}>Oops.... 404</h2>
             <p className={`${style.page__subtitle}`}>Page Not Found <FontAwesomeIcon icon={faFaceFrownOpen} spin /></p>
-            <button type='submit' className={`${style.page__goHome}`}> <NavLink to='/home'><FontAwesomeIcon icon={faHouse} /> Home</NavLink> </button>
+            <button type='submit' className={`${style.page__goHome}`}> <NavLink to='/'><FontAwesomeIcon icon={faHouse} /> Home</NavLink> </button>
          </div>
       </div>
    )
