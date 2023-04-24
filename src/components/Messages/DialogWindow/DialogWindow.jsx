@@ -2,23 +2,21 @@ import style from '../Messages.module.scss';
 
 import SentMessage from './SentMessage/SentMessage';
 import React from 'react';
+import { sendMessageAC, updateMessageTxtAC } from '../../../redux/messagesReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { sendMessageAC, updateMessageTxtAC } from '../../../redux/state';
 
 
 const DialogWindow = (props) => {
    let newMessage = props.sentMessagesData.map(el => <SentMessage message={el.message} id={el.id} sender={el.sender} />)
-
-   let dialogEl = React.createRef();
 
    let sendMessage = () => {
       props.newMessageTxt === '' ? alert('You cant send "nothing"') : props.dispatch(sendMessageAC());
       props.dispatch(updateMessageTxtAC(''));
    };
 
-   let onMessageChange = () => {
-      let txt = dialogEl.current.value;
+   let onMessageChange = (e) => {
+      let txt = e.target.value;
       props.dispatch(updateMessageTxtAC(txt));
    };
 
@@ -28,9 +26,9 @@ const DialogWindow = (props) => {
             {newMessage}
          </div>
          <div className={`${style.dialogWindow__input}`}>
-            <form action="#">
-               <input onChange={onMessageChange} value={props.newMessageTxt} ref={dialogEl} type="text" />
-               <button onClick={sendMessage} type='submit'><FontAwesomeIcon icon={faPaperPlane} /></button>
+            <form action='#'>
+               <input onChange={onMessageChange} value={props.newMessageTxt} placeholder='Type your message...' type="text" />
+               <button onClick={sendMessage} ><FontAwesomeIcon icon={faPaperPlane} /></button>
             </form>
          </div>
       </div>

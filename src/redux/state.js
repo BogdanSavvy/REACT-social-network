@@ -1,10 +1,7 @@
-//imitation of Data
+import messagesReducer from "./messagesReducer";
+import profileReducer from "./profileReducer";
 
-//? Variables - action types
-const addPost = 'ADD-POST';
-const upPostTxt = 'UPDATE-POST-TEXT';
-const sendMessage = 'SEND-MESSAGE';
-const upMessageTxt = 'UPDATE-MESSAGE-TEXT';
+//imitation of Data
 
 //*abbreviation "P" => "Page";
 let store = {
@@ -62,45 +59,13 @@ let store = {
       return this._state;
    },
    dispatch (action) {
-      switch (action.type) {
-         case 'ADD-POST' :
-            let newPost = {
-               id: 7,
-               ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg',
-               name: 'Amogus Amongasovich',
-               message: this._state.profileP.newPostTxt,
-               time: 'now',
-            };
-            this._state.profileP.postsData.unshift(newPost);
-            this._callSub(this._state);
-         break;
-         case 'UPDATE-POST-TEXT' :
-            this._state.profileP.newPostTxt = action.newTxt;
-            this._callSub(this._state);
-         break;
-         case 'SEND-MESSAGE' :
-            let newMessage = {
-               id: 7,
-               message: this._state.messagesP.newMessageTxt,
-               sender: 'me',
-            };
-            this._state.messagesP.sentMessagesData.push(newMessage);
-            this._callSub(this._state);
-         break;
-         case 'UPDATE-MESSAGE-TEXT' :
-            this._state.messagesP.newMessageTxt = action.newTxt;
-            this._callSub(this._state);
-         break;
-      }
+
+      this._state.profileP = profileReducer(this._state.profileP, action);
+      this._state.messagesP = messagesReducer(this._state.messagesP, action);
+
+      this._callSub(this._state);
+
    },
 }
-
-//*abbreviation "AC" => "ActionCreator"
-export const addPostAC = () => ({ type: addPost });
-export const updatePostTxtAC = txt => ({ type: upPostTxt, newTxt: txt });
-
-export const sendMessageAC = () => ({ type: sendMessage });
-export const updateMessageTxtAC = txt => ({type: upMessageTxt, newTxt: txt });
-
 
 export default store;

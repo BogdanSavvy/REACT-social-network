@@ -1,4 +1,3 @@
-import style from '../UserProfile.module.scss';
 
 import Post from './Post/Post';
 import PostCreator from './PostCreator/PostCreator' 

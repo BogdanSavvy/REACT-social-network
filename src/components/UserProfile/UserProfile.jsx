@@ -1,11 +1,11 @@
 import style from "./UserProfile.module.scss";
 
+import { Route, Routes } from "react-router-dom";
 import MainProfile from "./MainProfie/MainProfile";
 import PostsTab from "./PostsTab/PostsTab";
 import Activity from "./Activity/Activity";
 import GalleryTab from "./GalleryTab/GalleryTab";
 import VideoTab from "./VideoTab/VideoTab";
-import { Route, Routes } from "react-router-dom";
 
 
 const UserProfile = (props) => {
