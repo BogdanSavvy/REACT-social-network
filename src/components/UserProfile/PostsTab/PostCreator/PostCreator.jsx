@@ -3,19 +3,21 @@ import style from '../../UserProfile.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import { addPostAC, updatePostTxtAC } from '../../../../redux/state';
+
 
 
 const PostCreator = (props) => {
    let postEl = React.createRef();
 
    let addPost = () => {
-      props.newPostTxt === '' ? alert('The text field is empty. Please write something *)') : props.addPost();
-      props.updatePostTxt('');
+      props.newPostTxt === '' ? alert('The text field is empty. Please write something *)') : props.dispatch(addPostAC());
+      props.dispatch(updatePostTxtAC(''));
    };
 
    let onPostChange = () => {
       let txt = postEl.current.value;
-      props.updatePostTxt(txt);
+      props.dispatch(updatePostTxtAC(txt));
    };
 
    return (

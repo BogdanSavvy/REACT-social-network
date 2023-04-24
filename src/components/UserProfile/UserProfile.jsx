@@ -13,13 +13,11 @@ const UserProfile = (props) => {
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>
-            {/* <MainProfile admin={props.profData.adminData}  /> */}
             {adminProf}
             <Routes>
                <Route path="/posts" element={<PostsTab postsData={props.profData.postsData} 
                                     newPostTxt={props.profData.newPostTxt} 
-                                    updatePostTxt={props.updatePostTxt} 
-                                    addPost={props.addPost} />} />
+                                    dispatch = {props.dispatch} />} />
                <Route path="/activity" element={<Activity />} />
                <Route path="/gallery" element={<GalleryTab />} />
                <Route path="/videos" element={<VideoTab />} />

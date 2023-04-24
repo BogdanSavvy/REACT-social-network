@@ -4,6 +4,7 @@ import SentMessage from './SentMessage/SentMessage';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { sendMessageAC, updateMessageTxtAC } from '../../../redux/state';
 
 
 const DialogWindow = (props) => {
@@ -12,13 +13,13 @@ const DialogWindow = (props) => {
    let dialogEl = React.createRef();
 
    let sendMessage = () => {
-      props.newMessageTxt === '' ? alert('You cant send "nothing"') : props.sendMessage();
-      props.updateMessageTxt('');
+      props.newMessageTxt === '' ? alert('You cant send "nothing"') : props.dispatch(sendMessageAC());
+      props.dispatch(updateMessageTxtAC(''));
    };
 
    let onMessageChange = () => {
       let txt = dialogEl.current.value;
-      props.updateMessageTxt(txt);
+      props.dispatch(updateMessageTxtAC(txt));
    };
 
    return (

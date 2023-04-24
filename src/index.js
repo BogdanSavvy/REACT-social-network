@@ -14,11 +14,7 @@ let reRender = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state = {state} 
-          addPost = {store.addPost.bind(store)} 
-          updatePostTxt = {store.updatePostTxt.bind(store)} 
-          sendMessage = {store.sendMessage.bind(store)} 
-          updateMessageTxt = {store.updateMessageTxt.bind(store)} />
+        <App state = {state} dispatch = {store.dispatch.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>
   );

@@ -1,7 +1,14 @@
 //imitation of Data
-//*P = Page;
+
+//? Variables - action types
+const addPost = 'ADD-POST';
+const upPostTxt = 'UPDATE-POST-TEXT';
+const sendMessage = 'SEND-MESSAGE';
+const upMessageTxt = 'UPDATE-MESSAGE-TEXT';
+
+//*abbreviation "P" => "Page";
 let store = {
-   
+
    _state: {
       profileP: {
          adminData: [
@@ -45,44 +52,55 @@ let store = {
          newMessageTxt: '',
       },
    },
-   _callSub() {
+   _callSub () {
       //plug
    },
-   subscribe(observer) {
+   subscribe (observer) {
       this._callSub = observer;
    },
-   getState() {
+   getState () {
       return this._state;
    },
-   addPost() {
-      let newPost = {
-         id: 7,
-         ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg',
-         name: 'Amogus Amongasovich',
-         message: this._state.profileP.newPostTxt,
-         time: 'now',
-      };
-      this._state.profileP.postsData.unshift(newPost);
-      this._callSub(this._state);
-   },
-   updatePostTxt(newTxt) {
-      this._state.profileP.newPostTxt = newTxt;
-      console.log(newTxt)
-      this._callSub(this._state);
-   },
-   sendMessage() {
-      let newMessage = {
-         id: 7,
-         message: this._state.messagesP.newMessageTxt,
-         sender: 'me',
+   dispatch (action) {
+      switch (action.type) {
+         case 'ADD-POST' :
+            let newPost = {
+               id: 7,
+               ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg',
+               name: 'Amogus Amongasovich',
+               message: this._state.profileP.newPostTxt,
+               time: 'now',
+            };
+            this._state.profileP.postsData.unshift(newPost);
+            this._callSub(this._state);
+         break;
+         case 'UPDATE-POST-TEXT' :
+            this._state.profileP.newPostTxt = action.newTxt;
+            this._callSub(this._state);
+         break;
+         case 'SEND-MESSAGE' :
+            let newMessage = {
+               id: 7,
+               message: this._state.messagesP.newMessageTxt,
+               sender: 'me',
+            };
+            this._state.messagesP.sentMessagesData.push(newMessage);
+            this._callSub(this._state);
+         break;
+         case 'UPDATE-MESSAGE-TEXT' :
+            this._state.messagesP.newMessageTxt = action.newTxt;
+            this._callSub(this._state);
+         break;
       }
-      this._state.messagesP.sentMessagesData.push(newMessage);
-      this._callSub(this._state);
-   },
-   updateMessageTxt(newTxt) {
-      this._state.messagesP.newMessageTxt = newTxt;
-      this._callSub(this._state);
    },
 }
+
+//*abbreviation "AC" => "ActionCreator"
+export const addPostAC = () => ({ type: addPost });
+export const updatePostTxtAC = txt => ({ type: upPostTxt, newTxt: txt });
+
+export const sendMessageAC = () => ({ type: sendMessage });
+export const updateMessageTxtAC = txt => ({type: upMessageTxt, newTxt: txt });
+
 
 export default store;
