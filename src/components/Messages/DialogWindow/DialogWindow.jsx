@@ -26,10 +26,10 @@ const DialogWindow = (props) => {
             {newMessage}
          </div>
          <div className={`${style.dialogWindow__input}`}>
-            <form action='#'>
+            <div action='#' className={`${style.dialogWindow__form}`}>
                <input onChange={onMessageChange} value={props.newMessageTxt} placeholder='Type your message...' type="text" />
                <button onClick={sendMessage} ><FontAwesomeIcon icon={faPaperPlane} /></button>
-            </form>
+            </div>
          </div>
       </div>
    )

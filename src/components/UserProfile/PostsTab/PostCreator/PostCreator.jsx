@@ -21,10 +21,10 @@ const PostCreator = (props) => {
 
    return (
       <div className={`${style.page__postCreator} ${style.postCreator}`}>
-         <form action='#' className={`${style.postCreator__form}`}>
+         <div action='#' className={`${style.postCreator__form}`}>
             <textarea onChange={onPostChange} value={props.newPostTxt} type="text" placeholder="Start typing to create new post..." />
             <button onClick={addPost} ><FontAwesomeIcon icon={faShare} /></button>
-         </form>
+         </div>
       </div>
    )
 };

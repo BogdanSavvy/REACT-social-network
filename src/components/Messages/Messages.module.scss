@@ -110,6 +110,14 @@
          border-radius: 5px;
       }
    }
+   &__form{
+      padding: 15px;
+      background-color: $darkTh_bg;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 20px;
+   }
    &__sent{
       font-size: 16px;
       line-height: 1.5;
@@ -125,7 +133,6 @@
    }
 
 //?_________classes to "dialogWindow__sent"_____________________
-
 .user{
    display: inline-flex;
    p{
@@ -145,14 +152,6 @@
 
    &__input{
       position: relative;
-      form{
-         padding: 15px;
-         background-color: $darkTh_bg;
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-         column-gap: 20px;
-      }
       input{ 
          width: 95%;
          font-size: 16px;

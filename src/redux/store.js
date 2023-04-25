@@ -59,12 +59,10 @@ let store = {
       return this._state;
    },
    dispatch (action) {
-
       this._state.profileP = profileReducer(this._state.profileP, action);
       this._state.messagesP = messagesReducer(this._state.messagesP, action);
 
       this._callSub(this._state);
-
    },
 }
 
