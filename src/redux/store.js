@@ -8,9 +8,6 @@ let store = {
 
    _state: {
       profileP: {
-         adminData: [
-            { name: 'Pepe Frog', surname: 'Frog', status: 'It should be status', ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', bgImg: 'https://wallpapers.com/images/featured/fc0xi68rw21ini90.jpg', },
-         ],
          postsData: [
             { id: 1, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'WTF', time: '25min ago', },
             { id: 2, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'is', time: '2 days ago', },

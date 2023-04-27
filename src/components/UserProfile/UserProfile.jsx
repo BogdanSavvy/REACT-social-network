@@ -9,15 +9,15 @@ import VideoTab from "./VideoTab/VideoTab";
 
 
 const UserProfile = (props) => {
-   let adminProf = props.profData.adminData.map( el => <MainProfile name={el.name} status={el.status} ava={el.ava} bgImg={el.bgImg} />);
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>
-            {adminProf}
+            <MainProfile />
             <Routes>
-               <Route path="/posts" element={<PostsTab postsData={props.profData.postsData} 
-                                    newPostTxt={props.profData.newPostTxt} 
-                                    dispatch = {props.dispatch} />} />
+               <Route path="/posts" element={<PostsTab postsData = {props.postData} 
+                                                       updatePostTxt = {props.updatePostTxt} 
+                                                       addPost = {props.addPost} 
+                                                       newPostTxt = {props.newPostTxt} />} />
                <Route path="/activity" element={<Activity />} />
                <Route path="/gallery" element={<GalleryTab />} />
                <Route path="/videos" element={<VideoTab />} />

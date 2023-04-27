@@ -1,9 +1,9 @@
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
-import UserProfile from './components/UserProfile/UserProfile';
-import Messages from './components/Messages/Messages';
+import MessagesContainer from './components/Messages/MessagesContainer';
 import News from './components/News/News';
+import UserProfileContainer from './components/UserProfile/UserProfileContainer';
 // import Music from './components/Music/Music';
 // import Groups from './components/Groups/Groups';
 // import Friends from './components/Friends/Friends';
@@ -24,8 +24,8 @@ const App = (props) => {
       <div className="main-container">
         <Routes>
           <Route path='/' Component={Home} />
-          <Route path='/profile/*' element={<UserProfile profData={props.state.profileP} dispatch = {props.dispatch} />} />
-          <Route path='/messages/*' element={<Messages messgData={props.state.messagesP} dispatch = {props.dispatch} />} />
+          <Route path='/profile/*' element={<UserProfileContainer store={props.store} />} />
+          <Route path='/messages/*' element={<MessagesContainer store={props.store} />} />
           <Route path='/news' Component={News} />
           <Route path='/music' Component={NotFoundPage} />
           <Route path='/groups' Component={NotFoundPage} />

@@ -1,7 +1,6 @@
 import style from '../../UserProfile.module.scss';
 
 import React from 'react';
-import { addPostAC, updatePostTxtAC } from '../../../../redux/profileReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,13 +9,13 @@ import { faShare } from '@fortawesome/free-solid-svg-icons';
 const PostCreator = (props) => {
 
    let addPost = () => {
-      props.newPostTxt === '' ? alert('The text field is empty. Please write something *)') : props.dispatch(addPostAC());
-      props.dispatch(updatePostTxtAC(''));
+      props.newPostTxt === '' ? alert('The text field is empty. Please write something *)') : props.addPost();
+      props.updatePostTxt('');
    };
 
    let onPostChange = (e) => {
       let txt = e.target.value;
-      props.dispatch(updatePostTxtAC(txt));
+      props.updatePostTxt(txt);
    };
 
    return (

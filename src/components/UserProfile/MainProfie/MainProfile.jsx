@@ -8,15 +8,15 @@ const MainProfile = (props) => {
    return (
       <section className={`${style.page__profile} ${style.profile}`}>
          <div className={`${style.profile__image}`}>
-            <img src={props.bgImg} alt="wallpaper_img" />
+            <img src='https://wallpapers.com/images/featured/fc0xi68rw21ini90.jpg' alt="wallpaper_img" />
          </div>
          <div className={`${style.profile__info} ${style.info}`}>
             <div className={`${style.info__avatar}`}>
-               <img src={props.ava} alt="that was be avatar )" />
+               <img src='https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg' alt="that was be avatar )" />
             </div>
             <div className={`${style.info__description}`}>
-               <h2 className={`${style.info__name}`}> {props.name} </h2>
-               <p className={`${style.info__status}`}> {props.status} </p>
+               <h2 className={`${style.info__name}`}> Pepe Frog </h2>
+               <p className={`${style.info__status}`}> It should be status </p>
             </div>
          </div>
          <div className={`${style.profile__tabs} ${style.tabs}`}>

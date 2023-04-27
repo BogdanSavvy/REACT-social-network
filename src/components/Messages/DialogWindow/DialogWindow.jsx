@@ -1,8 +1,6 @@
 import style from '../Messages.module.scss';
 
 import SentMessage from './SentMessage/SentMessage';
-import React from 'react';
-import { sendMessageAC, updateMessageTxtAC } from '../../../redux/messagesReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
@@ -11,13 +9,13 @@ const DialogWindow = (props) => {
    let newMessage = props.sentMessagesData.map(el => <SentMessage message={el.message} id={el.id} sender={el.sender} />)
 
    let sendMessage = () => {
-      props.newMessageTxt === '' ? alert('You cant send "nothing"') : props.dispatch(sendMessageAC());
-      props.dispatch(updateMessageTxtAC(''));
+      props.newMessageTxt === '' ? alert('You cant send "nothing"') : props.sendMessage();
+      props.updateMessageTxt('');
    };
 
    let onMessageChange = (e) => {
       let txt = e.target.value;
-      props.dispatch(updateMessageTxtAC(txt));
+      props.updateMessageTxt(txt);
    };
 
    return (
