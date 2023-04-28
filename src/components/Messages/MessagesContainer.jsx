@@ -1,29 +1,31 @@
+import { connect } from 'react-redux';
 import { sendMessageAC, updateMessageTxtAC } from '../../redux/messagesReducer';
+
 import Messages from './Messages';
 
 
-const MessagesContainer = (props) => {
-
-   let branchesData = props.store.getState().messagesP.branchesData;
-   let sentMessagesData = props.store.getState().messagesP.sentMessagesData;
-   let newMessageTxt = props.store.getState().messagesP.newMessageTxt;
-
-   let sendMessage = () => {
-      newMessageTxt === '' ? alert('You cant send "nothing"') : props.store.dispatch(sendMessageAC());
-      props.store.dispatch(updateMessageTxtAC(''));
-   };
-
-   let onMessageChange = (txt) => {
-      props.store.dispatch(updateMessageTxtAC(txt));
-   };
-
-
-   return (<Messages branchesData = {branchesData} 
-                     sentMessagesData = {sentMessagesData}
-                     newMessageTxt = {newMessageTxt}
-                     sendMessage = {sendMessage}
-                     updateMessageTxt = {onMessageChange} />)
+//?_____ function "mapStateToProps" _____
+const func1 = (state) => {
+   return {
+      branchesData: state.messagesP.branchesData,
+      sentMessagesData: state.messagesP.sentMessagesData,
+      newMessageTxt: state.messagesP.newMessageTxt,
+   }
 };
+
+//?_____ function "mapDispatchToProps" _____
+const func2 = (dispatch) => {
+   return {
+      sendMessage: () => {
+         dispatch(sendMessageAC());
+      },
+      updateMessageTxt: (txt) => {
+         dispatch(updateMessageTxtAC(txt));
+      },
+   }
+};
+
+const MessagesContainer = connect(func1, func2)(Messages);
 
 
 export default MessagesContainer;

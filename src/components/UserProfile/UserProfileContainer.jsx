@@ -1,27 +1,30 @@
+import { connect } from 'react-redux';
 import { addPostAC, updatePostTxtAC } from '../../redux/profileReducer';
 
 import UserProfile from "./UserProfile";
 
 
-const UserProfileContainer = (props) => {
+//?_____ function "mapStateToProps" _____
+const func1 = (state) => {
+   return {
+      postData: state.profileP.postsData,
+      newPostTxt: state.profileP.newPostTxt,
+   }
+};
 
-   let postData = props.store.getState().profileP.postsData;
-   let newPostTxt = props.store.getState().profileP.newPostTxt;
+//?_____ function "mapDispatchToProps" _____
+const func2 = (dispatch) => {
+   return {
+      addPost: () => {
+         dispatch(addPostAC());
+      },
+      updatePostTxt: (txt) => {
+         dispatch(updatePostTxtAC(txt));
+      },
+   }
+};
 
-   let addPost = () => {
-      newPostTxt === '' ? alert('The text field is empty. Please write something *)') : props.store.dispatch(addPostAC());
-      props.store.dispatch(updatePostTxtAC(''));
-   };
-
-   let onPostChange = (txt) => {
-      props.store.dispatch(updatePostTxtAC(txt));
-   };
-
-   return (<UserProfile postData = {postData} 
-                        newPostTxt = {newPostTxt} 
-                        addPost = {addPost} 
-                        updatePostTxt = {onPostChange} />)
-}
+const UserProfileContainer = connect(func1,func2)(UserProfile);
 
 
 export default UserProfileContainer;

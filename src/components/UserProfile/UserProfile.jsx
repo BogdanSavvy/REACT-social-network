@@ -1,6 +1,7 @@
 import style from "./UserProfile.module.scss";
 
 import { Route, Routes } from "react-router-dom";
+
 import MainProfile from "./MainProfie/MainProfile";
 import PostsTab from "./PostsTab/PostsTab";
 import Activity from "./Activity/Activity";

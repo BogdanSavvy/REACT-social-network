@@ -1,3 +1,4 @@
+//? Action variables
 const sendMessage = 'SEND-MESSAGE';
 const upMessageTxt = 'UPDATE-MESSAGE-TEXT';
 
@@ -31,17 +32,22 @@ let initalState = {
 
 const messagesReducer = (state = initalState, action) => {
    switch (action.type) {
-      case sendMessage :
+      case sendMessage : {
          let newMessage = {
             id: 7,
             message: state.newMessageTxt,
             sender: 'me',
          };
-         state.sentMessagesData.push(newMessage);
-         return state;
-      case upMessageTxt :
-         state.newMessageTxt = action.newTxt;
-         return state;
+         let stateCopy = {...state};
+         stateCopy.sentMessagesData = [...state.sentMessagesData];
+         stateCopy.sentMessagesData.push(newMessage);
+         return stateCopy;
+      };
+      case upMessageTxt : {
+         let stateCopy = {...state};
+         stateCopy.newMessageTxt = action.newTxt;
+         return stateCopy;
+      };
       default: return state;
    };
 };

@@ -1,3 +1,8 @@
+import "./scss/null.scss"
+import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
@@ -10,11 +15,6 @@ import UserProfileContainer from './components/UserProfile/UserProfileContainer'
 // import Settings from './components/Settings/Settings';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
-import "./scss/null.scss"
-import './App.css';
-
-import { Route, Routes } from 'react-router-dom';
-
 
 const App = (props) => {
   return (
@@ -24,8 +24,8 @@ const App = (props) => {
       <div className="main-container">
         <Routes>
           <Route path='/' Component={Home} />
-          <Route path='/profile/*' element={<UserProfileContainer store={props.store} />} />
-          <Route path='/messages/*' element={<MessagesContainer store={props.store} />} />
+          <Route path='/profile/*' element={<UserProfileContainer />} />
+          <Route path='/messages/*' element={<MessagesContainer />} />
           <Route path='/news' Component={News} />
           <Route path='/music' Component={NotFoundPage} />
           <Route path='/groups' Component={NotFoundPage} />

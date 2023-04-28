@@ -1,11 +1,13 @@
 import style from '../Messages.module.scss';
 
 import SentMessage from './SentMessage/SentMessage';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 
 const DialogWindow = (props) => {
+
    let newMessage = props.sentMessagesData.map(el => <SentMessage message={el.message} id={el.id} sender={el.sender} />)
 
    let sendMessage = () => {

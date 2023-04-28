@@ -1,6 +1,7 @@
 import style from '../../UserProfile.module.scss';
 
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 
