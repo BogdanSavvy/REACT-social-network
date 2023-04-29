@@ -37,7 +37,15 @@
 }
 
 .dialogsList{
-   color: #fff;
+   
+   a{ 
+      color: $darkTh_txt;
+      transition: all 0.3s ease;
+      &:hover{
+         transition: all 0.3s ease;
+         background-color: $darkTh_nav;
+      }
+   }
    &__branch{
       line-height: 1.5;
       padding: 10px;
@@ -160,15 +168,24 @@
          padding: 13px 50px 13px 20px;
          background-color: transparent;
          border: 2px solid #fff;
+         transition: all 0.4s ease;
+         &:focus{
+            border: 2px solid #ce2a7c;
+            transition: all 0.4s ease;
+         }
       }
       button{
          font-size: 16px;
          color: #ffffff;
          text-align: center;
          padding: 14px 16px;
-         background-color: rgb(206, 42, 124);
+         background-color: #ce2a7c;
          border-radius: 40%;
-         
+         transition: all 0.3s ease-in-out;
+         &:hover{
+            filter: brightness(1.2);
+            transition: all 0.3s ease-in-out;
+         }
       }
    }
 }

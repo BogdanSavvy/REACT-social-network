@@ -12,7 +12,7 @@ const Branch = (props) => {
                   <img src={`${props.avatar}`} alt="user_ava" />
                </div>
                <div className={`${style.dialogsList__userName}`}>
-                  <NavLink to={`/messages/${props.id}`}>{props.name} {props.surname}</NavLink>
+                  {props.name} {props.surname}
                </div>
                <div className={`${style.dialogsList__lastVisit} ${style[props.visit]}`}>{props.visit}</div>
             </div>

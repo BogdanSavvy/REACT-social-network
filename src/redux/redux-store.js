@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
 import profileReducer from './profileReducer'
 import messagesReducer from './messagesReducer'
@@ -10,7 +10,9 @@ let rootReducer = combineReducers({
    messagesP: messagesReducer,
 });
 
-let store = createStore(rootReducer);
+let store = configureStore({
+   reducer: rootReducer,
+});
 
 
 export default store;

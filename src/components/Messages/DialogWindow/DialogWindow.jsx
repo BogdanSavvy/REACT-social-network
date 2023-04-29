@@ -8,7 +8,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 const DialogWindow = (props) => {
 
-   let newMessage = props.sentMessagesData.map(el => <SentMessage message={el.message} id={el.id} sender={el.sender} />)
+   let newMessage = props.sentMessagesData.map(el => <SentMessage key={el.id} message={el.message} id={el.id} sender={el.sender} />)
 
    let sendMessage = () => {
       props.newMessageTxt === '' ? alert('You cant send "nothing"') : props.sendMessage();
