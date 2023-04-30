@@ -55,10 +55,10 @@ const NavBar = (props) => {
                <NavLink className={`${style.nav__link}`} to='groups' > Group`s </NavLink>
             </li>
             <li className={`${style.nav__menuItem}`}>
-               <NavLink className={`${style.nav__iconBox}`} to='/friends' style={({ isActive }) => {return {color: isActive ? "#0163cc" : "white",};}}>
+               <NavLink className={`${style.nav__iconBox}`} to='/users' style={({ isActive }) => {return {color: isActive ? "#0163cc" : "white",};}}>
                   <FontAwesomeIcon className={`${style.nav__icon}`} icon={faHandshake} />
                </NavLink>
-               <NavLink className={`${style.nav__link}`} to='friends' > Friend`s </NavLink>
+               <NavLink className={`${style.nav__link}`} to='users' > Users </NavLink>
             </li>
             <li className={`${style.nav__menuItem}`}>
                <NavLink className={`${style.nav__iconBox}`} to='/settings' style={({ isActive }) => {return {color: isActive ? "#0163cc" : "white",};}}>
