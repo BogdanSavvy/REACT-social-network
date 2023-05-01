@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-import profileReducer from './profileReducer'
-import messagesReducer from './messagesReducer'
+import profileReducer from './profileReducer';
+import messagesReducer from './messagesReducer';
 import usersReducer from './usersReducer';
 
 

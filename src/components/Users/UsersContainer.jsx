@@ -15,7 +15,7 @@ const f2 = dispatch => {
    return {
       follow: userId => { dispatch(followAC(userId)) },
       unFollow: userId => { dispatch(unFollowAC(userId)) },
-      // setUsers: usersData => { dispatch(setUsersAC(usersData)) },
+      setUsers: usersData => { dispatch(setUsersAC(usersData)) },
    }
 };
 

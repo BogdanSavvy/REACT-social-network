@@ -1,11 +1,19 @@
 import style from './Users.module.scss';
 
+import axios from 'axios';
+
 import Member from './Member/Member';
 
 
 const Users = (props) => {
 
-   let members = props.usersData.map(el => <Member key={el.id} id={el.id} bgImg={el.bgImg} ava={el.ava} name={el.name} status={el.status} followed={el.followed} follow={props.follow} unFollow={props.unFollow} />);
+   if (props.usersData.length === 0) {
+      axios.get("https://social-network.samuraijs.com/api/1.0/users").then( response => props.setUsers(response.data.items));
+   }
+   
+   let members = props.usersData.map (el => 
+      <Member key={el.id} id={el.id} bgImg={el.photos.large} ava={el.photos.small} name={el.name} status={el.status} followed={el.followed} follow={props.follow} unFollow={props.unFollow} />
+   );
 
    return (
       <div className={`${style.page}`}>

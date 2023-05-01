@@ -5,8 +5,12 @@ import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
+import defaultUserAva from '../../../images/defaultAva/user.jpg';
+import defaultBgImg from '../../../images/defaultBg/defBg.webp';
+
 
 const Member = props => {
+
    let onFollow = () => props.follow(props.id);
 
    let onUnFollow = () => props.unFollow(props.id);
@@ -14,10 +18,10 @@ const Member = props => {
    return (
       <div className={`${style.users__member} ${style.member}`}>
          <div className={`${style.member__img}`}>
-            <img src={props.bgImg} alt="BG_IMG" />
+            <img src={props.bgImg != null ? props.bgImg : defaultBgImg } alt="BG_IMG" />
          </div>
          <div className={`${style.member__ava}`}>
-            <img src={props.ava} alt="AVATAR" />
+            <img src={props.ava != null ? props.ava : defaultUserAva} alt="AVATAR" />
          </div>
          <div className={`${style.member__text}`}>
             <div className={`${style.member__userName}`}> {props.name} </div>
