@@ -24,8 +24,27 @@
       row-gap: 20px;
       column-gap: 25px;
       justify-content: center;
+      margin-bottom: 25px;
+   }
+   &__pages{
+      font-size: 20px;
+      color: $darkTh_txt;
+      text-align: center;
+      line-height: 130%;
+      span{
+         cursor: pointer;
+         transition: color 0.2s ease-in-out;
+         &:not(:last-child){
+            margin-right: 10px;
+         }
+         &:hover{
+            color: $Dlink_hover;
+            transition: color 0.2s ease-in-out;
+         }
+      }
    }
 }
+
 .users{
    &__member{
       flex: 0 1 20%;
@@ -34,6 +53,7 @@
       background-color: $darkTh_content;
    }
 }
+
 .member{
    display: flex;
    flex-direction: column;
@@ -109,5 +129,11 @@
       flex: 0 1 20%;
       font-size: 20px;
       background-color: #17acf1;
+   }
+}
+
+.pages{
+   &__selected{
+      color: $Dlink_active;
    }
 }
