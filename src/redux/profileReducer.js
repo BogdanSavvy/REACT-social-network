@@ -1,6 +1,6 @@
 //? Action variables
-const addPost = 'ADD-POST';
-const upPostTxt = 'UPDATE-POST-TEXT';
+const ADD_POST = 'ADD-POST';
+const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
 
 let initalState = {
    postsData: [
@@ -16,7 +16,7 @@ let initalState = {
 
 const profileReducer = (state = initalState, action) => {
    switch (action.type) {
-      case addPost : 
+      case ADD_POST : 
          let newPost = {
             id: 7,
             ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg',
@@ -28,7 +28,7 @@ const profileReducer = (state = initalState, action) => {
             ...state,
             postsData: [newPost, ...state.postsData],  //! ===>  stateCopy.postsData.unshift(newPost);
          };
-      case upPostTxt : 
+      case UPDATE_POST_TEXT : 
          return {        //! ==> stateCopy
             ...state,
             newPostTxt: action.newTxt,
@@ -37,8 +37,8 @@ const profileReducer = (state = initalState, action) => {
    };
 };
 
-//*abbreviation "AC" => "ActionCreator"
-export const addPostAC = () => ({ type: addPost });
-export const updatePostTxtAC = txt => ({ type: upPostTxt, newTxt: txt });
+//*_____"Action Creators"_____
+export const addPost = () => ({ type: ADD_POST });
+export const updatePostTxt = txt => ({ type: UPDATE_POST_TEXT, newTxt: txt });
 
 export default profileReducer;

@@ -5,7 +5,7 @@ import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
-import defaultUserAva from '../../../images/defaultAva/user.jpg';
+import defaultUserPhoto from '../../../images/defaultAva/user.jpg';
 import defaultBgImg from '../../../images/defaultBg/defBg.webp';
 
 
@@ -21,7 +21,7 @@ const Member = props => {
             <img src={props.bgImg != null ? props.bgImg : defaultBgImg } alt="BG_IMG" />
          </div>
          <div className={`${style.member__ava}`}>
-            <img src={props.ava != null ? props.ava : defaultUserAva} alt="AVATAR" />
+            <img src={props.ava != null ? props.ava : defaultUserPhoto } alt="AVATAR" />
          </div>
          <div className={`${style.member__text}`}>
             <div className={`${style.member__userName}`}> {props.name} </div>

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { sendMessageAC, updateMessageTxtAC } from '../../redux/messagesReducer';
+import { sendMessage, updateMessageTxt } from '../../redux/messagesReducer';
 
 import Messages from './Messages';
 
 
-//?_____ function "mapStateToProps" _____
-const func1 = (state) => {
+//* MSTP => MapStateToProps
+const MSTP = (state) => {
    return {
       branchesData: state.messagesP.branchesData,
       sentMessagesData: state.messagesP.sentMessagesData,
@@ -13,19 +13,8 @@ const func1 = (state) => {
    }
 };
 
-//?_____ function "mapDispatchToProps" _____
-const func2 = (dispatch) => {
-   return {
-      sendMessage: () => {
-         dispatch(sendMessageAC());
-      },
-      updateMessageTxt: (txt) => {
-         dispatch(updateMessageTxtAC(txt));
-      },
-   }
-};
 
-const MessagesContainer = connect(func1, func2)(Messages);
+const MessagesContainer = connect( MSTP, {sendMessage, updateMessageTxt} )(Messages);
 
 
 export default MessagesContainer;

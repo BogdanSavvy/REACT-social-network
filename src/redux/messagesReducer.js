@@ -1,6 +1,6 @@
 //? Action variables
-const sendMessage = 'SEND-MESSAGE';
-const upMessageTxt = 'UPDATE-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
 
 let initalState = {
    branchesData: [
@@ -32,7 +32,7 @@ let initalState = {
 
 const messagesReducer = (state = initalState, action) => {
    switch (action.type) {
-      case sendMessage : 
+      case SEND_MESSAGE : 
          let newMessage = {
             id: 7,
             message: state.newMessageTxt,
@@ -42,7 +42,7 @@ const messagesReducer = (state = initalState, action) => {
             ...state,
             sentMessagesData: [...state.sentMessagesData, newMessage],       //! ===>  stateCopy.sentMessagesData.push(newMessage);
          };
-      case upMessageTxt : 
+      case UPDATE_MESSAGE_TEXT : 
          return {         //! ==> stateCopy
             ...state,
             newMessageTxt: action.newTxt,
@@ -51,8 +51,8 @@ const messagesReducer = (state = initalState, action) => {
    };
 };
 
-//*abbreviation "AC" => "ActionCreator"
-export const sendMessageAC = () => ({ type: sendMessage });
-export const updateMessageTxtAC = txt => ({type: upMessageTxt, newTxt: txt });
+//*_____"Action Creators"_____
+export const sendMessage = () => ({ type: SEND_MESSAGE });
+export const updateMessageTxt = txt => ({type: UPDATE_MESSAGE_TEXT, newTxt: txt });
 
 export default messagesReducer;

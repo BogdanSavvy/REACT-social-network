@@ -1,30 +1,19 @@
 import { connect } from 'react-redux';
-import { addPostAC, updatePostTxtAC } from '../../redux/profileReducer';
+import { addPost, updatePostTxt } from '../../redux/profileReducer';
 
 import UserProfile from "./UserProfile";
 
 
-//?_____ function "mapStateToProps" _____
-const func1 = (state) => {
+//* MSTP => MapStateToProps
+const MSTP = (state) => {
    return {
       postData: state.profileP.postsData,
       newPostTxt: state.profileP.newPostTxt,
    }
 };
 
-//?_____ function "mapDispatchToProps" _____
-const func2 = (dispatch) => {
-   return {
-      addPost: () => {
-         dispatch(addPostAC());
-      },
-      updatePostTxt: (txt) => {
-         dispatch(updatePostTxtAC(txt));
-      },
-   }
-};
 
-const UserProfileContainer = connect(func1,func2)(UserProfile);
+const UserProfileContainer = connect( MSTP, {addPost, updatePostTxt} )(UserProfile);
 
 
 export default UserProfileContainer;

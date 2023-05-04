@@ -1,35 +1,47 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from "react-redux";
-import { followAC, unFollowAC, setUsersAC, setTotalCountAC, setCurrentPageAC } from "../../redux/usersReducer";
+import { follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching } from "../../redux/usersReducer";
 
 import Users from './Users';
+import Preloader from '../common/Preloader/Preloader';
 
-//*Another Сlass-ContainerComponent that makes a request to the server 
+//*Another СlassContainerComponent that makes a AJAX request 
 class UsersAJAXContainer extends React.Component {
 
-   componentDidMount () {
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.count}`).then( response => {
+   componentDidMount() {
+      this.props.toggleIsFetching(true)
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.count}`).then(response => {
+         this.props.toggleIsFetching(false)
          this.props.setUsers(response.data.items);
          this.props.setTotalCount(response.data.totalCount);
       });
    };
-   
+
    onPageChaged = pageNum => {
       this.props.setCurrentPage(pageNum);
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNum}&count=${this.props.count}`).then( response => this.props.setUsers(response.data.items));
+      this.props.toggleIsFetching(true)
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNum}&count=${this.props.count}`).then(response => {
+         this.props.setUsers(response.data.items);
+         this.props.toggleIsFetching(false)
+      });
    };
 
-   render ()  {
-      return  <Users usersData={this.props.usersData} 
-                     totalCount={this.props.totalCount}
-                     count={this.props.count} 
-                     currentPage={this.props.currentPage} 
-                     follow={this.props.follow} 
-                     unFollow={this.props.unFollow} 
-                     onPageChaged={this.onPageChaged} />
+   render() {
+      return (
+         <>
+            {this.props.isFetching ?
+               <Preloader /> : <Users usersData={this.props.usersData}
+                                    totalCount={this.props.totalCount}
+                                    count={this.props.count}
+                                    currentPage={this.props.currentPage}
+                                    follow={this.props.follow}
+                                    unFollow={this.props.unFollow}
+                                    onPageChaged={this.onPageChaged} />}
+         </>
+      )
    };
-}
+};
 
 //* MSTP => MapStateToProps
 const MSTP = state => {
@@ -38,20 +50,11 @@ const MSTP = state => {
       count: state.usersP.count,
       totalCount: state.usersP.totalCount,
       currentPage: state.usersP.currentPage,
+      isFetching: state.usersP.isFetching,
    }
 };
 
-//* MDTP => MapDispatchToProps
-const MDTP = dispatch => {
-   return {
-      follow: userId => { dispatch(followAC(userId)) },
-      unFollow: userId => { dispatch(unFollowAC(userId)) },
-      setUsers: usersData => { dispatch(setUsersAC(usersData)) },
-      setTotalCount: totalCount => { dispatch(setTotalCountAC(totalCount)) },
-      setCurrentPage: pageNum => { dispatch(setCurrentPageAC(pageNum)) },
-   }
-};
 
-const UsersContainer = connect(MSTP, MDTP)(UsersAJAXContainer);
+const UsersContainer = connect(MSTP, { follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching })(UsersAJAXContainer);
 
 export default UsersContainer;
