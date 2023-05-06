@@ -9,7 +9,7 @@ import Preloader from '../common/Preloader/Preloader';
 //*Another СlassContainerComponent that makes a AJAX request 
 class UsersAJAXContainer extends React.Component {
 
-   componentDidMount() {
+   componentDidMount () {
       this.props.toggleIsFetching(true)
       axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.count}`).then(response => {
          this.props.toggleIsFetching(false)
@@ -27,7 +27,7 @@ class UsersAJAXContainer extends React.Component {
       });
    };
 
-   render() {
+   render () {
       return (
          <>
             {this.props.isFetching ?
@@ -55,6 +55,6 @@ const MSTP = state => {
 };
 
 
-const UsersContainer = connect(MSTP, { follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching })(UsersAJAXContainer);
+const UsersContainer = connect( MSTP, {follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching} )(UsersAJAXContainer);
 
 export default UsersContainer;

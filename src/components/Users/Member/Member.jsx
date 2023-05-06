@@ -1,5 +1,6 @@
 import style from '../Users.module.scss';
 
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +22,9 @@ const Member = props => {
             <img src={props.bgImg != null ? props.bgImg : defaultBgImg } alt="BG_IMG" />
          </div>
          <div className={`${style.member__ava}`}>
-            <img src={props.ava != null ? props.ava : defaultUserPhoto } alt="AVATAR" />
+            <NavLink to={`/profile/${props.id}`}>
+               <img src={props.ava != null ? props.ava : defaultUserPhoto } alt="AVATAR" />
+            </NavLink>
          </div>
          <div className={`${style.member__text}`}>
             <div className={`${style.member__userName}`}> {props.name} </div>

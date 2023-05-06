@@ -2,21 +2,27 @@ import style from "../UserProfile.module.scss";
 
 import { NavLink } from "react-router-dom";
 
+import defaultUserAva from '../../../images/defaultAva/user.jpg';
+import defaultBgImg from '../../../images/defaultBg/defBg.webp';
+import Preloader from '../../common/Preloader/Preloader';
 
 const MainProfile = (props) => {
-
+   if(props.profile === null){
+      return <Preloader />
+   }
    return (
       <section className={`${style.page__profile} ${style.profile}`}>
          <div className={`${style.profile__image}`}>
-            <img src='https://wallpapers.com/images/featured/fc0xi68rw21ini90.jpg' alt="wallpaper_img" />
+            <img src={!props.profile.photos.large ? defaultBgImg : props.profile.photos.large} alt="wallpaper_img" />
          </div>
          <div className={`${style.profile__info} ${style.info}`}>
             <div className={`${style.info__avatar}`}>
-               <img src='https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg' alt="that was be avatar )" />
+               <img src={!props.profile.photos.small ? defaultUserAva : props.profile.photos.small} alt="that was be avatar )" />
             </div>
             <div className={`${style.info__description}`}>
-               <h2 className={`${style.info__name}`}> Pepe Frog </h2>
-               <p className={`${style.info__status}`}> It should be status </p>
+               <h2 className={`${style.info__name}`}> {props.profile.fullName} </h2>
+               <p className={`${style.info__status}`}> {props.profile.aboutMe} </p>
+               <p className={`${style.info__status}`}> {props.profile.lookingForAJobDescription} </p>
             </div>
          </div>
          <div className={`${style.profile__tabs} ${style.tabs}`}>

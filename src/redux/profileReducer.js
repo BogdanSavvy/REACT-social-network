@@ -1,6 +1,7 @@
 //? Action variables
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initalState = {
    postsData: [
@@ -12,6 +13,7 @@ let initalState = {
       { id: 6, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
    ],
    newPostTxt: '',
+   profile: null,
 };
 
 const profileReducer = (state = initalState, action) => {
@@ -33,6 +35,11 @@ const profileReducer = (state = initalState, action) => {
             ...state,
             newPostTxt: action.newTxt,
          };
+      case SET_USER_PROFILE : 
+         return {        //! ==> stateCopy
+            ...state,
+            profile: action.profile,
+         };
       default: return state;
    };
 };
@@ -40,5 +47,6 @@ const profileReducer = (state = initalState, action) => {
 //*_____"Action Creators"_____
 export const addPost = () => ({ type: ADD_POST });
 export const updatePostTxt = txt => ({ type: UPDATE_POST_TEXT, newTxt: txt });
+export const setUserProfile = profData => ({ type: SET_USER_PROFILE, profile: profData, });
 
 export default profileReducer;

@@ -13,7 +13,7 @@ const UserProfile = (props) => {
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>
-            <MainProfile />
+            <MainProfile profile={props.profile} />
             <Routes>
                <Route path="/posts" element={<PostsTab postsData = {props.postData} 
                                                        updatePostTxt = {props.updatePostTxt} 
