@@ -75,6 +75,7 @@
 
    &__description {
       padding-top: 15px;
+      flex: 0 1 70%;
    }
 
    &__name {
@@ -115,6 +116,30 @@
          border-radius: 50%;
          background-color: #fafafa;
       }
+   }
+
+   &__contacts{
+      padding: 15px;
+   }
+   &__links{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+   }
+   &__link{
+      justify-content: space-around;
+      color: $darkTh_txt;
+      transition: all 0.3s ease;
+         font-size: 20px;
+         &:hover{
+            color: $Dlink_hover;
+            transition: all 0.3s ease;
+         }
+   }
+   &__linkNull{
+      display: none;
    }
 
 }

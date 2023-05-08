@@ -2,6 +2,9 @@ import style from "../UserProfile.module.scss";
 
 import { NavLink } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faTwitter, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
 import defaultUserAva from '../../../images/defaultAva/user.jpg';
 import defaultBgImg from '../../../images/defaultBg/defBg.webp';
 import Preloader from '../../common/Preloader/Preloader';
@@ -23,6 +26,15 @@ const MainProfile = (props) => {
                <h2 className={`${style.info__name}`}> {props.profile.fullName} </h2>
                <p className={`${style.info__status}`}> {props.profile.aboutMe} </p>
                <p className={`${style.info__status}`}> {props.profile.lookingForAJobDescription} </p>
+            </div>
+            <div className={`${style.info__contacts}`}>
+               <div className={`${style.info__links}`}>
+                  <a className={`${!props.profile.contacts.facebook ? style.info__linkNull : style.info__link}`} href={props.profile.contacts.facebook}><FontAwesomeIcon icon={faFacebook} /></a>
+                  <a className={`${!props.profile.contacts.instagram ? style.info__linkNull : style.info__link}`} href={props.profile.contacts.instagram}><FontAwesomeIcon icon={faInstagram} /></a>
+                  <a className={`${!props.profile.contacts.twitter ? style.info__linkNull : style.info__link}`} href={props.profile.contacts.twitter}><FontAwesomeIcon icon={faTwitter} /></a>
+                  <a className={`${!props.profile.contacts.github ? style.info__linkNull : style.info__link}`} href={props.profile.contacts.github}><FontAwesomeIcon icon={faGithub} /></a>
+                  <a className={`${!props.profile.contacts.youtube ? style.info__linkNull : style.info__link}`} href={props.profile.contacts.youtube}><FontAwesomeIcon icon={faYoutube} /></a>
+               </div>
             </div>
          </div>
          <div className={`${style.profile__tabs} ${style.tabs}`}>

@@ -8,13 +8,36 @@ import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
 import defaultUserPhoto from '../../../images/defaultAva/user.jpg';
 import defaultBgImg from '../../../images/defaultBg/defBg.webp';
+import axios from 'axios';
 
 
 const Member = props => {
 
-   let onFollow = () => props.follow(props.id);
+   let onFollow = () => {
+      axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {}, {
+         withCredentials: true,
+         headers: {
+            "API-KEY": '4e3604ed-fad8-4895-ada3-69451f0f9395'
+         },
+      }).then(response => {
+         if(response.data.resultCode === 0){
+            props.follow(props.id);
+         }
+      });
+   }
 
-   let onUnFollow = () => props.unFollow(props.id);
+   let onUnFollow = () => {
+      axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {
+         withCredentials: true, 
+         headers: {
+            "API-KEY": '4e3604ed-fad8-4895-ada3-69451f0f9395'
+         },
+      }).then(response => {
+         if(response.data.resultCode === 0){
+            props.unFollow(props.id)
+         }
+      });
+   }
 
    return (
       <div className={`${style.users__member} ${style.member}`}>

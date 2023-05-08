@@ -13,7 +13,7 @@ class UserProfileAJAXContainer extends React.Component {
       if (!profId) {
          profId = 2;
       };
-      axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profId}`).then(response => {
+      axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profId}`,).then(response => {
          this.props.setUserProfile(response.data)
       });
    }

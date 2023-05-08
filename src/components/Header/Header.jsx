@@ -13,7 +13,7 @@ const Header = (props) => {
             <Logo />
             <Search />
             <Notification />
-            <MiniProfile name="Pepe" />
+            { props.isAuth ? <MiniProfile name={props.login} /> : 'Login'}
          </div>
       </header>
    )

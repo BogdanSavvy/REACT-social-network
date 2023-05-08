@@ -10,9 +10,11 @@ import Preloader from '../common/Preloader/Preloader';
 class UsersAJAXContainer extends React.Component {
 
    componentDidMount () {
-      this.props.toggleIsFetching(true)
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.count}`).then(response => {
-         this.props.toggleIsFetching(false)
+      this.props.toggleIsFetching(true);
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.count}`, { 
+         withCredentials: true, 
+      }).then(response => {
+         this.props.toggleIsFetching(false);
          this.props.setUsers(response.data.items);
          this.props.setTotalCount(response.data.totalCount);
       });
@@ -20,10 +22,12 @@ class UsersAJAXContainer extends React.Component {
 
    onPageChaged = pageNum => {
       this.props.setCurrentPage(pageNum);
-      this.props.toggleIsFetching(true)
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNum}&count=${this.props.count}`).then(response => {
+      this.props.toggleIsFetching(true);
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNum}&count=${this.props.count}`, { 
+         withCredentials: true 
+      }).then(response => {
          this.props.setUsers(response.data.items);
-         this.props.toggleIsFetching(false)
+         this.props.toggleIsFetching(false);
       });
    };
 
@@ -31,13 +35,7 @@ class UsersAJAXContainer extends React.Component {
       return (
          <>
             {this.props.isFetching ?
-               <Preloader /> : <Users usersData={this.props.usersData}
-                                    totalCount={this.props.totalCount}
-                                    count={this.props.count}
-                                    currentPage={this.props.currentPage}
-                                    follow={this.props.follow}
-                                    unFollow={this.props.unFollow}
-                                    onPageChaged={this.onPageChaged} />}
+               <Preloader /> : <Users {...this.props} onPageChaged={this.onPageChaged} />}
          </>
       )
    };

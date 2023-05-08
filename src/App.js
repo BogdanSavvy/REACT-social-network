@@ -3,7 +3,7 @@ import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
 
-import Header from './components/Header/Header';
+import HeaderContainer from "./components/Header/HeaderContainer";
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
 import UserProfileContainer from './components/UserProfile/UserProfileContainer';
@@ -19,7 +19,7 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 const App = (props) => {
   return (
     <div className="wrapper">
-      <Header />
+      <HeaderContainer />
       <NavBar />
       <div className="main-container">
         <Routes>
