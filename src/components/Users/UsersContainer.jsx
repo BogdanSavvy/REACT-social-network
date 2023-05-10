@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import { connect } from "react-redux";
-import { follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching } from "../../redux/usersReducer";
+import { follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching, toggleFollowProgress } from "../../redux/usersReducer";
+import { getUsers } from '../api/api';
 
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
@@ -11,22 +11,18 @@ class UsersAJAXContainer extends React.Component {
 
    componentDidMount () {
       this.props.toggleIsFetching(true);
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.count}`, { 
-         withCredentials: true, 
-      }).then(response => {
+      getUsers(this.props.currentPage, this.props.count).then(data => {
          this.props.toggleIsFetching(false);
-         this.props.setUsers(response.data.items);
-         this.props.setTotalCount(response.data.totalCount);
+         this.props.setUsers(data.items);
+         this.props.setTotalCount(data.totalCount);
       });
    };
 
    onPageChaged = pageNum => {
       this.props.setCurrentPage(pageNum);
       this.props.toggleIsFetching(true);
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNum}&count=${this.props.count}`, { 
-         withCredentials: true 
-      }).then(response => {
-         this.props.setUsers(response.data.items);
+      getUsers(pageNum, this.props.count).then(data => {
+         this.props.setUsers(data.items);
          this.props.toggleIsFetching(false);
       });
    };
@@ -49,10 +45,11 @@ const MSTP = state => {
       totalCount: state.usersP.totalCount,
       currentPage: state.usersP.currentPage,
       isFetching: state.usersP.isFetching,
+      followProgress: state.usersP.followProgress,
    }
 };
 
 
-const UsersContainer = connect( MSTP, {follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching} )(UsersAJAXContainer);
+const UsersContainer = connect( MSTP, {follow, unFollow, setUsers, setTotalCount, setCurrentPage, toggleIsFetching, toggleFollowProgress} )(UsersAJAXContainer);
 
 export default UsersContainer;

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { addPost, updatePostTxt, setUserProfile } from '../../redux/profileReducer';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import axios from 'axios';
+import { getProfile } from '../api/api'
 
 import UserProfile from "./UserProfile";
 
@@ -11,11 +11,9 @@ class UserProfileAJAXContainer extends React.Component {
    componentDidMount () {
       let profId = this.props.router.params.userId;
       if (!profId) {
-         profId = 2;
+         profId = 28996;
       };
-      axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profId}`,).then(response => {
-         this.props.setUserProfile(response.data)
-      });
+      getProfile(profId).then(data => this.props.setUserProfile(data));
    }
 
    render = () => {

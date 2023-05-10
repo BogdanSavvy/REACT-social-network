@@ -1,6 +1,8 @@
 import style from '../Users.module.scss';
 
+import { setFollow, setUnfollow } from '../../api/api';
 import { NavLink } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
@@ -8,45 +10,40 @@ import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
 import defaultUserPhoto from '../../../images/defaultAva/user.jpg';
 import defaultBgImg from '../../../images/defaultBg/defBg.webp';
-import axios from 'axios';
 
 
 const Member = props => {
 
    let onFollow = () => {
-      axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {}, {
-         withCredentials: true,
-         headers: {
-            "API-KEY": '4e3604ed-fad8-4895-ada3-69451f0f9395'
-         },
-      }).then(response => {
-         if(response.data.resultCode === 0){
+      props.toggleFollowProgress(true, props.id);
+      setFollow(props.id).then(data => {
+         if (data.resultCode === 0) {
             props.follow(props.id);
          }
+         props.toggleFollowProgress(false, props.id);
       });
-   }
+   };
 
    let onUnFollow = () => {
-      axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {
-         withCredentials: true, 
-         headers: {
-            "API-KEY": '4e3604ed-fad8-4895-ada3-69451f0f9395'
-         },
-      }).then(response => {
-         if(response.data.resultCode === 0){
-            props.unFollow(props.id)
+      props.toggleFollowProgress(true, props.id);
+      setUnfollow(props.id).then(data => {
+         if (data.resultCode === 0) {
+            props.unFollow(props.id);
          }
+         props.toggleFollowProgress(false, props.id);
       });
-   }
+   };
+
+   let isDisabled = props.followProgress.some(id => id === props.id);
 
    return (
       <div className={`${style.users__member} ${style.member}`}>
          <div className={`${style.member__img}`}>
-            <img src={props.bgImg != null ? props.bgImg : defaultBgImg } alt="BG_IMG" />
+            <img src={props.bgImg != null ? props.bgImg : defaultBgImg} alt="BG_IMG" />
          </div>
          <div className={`${style.member__ava}`}>
             <NavLink to={`/profile/${props.id}`}>
-               <img src={props.ava != null ? props.ava : defaultUserPhoto } alt="AVATAR" />
+               <img src={props.ava != null ? props.ava : defaultUserPhoto} alt="AVATAR" />
             </NavLink>
          </div>
          <div className={`${style.member__text}`}>
@@ -55,8 +52,12 @@ const Member = props => {
          </div>
          <div className={`${style.member__actions}`}>
             {props.followed ?
-               <button onClick={onUnFollow} className={`${style.member__unFollow}`}><FontAwesomeIcon icon={faUserXmark} /> Un Follow</button>
-               : <button onClick={onFollow} className={`${style.member__follow}`}><FontAwesomeIcon icon={faUserCheck} /> Follow</button>
+               <button disabled={isDisabled} onClick={onUnFollow} className={`${style.member__unFollow}`}>
+                  <FontAwesomeIcon icon={faUserXmark} /> Un Follow
+               </button>
+               : <button disabled={isDisabled} onClick={onFollow} className={`${style.member__follow}`}>
+                  <FontAwesomeIcon icon={faUserCheck} /> Follow
+               </button>
             }
             <button className={`${style.member__message}`}><FontAwesomeIcon icon={faEnvelopeOpen} /></button>
          </div>
