@@ -6,7 +6,7 @@ import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
 
 //*Another СlassContainerComponent that makes a AJAX request 
-class UsersAJAXContainer extends React.Component {
+class UsersContainer extends React.Component {
 
    componentDidMount () {
       this.props.getUsers(this.props.currentPage, this.props.count)
@@ -39,6 +39,4 @@ const MSTP = state => {
 };
 
 
-const UsersContainer = connect( MSTP, {follow, unfollow, getUsers} )(UsersAJAXContainer);
-
-export default UsersContainer;
+export default connect( MSTP, {follow, unfollow, getUsers} )(UsersContainer);

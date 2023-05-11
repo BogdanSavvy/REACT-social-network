@@ -5,7 +5,7 @@ import React from 'react';
 
 import UserProfile from "./UserProfile";
 
-class UserProfileAJAXContainer extends React.Component {
+class UserProfileContainer extends React.Component {
 
    componentDidMount () {
       let profId = this.props.router.params.userId;
@@ -40,7 +40,5 @@ function withRouter (Component) {
    return ComponentWithRouterProp;
 }
 
-const UserProfileContainer = connect( MSTP, {addPost, updatePostTxt, getProfile} )(withRouter(UserProfileAJAXContainer));
 
-
-export default UserProfileContainer;
+export default connect( MSTP, {addPost, updatePostTxt, getProfile} )(withRouter(UserProfileContainer));
