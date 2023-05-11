@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { addPost, updatePostTxt, getProfile } from '../../redux/profileReducer';
 import { useParams } from 'react-router-dom';
 import React from 'react';
@@ -40,5 +41,7 @@ function withRouter (Component) {
    return ComponentWithRouterProp;
 }
 
-
-export default connect( MSTP, {addPost, updatePostTxt, getProfile} )(withRouter(UserProfileContainer));
+export default compose (
+   connect( MSTP, {addPost, updatePostTxt, getProfile} ),
+   withRouter
+)(UserProfileContainer)

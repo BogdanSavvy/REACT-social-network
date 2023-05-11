@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { sendMessage, updateMessageTxt } from '../../redux/messagesReducer';
 
 import Messages from './Messages';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 
 //* MSTP => MapStateToProps
@@ -14,7 +16,7 @@ const MSTP = (state) => {
 };
 
 
-const MessagesContainer = connect( MSTP, {sendMessage, updateMessageTxt} )(Messages);
-
-
-export default MessagesContainer;
+export default compose(
+   connect( MSTP, {sendMessage, updateMessageTxt} ),
+   withAuthRedirect
+)(Messages)

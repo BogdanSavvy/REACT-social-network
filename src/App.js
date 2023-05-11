@@ -14,6 +14,7 @@ import UsersContainer from "./components/Users/UsersContainer";
 // import Groups from './components/Groups/Groups';
 // import Settings from './components/Settings/Settings';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import Login from './components/Login/Login';
 
 
 const App = (props) => {
@@ -31,6 +32,7 @@ const App = (props) => {
           <Route path='/groups' Component={NotFoundPage} />
           <Route path='/users/*' element={<UsersContainer /> } />
           <Route path='/settings' Component={NotFoundPage} />
+          <Route path='/login' Component={Login} />
         </Routes>
       </div>
     </div>
