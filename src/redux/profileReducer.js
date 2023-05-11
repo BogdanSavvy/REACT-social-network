@@ -1,3 +1,6 @@
+import { profileApi } from '../api/api';
+
+
 //? Action variables
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
@@ -49,4 +52,10 @@ export const addPost = () => ({ type: ADD_POST });
 export const updatePostTxt = txt => ({ type: UPDATE_POST_TEXT, newTxt: txt });
 export const setUserProfile = profData => ({ type: SET_USER_PROFILE, profile: profData, });
 
+export const getProfile = (profId) => (dispatch) => {
+   profileApi.getProfile(profId).then(data => {
+      dispatch(setUserProfile(data));
+   });
+};
+ 
 export default profileReducer;

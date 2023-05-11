@@ -1,6 +1,5 @@
 import style from '../Users.module.scss';
 
-import { setFollow, setUnfollow } from '../../api/api';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,23 +14,11 @@ import defaultBgImg from '../../../images/defaultBg/defBg.webp';
 const Member = props => {
 
    let onFollow = () => {
-      props.toggleFollowProgress(true, props.id);
-      setFollow(props.id).then(data => {
-         if (data.resultCode === 0) {
-            props.follow(props.id);
-         }
-         props.toggleFollowProgress(false, props.id);
-      });
+      props.follow(props.id);
    };
 
    let onUnFollow = () => {
-      props.toggleFollowProgress(true, props.id);
-      setUnfollow(props.id).then(data => {
-         if (data.resultCode === 0) {
-            props.unFollow(props.id);
-         }
-         props.toggleFollowProgress(false, props.id);
-      });
+      props.unfollow(props.id);
    };
 
    let isDisabled = props.followProgress.some(id => id === props.id);
@@ -51,8 +38,8 @@ const Member = props => {
             <div className={`${style.member__status}`}> {props.status} </div>
          </div>
          <div className={`${style.member__actions}`}>
-            {props.followed ?
-               <button disabled={isDisabled} onClick={onUnFollow} className={`${style.member__unFollow}`}>
+            {props.followed 
+               ? <button disabled={isDisabled} onClick={onUnFollow} className={`${style.member__unFollow}`}>
                   <FontAwesomeIcon icon={faUserXmark} /> Un Follow
                </button>
                : <button disabled={isDisabled} onClick={onFollow} className={`${style.member__follow}`}>

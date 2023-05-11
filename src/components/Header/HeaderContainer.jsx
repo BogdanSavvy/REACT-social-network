@@ -1,20 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { authUser } from '../../redux/authReducer';
+import { authMe } from '../../redux/authReducer';
 
 import Header from './Header';
-import { getAuth } from '../api/api';
 
 
 class HeaderContainer extends React.Component {
 
    componentDidMount(){
-      getAuth().then(data => {
-         if(data.resultCode === 0){
-            let { email, id, login} = data.data;
-            this.props.authUser(email, id, login);
-         }
-      })
+      this.props.authMe();
    }
 
    render() {
@@ -32,5 +26,5 @@ const MTSP = (state) => {
 }
 
 
-export default connect(MTSP, { authUser })(HeaderContainer);
+export default connect(MTSP, { authMe })(HeaderContainer);
 

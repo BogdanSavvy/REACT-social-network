@@ -8,7 +8,7 @@ const Users = props => {
    //?____Filling the page with user profiles_____
    let members = props.usersData.map(el => 
    <Member key={el.id} id={el.id} bgImg={el.photos.large} ava={el.photos.small} name={el.name}
-      status={el.status} followed={el.followed} follow={props.follow} unFollow={props.unFollow} 
+      status={el.status} followed={el.followed} follow={props.follow} unfollow={props.unfollow} 
       toggleFollowProgress={props.toggleFollowProgress} followProgress={props.followProgress} />);
 
    //?____Counting the number of pages to display users______
@@ -18,7 +18,12 @@ const Users = props => {
       pageNumbers.push(i);
    };
    //?____Displaying page numbering______
-   let numbering = pageNumbers.map(p => p <= 25 && <span key={p} onClick={() => { props.onPageChaged(p) }} className={p === props.currentPage ? `${style.pages__selected}` : null}>{p}</span>);
+   let numbering = pageNumbers.map(p => {
+      return p <= 25 && <span key={p} onClick={() => { props.onPageChaged(p) }} 
+      className={p === props.currentPage 
+         ? `${style.pages__selected}` 
+         : null}>{p}</span>
+   });
 
    return (
       <div className={`${style.page}`}>

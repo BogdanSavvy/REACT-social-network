@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
+import  thunkMiddleware  from 'redux-thunk';
 
 import profileReducer from './profileReducer';
 import messagesReducer from './messagesReducer';
@@ -16,7 +17,7 @@ let rootReducer = combineReducers({
 
 let store = configureStore({
    reducer: rootReducer,
+   middleware: [thunkMiddleware],
 });
 
-window.store = store
 export default store;

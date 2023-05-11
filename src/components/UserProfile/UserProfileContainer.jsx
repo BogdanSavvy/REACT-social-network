@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import { addPost, updatePostTxt, setUserProfile } from '../../redux/profileReducer';
+import { addPost, updatePostTxt, getProfile } from '../../redux/profileReducer';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import { getProfile } from '../api/api'
 
 import UserProfile from "./UserProfile";
 
@@ -13,7 +12,7 @@ class UserProfileAJAXContainer extends React.Component {
       if (!profId) {
          profId = 28996;
       };
-      getProfile(profId).then(data => this.props.setUserProfile(data));
+      this.props.getProfile(profId);
    }
 
    render = () => {
@@ -41,7 +40,7 @@ function withRouter (Component) {
    return ComponentWithRouterProp;
 }
 
-const UserProfileContainer = connect( MSTP, {addPost, updatePostTxt, setUserProfile} )(withRouter(UserProfileAJAXContainer));
+const UserProfileContainer = connect( MSTP, {addPost, updatePostTxt, getProfile} )(withRouter(UserProfileAJAXContainer));
 
 
 export default UserProfileContainer;
