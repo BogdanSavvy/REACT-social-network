@@ -9,11 +9,13 @@ import GalleryTab from "./GalleryTab/GalleryTab";
 import VideoTab from "./VideoTab/VideoTab";
 
 
-const UserProfile = (props) => {
+const UserProfile = props => {
    return (
       <div className={`${style.body}`}>
          <div className={`${style.body__page} ${style.page}`}>
-            <MainProfile profile={props.profile} />
+            <MainProfile profile={props.profile} 
+                         status={props.status} 
+                         updateProfileStatus={props.updateProfileStatus} />
             <Routes>
                <Route path="/posts" element={<PostsTab postsData = {props.postData} 
                                                        updatePostTxt = {props.updatePostTxt} 

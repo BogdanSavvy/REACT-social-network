@@ -102,19 +102,10 @@
    &__status {
       font-size: 22px;
       line-height: 1.5;
-      color: #fafafa;
-      position: relative;
-      padding-left: 18px;
-
-      &::before {
-         content: '';
-         position: absolute;
-         top: calc(50% - 5px);
-         left: 0;
-         width: 10px;
-         height: 10px;
-         border-radius: 50%;
-         background-color: #fafafa;
+      color: $darkTh_txt;
+      input{
+         color: #000;
+         font-size: 22px;
       }
    }
 

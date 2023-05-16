@@ -5,12 +5,14 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTwitter, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
+
 import defaultUserAva from '../../../images/defaultAva/user.jpg';
 import defaultBgImg from '../../../images/defaultBg/defBg.webp';
 import Preloader from '../../common/Preloader/Preloader';
 
-const MainProfile = (props) => {
-   if(props.profile === null){
+const MainProfile = props => {
+   if (!props.profile) {
       return <Preloader />
    }
    return (
@@ -24,8 +26,7 @@ const MainProfile = (props) => {
             </div>
             <div className={`${style.info__description}`}>
                <h2 className={`${style.info__name}`}> {props.profile.fullName} </h2>
-               <p className={`${style.info__status}`}> {props.profile.aboutMe} </p>
-               <p className={`${style.info__status}`}> {props.profile.lookingForAJobDescription} </p>
+               <ProfileStatus status={props.status} updateProfileStatus={props.updateProfileStatus} />
             </div>
             <div className={`${style.info__contacts}`}>
                <div className={`${style.info__links}`}>

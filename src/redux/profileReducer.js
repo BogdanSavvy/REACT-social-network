@@ -5,6 +5,7 @@ import { profileApi } from '../api/api';
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
+const SET_STATUS = 'SET-STATUS';
 
 let initalState = {
    postsData: [
@@ -15,8 +16,9 @@ let initalState = {
       { id: 5, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '4min ago', },
       { id: 6, ava: 'https://i.pinimg.com/474x/97/bc/5a/97bc5a55c52716b393db4fd73f86b643.jpg', name: 'Pepe Frog', message: 'THIS DESIGN IS TRASH!', time: '5min ago', },
    ],
-   newPostTxt: '',
+   newPostTxt: "",
    profile: null,
+   status: ""
 };
 
 const profileReducer = (state = initalState, action) => {
@@ -43,6 +45,11 @@ const profileReducer = (state = initalState, action) => {
             ...state,
             profile: action.profile,
          };
+      case SET_STATUS : 
+         return {        //! ==> stateCopy
+            ...state,
+            status: action.status,
+         };
       default: return state;
    };
 };
@@ -51,10 +58,25 @@ const profileReducer = (state = initalState, action) => {
 export const addPost = () => ({ type: ADD_POST });
 export const updatePostTxt = txt => ({ type: UPDATE_POST_TEXT, newTxt: txt });
 export const setUserProfile = profData => ({ type: SET_USER_PROFILE, profile: profData, });
+export const setUserStatus = status => ({ type: SET_STATUS, status });
 
-export const getProfile = (profId) => (dispatch) => {
+export const getProfile = profId => (dispatch) => {
    profileApi.getProfile(profId).then(data => {
       dispatch(setUserProfile(data));
+   });
+};
+
+export const getProfileStatus = profId => (dispatch) => {
+   profileApi.getStatus(profId).then(data => {
+      dispatch(setUserStatus(data));
+   });
+};
+
+export const updateProfileStatus = status => (dispatch) => {
+   profileApi.updateStatus(status).then(data => {
+      if (data.resultCode === 0){
+         dispatch(setUserStatus(status));
+      }
    });
 };
  
