@@ -1,0 +1,30 @@
+.textarea,
+.input {
+	position: relative;
+}
+.input {
+	width: 95%;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 20px;
+	padding: 13px 50px 13px 20px;
+	background-color: transparent;
+	border: 2px solid #fff;
+	transition: all 0.4s ease;
+}
+.error {
+	border: 2px solid red;
+}
+.input {
+	&.errorMessage {
+		top: -10px;
+	}
+}
+.errorMessage {
+	position: absolute;
+	z-index: 3;
+	top: -20px;
+	font-size: 16px;
+	color: red;
+	padding: 0 50px;
+}

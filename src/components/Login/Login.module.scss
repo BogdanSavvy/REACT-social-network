@@ -1,6 +1,19 @@
-.title{
-   padding-top: 300px;
-   font-size: 75px;
-   color: #fff;
-   text-align: center;
+.title {
+	padding-top: 300px;
+	font-size: 75px;
+	color: #fff;
+	text-align: center;
+}
+form {
+	font-size: 18;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	input {
+		color: #000;
+	}
+}
+button {
+	display: inline-flex;
 }
