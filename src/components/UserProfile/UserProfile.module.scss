@@ -1,441 +1,430 @@
-@import "../../scss/null.scss";
+@import '../../scss/null.scss';
 
 .body {
-
-   &__page {
-      padding: 115px 15px 10px;
-   }
+	&__page {
+		padding: 115px 15px 10px;
+	}
 }
 
 .page {
+	&__profile {
+		border-radius: 25px;
+		overflow: hidden;
+		background-color: $darkTh_content;
+		margin-bottom: 20px;
+	}
 
-   &__profile {
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: $darkTh_content;
-      margin-bottom: 20px;
-   }
+	&__postsBox {
+		&:not(:last-child) {
+			margin-bottom: 25px;
+		}
+	}
 
-   &__postsBox {
-      &:not(:last-child) {
-         margin-bottom: 25px;
-      }
-   }
+	&__postCreator {
+		background-color: $darkTh_content;
+		border-radius: 25px;
+		padding: 25px;
+		margin-bottom: 20px;
+	}
 
-   &__postCreator {
-      background-color: $darkTh_content;
-      border-radius: 25px;
-      padding: 25px;
-      margin-bottom: 20px;
-   }
-
-   &__gallery,
-   &__video,
-   &__activity {
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: $darkTh_content;
-      margin-bottom: 20px;
-   }
-
+	&__gallery,
+	&__video,
+	&__activity {
+		border-radius: 25px;
+		overflow: hidden;
+		background-color: $darkTh_content;
+		margin-bottom: 20px;
+	}
 }
 
 //?________________________Profile-Styles_________________________________________
 .profile {
-   &__image {
-      position: relative;
+	&__image {
+		position: relative;
 
-      img {
-         width: 100%;
-         height: 350px;
-         object-fit: cover;
-      }
-   }
+		img {
+			width: 100%;
+			height: 350px;
+			object-fit: cover;
+		}
+	}
 
-   &__info {
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
-   }
+	&__info {
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+	}
 
-   &__tabs {
-      border-top: 1px solid #ffffff;
-   }
+	&__tabs {
+		border-top: 1px solid #ffffff;
+	}
 }
 
 .info {
-   &__avatar {
-      transform: translate(0, -40%);
-      padding-left: 100px;
-      img {
-         width: 250px;
-         height: 250px;
-      }
-   }
+	&__avatar {
+		transform: translate(0, -40%);
+		padding-left: 100px;
+		img {
+			width: 250px;
+			height: 250px;
+		}
+	}
 
-   &__description {
-      padding-top: 15px;
-      flex: 0 1 70%;
-   }
+	&__description {
+		padding-top: 15px;
+		flex: 0 1 70%;
+	}
 
-   &__name {
-      font-size: 30px;
-      line-height: 1.5;
-      color: azure;
-      position: relative;
+	&__name {
+		font-size: 30px;
+		line-height: 1.5;
+		color: azure;
+		position: relative;
 
-      &:not(:last-child) {
-         margin-bottom: 15px;
-      }
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
 
-      &::after {
-         content: '';
-         position: absolute;
-         bottom: -20%;
-         left: 0;
-         width: 100px;
-         height: 2px;
-         background-color: #ffff;
-      }
-   }
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -20%;
+			left: 0;
+			width: 100px;
+			height: 2px;
+			background-color: #ffff;
+		}
+	}
 
-   &__status {
-      font-size: 22px;
-      line-height: 1.5;
-      color: $darkTh_txt;
-      input{
-         color: #000;
-         font-size: 22px;
-      }
-   }
+	&__status {
+		font-size: 22px;
+		line-height: 1.5;
+		color: $darkTh_txt;
+		input {
+			color: #000;
+			font-size: 22px;
+		}
+	}
 
-   &__contacts{
-      padding: 15px;
-   }
-   &__links{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-   }
-   &__link{
-      justify-content: space-around;
-      color: $darkTh_txt;
-      transition: all 0.3s ease;
-         font-size: 20px;
-         &:hover{
-            color: $Dlink_hover;
-            transition: all 0.3s ease;
-         }
-   }
-   &__linkNull{
-      display: none;
-   }
-
+	&__contacts {
+		padding: 15px;
+	}
+	&__links {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+	}
+	&__link {
+		justify-content: space-around;
+		color: $darkTh_txt;
+		transition: all 0.3s ease;
+		font-size: 20px;
+		&:hover {
+			color: $Dlink_hover;
+			transition: all 0.3s ease;
+		}
+	}
+	&__linkNull {
+		display: none;
+	}
 }
 
 .tabs {
+	&__list {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 50px;
+		padding: 0 30px;
+		min-height: 50px;
+	}
 
-   &__list {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      padding: 0 30px;
-      min-height: 50px;
-   }
+	&__link {
+		a {
+			color: #ffff;
+			font-size: 18px;
+			line-height: 1.4;
+			letter-spacing: 0.3px;
+			transition: 0.3s ease;
 
-   &__link {
-      a {
-         color: #ffff;
-         font-size: 18px;
-         line-height: 1.4;
-         letter-spacing: 0.3px;
-         transition: 0.3s ease;
-
-         &:hover {
-            transition: 0.3s ease;
-            color: $Dlink_hover;
-         }
-      }
-   }
-
+			&:hover {
+				transition: 0.3s ease;
+				color: $Dlink_hover;
+			}
+		}
+	}
 }
 
 //?________________________________________________________________________________
 
 //*________________________Posts-Styles________________________________________
 .postsBox {
-
-   &__post {
-      width: 100%;
-      min-height: 200px;
-      background-color: $darkTh_content;
-      border-radius: 25px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-   }
+	&__post {
+		width: 100%;
+		min-height: 200px;
+		background-color: $darkTh_content;
+		border-radius: 25px;
+		padding: 25px;
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .postCreator {
+	&__form {
+		position: relative;
 
-   &__form {
-      position: relative;
+		textarea {
+			padding: 20px 15px;
+			width: 100%;
+			min-height: 150px;
+			border-radius: 25px;
+			resize: none;
+		}
 
-      textarea {
-         padding: 20px 15px;
-         width: 100%;
-         min-height: 150px;
-         border-radius: 25px;
-         resize: none;
-      }
-
-      button {
-         font-size: 16px;
-         color: #fff;
-         position: absolute;
-         bottom: 10px;
-         right: 10px;
-         border-radius: 50%;
-         padding: 10px 12px;
-         background-color: $darkTh_content;
-         transition: 0.4s ease;
-         &:hover {
-            transition: 0.4s ease;
-            color: $Dlink_hover;
-            transform: rotate(360deg);
-         }
-      }
-   }
+		button {
+			font-size: 16px;
+			color: #fff;
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			border-radius: 50%;
+			padding: 10px 12px;
+			background-color: $darkTh_content;
+			transition: 0.4s ease;
+			&:hover {
+				transition: 0.4s ease;
+				color: $Dlink_hover;
+				transform: rotate(360deg);
+			}
+		}
+	}
 }
 
 .post {
+	&__top {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 25px;
+		padding-bottom: 20px;
 
-   &__top {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 25px;
-      padding-bottom: 20px;
+		img {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
 
-      img {
-         width: 60px;
-         height: 60px;
-         border-radius: 50%;
-         object-fit: cover;
-      }
-   }
+	&__body {
+		flex: 1 1 auto;
+		font-size: 17px;
+		color: $darkTh_txt;
+	}
 
-   &__body {
-      flex: 1 1 auto;
-      font-size: 17px;
-      color: $darkTh_txt;
-   }
+	&__action {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		justify-content: flex-end;
+		button {
+			padding: 7px;
+			border-radius: 5px;
+			background-color: transparent;
+			font-size: 19px;
+			color: $darkTh_txt;
+		}
+	}
+	&__like {
+		transition: 0.3s ease;
+		&:hover {
+			transition: 0.3s ease;
+			color: #e62214;
+		}
+	}
+	&__comment,
+	&__repost,
+	&__share {
+		transition: 0.3s ease;
+		&:hover {
+			transition: 0.3s ease;
+			color: $Dlink_hover;
+		}
+	}
 
-   &__action {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      justify-content: flex-end;
-      button {
-         padding: 7px;
-         border-radius: 5px;
-         background-color: transparent;
-         font-size: 19px;
-         color: $darkTh_txt;
-      }
-   }
-   &__like{
-      transition: 0.3s ease;
-      &:hover{
-         transition: 0.3s ease;
-         color: #e62214;
-      }
-   }
-   &__comment,&__repost,&__share{
-      transition: 0.3s ease;
-      &:hover{
-         transition: 0.3s ease;
-         color: $Dlink_hover;
-      }
-   }
+	&__name {
+		span {
+			font-size: 16px;
+			color: $darkTh_txt;
+		}
 
-   &__name {
-      span {
-         font-size: 16px;
-         color: $darkTh_txt;
-      }
-
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.5;
-      color: $Dlink_active;
-   }
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1.5;
+		color: $Dlink_active;
+	}
 }
 
 //*____________________________________________________________________________
 
-
 //!________________________Gallery-Styles________________________________________
 .gallery {
-   &__container {
-      display: flex;
-      flex-direction: row;
-      gap: 35px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 15px;
-   }
+	&__container {
+		display: flex;
+		flex-direction: row;
+		gap: 35px;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		padding: 30px 15px;
+	}
 
-   &__title {
-      font-size: 30px;
-      color: #fafafa;
-      font-weight: 600;
-      line-height: 140%;
-      margin-bottom: 25px;
-   }
+	&__title {
+		font-size: 30px;
+		color: #fafafa;
+		font-weight: 600;
+		line-height: 140%;
+		margin-bottom: 25px;
+	}
 
-   &__photosBox {
-      flex: 0 0 20%;
-      padding: 10px;
-      background-color: #ffffff75;
-   }
+	&__photosBox {
+		flex: 0 0 20%;
+		padding: 10px;
+		background-color: #ffffff75;
+	}
 
-   &__item {
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      row-gap: 10px;
+	&__item {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
 
-      img {
-         border-radius: 10px;
-         overflow: hidden;
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
+		img {
+			border-radius: 10px;
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 
-      }
-   }
+	&__subtitle {
+		font-size: 18px;
+		line-height: 145%;
+		font-weight: 500;
+	}
 
-   &__subtitle {
-      font-size: 18px;
-      line-height: 145%;
-      font-weight: 500;
-   }
+	&__description {
+		font-size: 16px;
+		line-height: 145%;
+		max-width: 200px;
+		word-wrap: break-word;
+	}
 
-   &__description {
-      font-size: 16px;
-      line-height: 145%;
-      max-width: 200px;
-      word-wrap: break-word;
-   }
+	&__addPhoto {
+		flex: 0 1 20%;
+		font-size: 35px;
+		line-height: 150%;
+		color: #504f4f;
+		text-align: center;
+		padding: 130px 15px;
+		background-color: #ffffff75;
+		border-radius: 15px;
+		transition: all 0.4s ease;
 
-   &__addPhoto {
-      flex: 0 1 20%;
-      font-size: 35px;
-      line-height: 150%;
-      color: #504f4f;
-      text-align: center;
-      padding: 130px 15px;
-      background-color: #ffffff75;
-      border-radius: 15px;
-      transition: all 0.4s ease;
+		&:hover {
+			transition: all 0.4s ease;
+			transform: scale(1.05);
+			background-color: #ffffffa2;
+		}
+	}
 
-      &:hover {
-         transition: all 0.4s ease;
-         transform: scale(1.05);
-         background-color: #ffffffa2;
-      }
-   }
-
-   &__icon {
-      font-size: 45px;
-   }
+	&__icon {
+		font-size: 45px;
+	}
 }
 
 //!______________________________________________________________________________
 
-
 //________________________Video-Styles__________________________________________
 .video {
-   &__container {
-      display: flex;
-      flex-direction: row;
-      gap: 35px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 15px;
-   }
+	&__container {
+		display: flex;
+		flex-direction: row;
+		gap: 35px;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		padding: 30px 15px;
+	}
 
-   &__title {
-      font-size: 30px;
-      color: #fafafa;
-      font-weight: 600;
-      line-height: 140%;
-      margin-bottom: 25px;
-   }
+	&__title {
+		font-size: 30px;
+		color: #fafafa;
+		font-weight: 600;
+		line-height: 140%;
+		margin-bottom: 25px;
+	}
 
-   &__videoBox {
-      flex: 0 0 30.3333%;
-      padding: 10px;
-      background-color: #ffffff75;
-   }
+	&__videoBox {
+		flex: 0 0 30.3333%;
+		padding: 10px;
+		background-color: #ffffff75;
+	}
 
-   &__item {
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      row-gap: 10px;
-   }
+	&__item {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+	}
 
-   &__subtitle {
-      font-size: 20px;
-      line-height: 145%;
-      font-weight: 500;
-   }
+	&__subtitle {
+		font-size: 20px;
+		line-height: 145%;
+		font-weight: 500;
+	}
 
-   &__description {
-      font-size: 16px;
-      line-height: 145%;
-   }
+	&__description {
+		font-size: 16px;
+		line-height: 145%;
+	}
 
-   &__addVideo {
-      flex: 0 1 30.333%;
-      font-size: 35px;
-      line-height: 150%;
-      color: #504f4f;
-      text-align: center;
-      padding: 110px 15px;
-      background-color: #ffffff75;
-      border-radius: 15px;
-      transition: all 0.4s ease;
+	&__addVideo {
+		flex: 0 1 30.333%;
+		font-size: 35px;
+		line-height: 150%;
+		color: #504f4f;
+		text-align: center;
+		padding: 110px 15px;
+		background-color: #ffffff75;
+		border-radius: 15px;
+		transition: all 0.4s ease;
 
-      &:hover {
-         transition: all 0.4s ease;
-         transform: scale(1.05);
-         background-color: #ffffffa2;
-      }
-   }
+		&:hover {
+			transition: all 0.4s ease;
+			transform: scale(1.05);
+			background-color: #ffffffa2;
+		}
+	}
 
-   &__icon {
-      font-size: 45px;
-   }
+	&__icon {
+		font-size: 45px;
+	}
 }
 
 //______________________________________________________________________________
 
-
 //todo______________________________Activity-Styles__________________________________
 .activity {
-   font-size: 45px;
-   color: $darkTh_txt;
-   text-align: center;
-   padding: 20px;
+	font-size: 45px;
+	color: $darkTh_txt;
+	text-align: center;
+	padding: 20px;
 }
 
 //todo_______________________________________________________________________________

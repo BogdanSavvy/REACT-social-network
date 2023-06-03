@@ -1,138 +1,132 @@
-@import "../../scss/null.scss";
+@import '../../scss/null.scss';
 .header {
-   width: 100%;
-   position: fixed;
-   top: 0;
-   left: 0;
-   background-color: $darkTh_content;
-   z-index: 100000;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $darkTh_content;
+	z-index: 100000;
 
-   &__container {
-      height: 100px;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      padding: 0 50px;
-      column-gap: 40px;
-   }
+	&__container {
+		height: 100px;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		padding: 0 50px;
+		column-gap: 40px;
+	}
 
-   &__logo {
-      font-size: 45px;
-      font-weight: 600;
-      line-height: 1.5;
-      letter-spacing: 1px;
+	&__logo {
+		font-size: 45px;
+		font-weight: 600;
+		line-height: 1.5;
+		letter-spacing: 1px;
+		a {
+			color: #fff;
+		}
+		span {
+			font-weight: 700;
+			color: $Dlink_active;
+		}
+	}
 
-      a {
-         color: #fff;
-      }
+	&__search {
+		display: flex;
+		flex: 1 1 auto;
+	}
 
-      span {
-         font-weight: 700;
-         color: $Dlink_active;
-      }
-   }
+	&__notification {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+	}
 
-   &__search {
-      display: flex;
-      flex: 1 1 auto;
-   }
-
-   &__notification {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-   }
-
-   &__miniProfile {
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
-      align-items: center;
-   }
-
+	&__miniProfile {
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+		align-items: center;
+	}
 }
 
 .search {
+	&__icon {
+		font-size: 25px;
+		color: $darkTh_txt;
+		transition: all 0.3s ease;
+		&:hover {
+			transition: all 0.3s ease;
+			color: $Dlink_hover;
+		}
+	}
 
-   &__icon {
-      font-size: 25px;
-      color: $darkTh_txt;
-      transition: all 0.3s ease;
-      &:hover{
-         transition: all 0.3s ease;
-         color: $Dlink_hover;
-      }
-   }
-
-   &__input {
-      margin-left: 15px;
-      background-color: transparent;
-      font-size: 16px;
-      line-height: 1.5;
-      width: 80%;
-      transition: all 0.4s ease-in-out;
-      color: $darkTh_txt;
-      &:focus {
-         color: $darkTh_txt;
-         border-bottom: 1px solid #ffffffaf;
-         transition: all 0.4s ease-in-out 0s;
-      }
-   }
+	&__input {
+		margin-left: 15px;
+		background-color: transparent;
+		font-size: 16px;
+		line-height: 1.5;
+		width: 80%;
+		transition: all 0.4s ease-in-out;
+		color: $darkTh_txt;
+		&:focus {
+			color: $darkTh_txt;
+			border-bottom: 1px solid #ffffffaf;
+			transition: all 0.4s ease-in-out 0s;
+		}
+	}
 }
 
 .notification {
-   a {
-      color: $darkTh_txt;
-   }
+	a {
+		color: $darkTh_txt;
+	}
 
-   &__messeges,
-   &__bell {
-      transition: all 0.2s ease;
+	&__messeges,
+	&__bell {
+		transition: all 0.2s ease;
+		&:hover {
+			transition: all 0.2s ease;
+			color: $Dlink_hover;
+		}
+	}
 
-      &:hover {
-         transition: all 0.2s ease;
-         color: $Dlink_hover;
-      }
-   }
+	&__messeges {
+		width: 35px;
+		height: 35px;
+	}
 
-   &__messeges {
-      width: 35px;
-      height: 35px;
-   }
+	&__bell {
+		width: 35px;
+		height: 35px;
+	}
 
-   &__bell {
-      width: 35px;
-      height: 35px;
-   }
-
-   &__icon {
-      font-size: 30px;
-      background-color: transparent;
-      cursor: pointer;
-   }
+	&__icon {
+		font-size: 30px;
+		background-color: transparent;
+		cursor: pointer;
+	}
 }
 
 .miniProfile {
-   z-index: 2;
-   &__avatar {
-      img {
-         width: 50px;
-         height: 50px;
-         border-radius: 50%;
-      }
-   }
+	z-index: 2;
+	&__avatar {
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+	}
 
-   &__text { 
-      a {
-         color: $darkTh_txt;
-         transition: all 0.3s ease;
-         &:hover {
-            text-decoration: underline;
-            color: $Dlink_hover;
-            transition: all 0.3s ease;
-         }
-      }
-
-      font-size: 16px;
-   }
+	&__text {
+		a {
+			color: $darkTh_txt;
+			transition: all 0.3s ease;
+			&:hover {
+				text-decoration: underline;
+				color: $Dlink_hover;
+				transition: all 0.3s ease;
+			}
+		}
+		font-size: 16px;
+	}
 }

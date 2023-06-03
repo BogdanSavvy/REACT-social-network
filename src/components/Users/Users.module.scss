@@ -1,139 +1,143 @@
-@import "../../scss/null.scss";
+@import '../../scss/null.scss';
 
-.page{
-   &__container{
-      padding-top: 110px;
-      padding-bottom: 20px;
-      max-width: 1440px;
-      margin: 0 auto;
-   }
-   &__title{
-      font-size: 45px;
-      letter-spacing: 0.2px;
-      line-height: 145%;
-      color: $darkTh_txt;
-      margin: 0 110px;
-      &:not(:last-child){
-         margin-bottom: 15px;
-      }
-   }
-   &__users{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      row-gap: 20px;
-      column-gap: 25px;
-      justify-content: center;
-      margin-bottom: 25px;
-   }
-   &__pages{
-      font-size: 20px;
-      color: $darkTh_txt;
-      text-align: center;
-      line-height: 130%;
-      span{
-         cursor: pointer;
-         transition: color 0.2s ease-in-out;
-         &:not(:last-child){
-            margin-right: 10px;
-         }
-         &:hover{
-            color: $Dlink_hover;
-            transition: color 0.2s ease-in-out;
-         }
-      }
-   }
+.page {
+	&__container {
+		padding-top: 110px;
+		padding-bottom: 20px;
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+	&__title {
+		font-size: 45px;
+		letter-spacing: 0.2px;
+		line-height: 145%;
+		color: $darkTh_txt;
+		margin: 0 110px;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+	&__users {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		row-gap: 20px;
+		column-gap: 25px;
+		justify-content: center;
+		margin-bottom: 25px;
+	}
+	&__pages {
+		font-size: 20px;
+		color: $darkTh_txt;
+		text-align: center;
+		line-height: 130%;
+		span {
+			cursor: pointer;
+			transition: color 0.2s ease-in-out;
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+			&:hover {
+				color: $Dlink_hover;
+				transition: color 0.2s ease-in-out;
+			}
+		}
+	}
 }
 
-.users{
-   &__member{
-      flex: 0 1 20%;
-      border-radius: 20px;
-      overflow: hidden;
-      background-color: $darkTh_content;
-   }
+.users {
+	&__member {
+		flex: 0 1 20%;
+		border-radius: 20px;
+		overflow: hidden;
+		background-color: $darkTh_content;
+	}
 }
 
-.member{
-   display: flex;
-   flex-direction: column;
-   &__img{
-      position: relative;
-      padding: 0 0 50% 0;
-      img{
-         width: 100%;
-         height: 100%;
-         position: absolute;
-         top: 0;
-         left: 0;
-         object-fit: cover;
-      }
-   }
-   &__ava{
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      transform: translate(0,-50%);
-      img{
-         border: 2px solid $darkTh_txt;
-         width: 150px;
-         height: 150px;
-         border-radius: 50%;
-         object-fit: cover;
-      }
-   }
-   &__text{
-      flex: 1 1 auto;
-   }
-   &__userName{
-      font-size: 22px;
-      color: $darkTh_txt;
-      text-align: center;
-      line-height: 130%;
-      &:not(:last-child){
-         margin-top: -25px;
-         margin-bottom: 15px;
-      }
-   }
-   &__status{
-      font-size: 14px;
-      line-height: 130%;
-      color: $darkTh_txt;
-      text-align: center;
-      margin-bottom: 10px;
-   }
-   &__actions{
-      display: flex;
-   }
-   &__unFollow,&__follow,&__message{
-      flex: 0 1 80%;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 15px 10px;
-      width: 100%;
-      line-height: 130%;
-      color: $darkTh_txt;
-      transition: all 0.4s ease;
-      &:hover{
-         transition: all 0.4s ease;
-         filter: contrast(1.7)
-      }
-   }
-   &__unFollow{
-      background-color: $Llink_active;
-   }
-   &__follow{
-      background-color: $Dlink_hover;
-   }
-   &__message{
-      flex: 0 1 20%;
-      font-size: 20px;
-      background-color: #17acf1;
-   }
+.member {
+	display: flex;
+	flex-direction: column;
+	&__img {
+		position: relative;
+		padding: 0 0 50% 0;
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+	&__ava {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		transform: translate(0, -50%);
+		img {
+			border: 2px solid $darkTh_txt;
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+	&__text {
+		flex: 1 1 auto;
+	}
+	&__userName {
+		font-size: 22px;
+		color: $darkTh_txt;
+		text-align: center;
+		line-height: 130%;
+		&:not(:last-child) {
+			margin-top: -25px;
+			margin-bottom: 15px;
+		}
+	}
+	&__status {
+		font-size: 14px;
+		line-height: 130%;
+		color: $darkTh_txt;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	&__actions {
+		display: flex;
+	}
+	&__unFollow,
+	&__follow,
+	&__message {
+		justify-content: center;
+		gap: 5px;
+		flex: 0 1 80%;
+		font-size: 16px;
+		font-weight: 600;
+		padding: 15px 10px;
+		width: 100%;
+		line-height: 130%;
+		color: $darkTh_txt;
+		transition: all 0.4s ease;
+		&:hover {
+			transition: all 0.4s ease;
+			filter: contrast(1.7);
+		}
+	}
+	&__unFollow {
+		background-color: $Llink_active;
+	}
+	&__follow {
+		background-color: $Dlink_hover;
+	}
+	&__message {
+		flex: 0 1 20%;
+		font-size: 20px;
+		background-color: #17acf1;
+	}
 }
 
-.pages{
-   &__selected{
-      color: $Dlink_active;
-   }
+.pages {
+	&__selected {
+		color: $Dlink_active;
+	}
 }

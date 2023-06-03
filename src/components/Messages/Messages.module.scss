@@ -1,191 +1,212 @@
-@import "../../scss/null.scss";
-.page{
-   &__container{
-      padding-top: 100px;
-      margin: 0 -160px 0 -70px;
-      display: flex;
-      flex-direction: row;
-   }
+@import '../../scss/null.scss';
+.page {
+	&__container {
+		padding-top: 100px;
+		margin: 0 -160px 0 -70px;
+		display: flex;
+		flex-direction: row;
+	}
 
-   &__dialogsList{
-      flex: 0 0 25%;
-      display: flex;
-      flex-direction: column;
-      max-height: 868.5px;
-      overflow-y: scroll;
-      background-color: $darkTh_bg;
-      border-right: 1px solid #ffffff4f;
-      //!--------------"Scroll_Style"---------------
-      &::-webkit-scrollbar{
-         background-color: transparent;
-         width: 5px;
-         position: absolute;
-         top: 0;
-         right: 0;
-      }
-      &::-webkit-scrollbar-thumb{
-         background-color: #ffffff;
-         border-radius: 5px;
-      }
-   }
+	&__dialogsList {
+		flex: 0 0 25%;
+		display: flex;
+		flex-direction: column;
+		max-height: 868.5px;
+		overflow-y: scroll;
+		background-color: $darkTh_bg;
+		border-right: 1px solid #ffffff4f;
+		//!--------------"Scroll_Style"---------------
+		&::-webkit-scrollbar {
+			background-color: transparent;
+			width: 5px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #ffffff;
+			border-radius: 5px;
+		}
+	}
 
-   &__dialogWindow{
-      flex: 0 1 75%;
-      display: flex;
-      flex-direction: column;
-   }
+	&__dialogWindow {
+		flex: 0 1 75%;
+		display: flex;
+		flex-direction: column;
+	}
 }
 
-.dialogsList{
-   
-   a{ 
-      color: $darkTh_txt;
-      transition: all 0.3s ease;
-      &:hover{
-         transition: all 0.3s ease;
-         background-color: $darkTh_nav;
-      }
-   }
-   &__branch{
-      line-height: 1.5;
-      padding: 10px;
-      border-bottom: 1px solid #ffffff4f;
-   }
-   &__branchWho{
-      display: flex;
-      flex-direction: row;
-      column-gap: 10px;
-      align-items: center;
-      &:not(:last-child){margin-bottom: 15px;}
-   }
-   &__userAvatar{
-      img{
-         width: 50px;
-         height: 50px;
-         border-radius: 50%;
-         object-fit: cover;
-      }
-   }
-   &__userName{
-      font-size: 16px;
-      a{color: $darkTh_txt;}
-   }
-   &__lastMessage{
-      font-size: 14px;
-      color: $darkTh_txt;
-      span{color: $Dlink_active; font-weight: 600;}
-   }
-   &__lastVisit{
-      font-size: 12px;
-      font-weight: 500;
-      position: relative;
-      &::after{
-         content: '';
-         position: absolute;
-         top: calc(50% - 3px);
-         right: -10px;
-         width: 6px;
-         height: 6px;
-         border-radius: 50%;
-      }
-   }
+.dialogsList {
+	a {
+		color: $darkTh_txt;
+		transition: all 0.3s ease;
+		&:hover {
+			transition: all 0.3s ease;
+			background-color: $darkTh_nav;
+		}
+	}
+	&__branch {
+		line-height: 1.5;
+		padding: 10px;
+		border-bottom: 1px solid #ffffff4f;
+	}
+	&__branchWho {
+		display: flex;
+		flex-direction: row;
+		column-gap: 10px;
+		align-items: center;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+	&__userAvatar {
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
+	&__userName {
+		font-size: 16px;
+		a {
+			color: $darkTh_txt;
+		}
+	}
+	&__lastMessage {
+		font-size: 14px;
+		color: $darkTh_txt;
+		span {
+			color: $Dlink_active;
+			font-weight: 600;
+		}
+	}
+	&__lastVisit {
+		font-size: 12px;
+		font-weight: 500;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: calc(50% - 3px);
+			right: -10px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+		}
+	}
 }
 
 //? classes to "dialogsList__lastVisit"
-.online{ color: #8add0d; &::after{background-color: #8add0d;}}
-.offline{ color: #e62214; &::after{background-color: #e62214;}}
+.online {
+	color: #8add0d;
+	&::after {
+		background-color: #8add0d;
+	}
+}
+.offline {
+	color: #e62214;
+	&::after {
+		background-color: #e62214;
+	}
+}
 //?__________________________________________
 
-.dialogWindow{
-   &__messages{
-      width: 100%;
-      background-color: $darkTh_bg;
-      flex: 1 1 689.5px;
-      padding: 15px;
-      overflow-y: scroll;
-      display: flex;
-      flex-direction: column;
-      //!--------------"Scroll_Style"---------------
-      &::-webkit-scrollbar{
-         background-color: transparent;
-         width: 5px;
-         position: absolute;
-         top: 0;
-         right: 0;
-      }
-      &::-webkit-scrollbar-thumb{
-         background-color: #ffffff;
-         border-radius: 5px;
-      }
-   }
-   &__form{
-      padding: 15px;
-      background-color: $darkTh_bg;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      column-gap: 20px;
-   }
-   &__sent{
-      font-size: 16px;
-      line-height: 1.5;
-      display: inline-block;
-      &:not(:last-child){
-         margin-bottom: 10px;
-      }
-      p{
-         padding: 15px 20px;
-         color: #fff;
-         max-width: 500px;
-      }
-   }
+.dialogWindow {
+	&__messages {
+		width: 100%;
+		background-color: $darkTh_bg;
+		flex: 1 1 689.5px;
+		padding: 15px;
+		overflow-y: scroll;
+		display: flex;
+		flex-direction: column;
+		//!--------------"Scroll_Style"---------------
+		&::-webkit-scrollbar {
+			background-color: transparent;
+			width: 5px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #ffffff;
+			border-radius: 5px;
+		}
+	}
+	&__form {
+		width: 100%;
+		padding: 15px;
+		background-color: $darkTh_bg;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 20px;
+		div {
+			width: 100%;
+		}
+	}
+	&__sent {
+		font-size: 16px;
+		line-height: 1.5;
+		display: inline-block;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		p {
+			padding: 15px 20px;
+			color: #fff;
+			max-width: 500px;
+		}
+	}
 
-//?_________classes to "dialogWindow__sent"_____________________
-.user{
-   display: inline-flex;
-   p{
-      background-color: rgb(140, 42, 206);
-      border-radius: 20px 20px 20px 0px;
-   }
-}
-.me{ 
-   display: flex;
-   justify-content: flex-end;
-   p{
-      background-color: rgb(223, 59, 209);
-      border-radius: 20px 20px 0px 20px;
-   }
-}
-//?____________________________________________________________________
+	//?_________classes to "dialogWindow__sent"_____________________
+	.user {
+		display: inline-flex;
+		p {
+			background-color: rgb(140, 42, 206);
+			border-radius: 20px 20px 20px 0px;
+		}
+	}
+	.me {
+		display: flex;
+		justify-content: flex-end;
+		p {
+			background-color: rgb(223, 59, 209);
+			border-radius: 20px 20px 0px 20px;
+		}
+	}
+	//?____________________________________________________________________
 
-   &__input{
-      position: relative;
-      input{ 
-         width: 95%;
-         font-size: 16px;
-         color: #fff;
-         border-radius: 20px;
-         padding: 13px 50px 13px 20px;
-         background-color: transparent;
-         border: 2px solid #fff;
-         transition: all 0.4s ease;
-         &:focus{
-            border: 2px solid #ce2a7c;
-            transition: all 0.4s ease;
-         }
-      }
-      button{
-         font-size: 16px;
-         color: #ffffff;
-         text-align: center;
-         padding: 14px 16px;
-         background-color: #ce2a7c;
-         border-radius: 40%;
-         transition: all 0.3s ease-in-out;
-         &:hover{
-            filter: brightness(1.2);
-            transition: all 0.3s ease-in-out;
-         }
-      }
-   }
+	&__input {
+		position: relative;
+		input {
+			font-size: 16px;
+			color: #fff;
+			border-radius: 20px;
+			padding: 13px 50px 13px 20px;
+			background-color: transparent;
+			border: 2px solid #fff;
+			transition: all 0.4s ease;
+			&:focus {
+				border: 2px solid #ce2a7c;
+				transition: all 0.4s ease;
+			}
+		}
+		button {
+			position: absolute;
+			right: 15px;
+			font-size: 16px;
+			color: $darkTh_txt;
+			text-align: center;
+			padding: 18px;
+			background-color: #ce2a7c;
+			border-radius: 40%;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				filter: brightness(1.2);
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
 }

@@ -1,15 +1,17 @@
-.page{
-   &__container{
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   }
-   &__title{
-      font-size: 80px;
-      color: #ffff;
-      font-weight: 700;
-   }
-   &__category{}
-   &__container{}
+.page {
+	&__container {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__title {
+		font-size: 80px;
+		color: #ffff;
+		font-weight: 700;
+	}
+	&__category {
+	}
+	&__container {
+	}
 }

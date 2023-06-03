@@ -1,94 +1,99 @@
-@import "../../scss/null.scss";
-.nav{
-   position: fixed;
-   top: 0;
-   left: 0;
-   display: flex;
-   flex-direction: column;
-   height: 100%;
-   background-color: $darkTh_nav;
-   padding-top: 100px;
-   z-index: 2;
-   width: 90px;
-   transition: width 0.3s ease-out 0s;
-   overflow: hidden;
-   &_open{
-      width:300px;
-      button{
-         transform: scaleX(-1);
-         transition: all 0.4s ease ;
-      }
-   }
+@import '../../scss/null.scss';
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: $darkTh_nav;
+	padding-top: 100px;
+	z-index: 2;
+	width: 90px;
+	transition: width 0.3s ease-out 0s;
+	overflow: hidden;
+	&_open {
+		width: 300px;
+		button {
+			transform: scaleX(-1);
+			transition: all 0.4s ease;
+		}
+	}
 
-   &__menuList{
-      padding: 30px 20px;
-      flex: 1 1 auto;
-      a{color: #fff;}
-   }
+	&__menuList {
+		padding: 30px 20px;
+		flex: 1 1 auto;
+		a {
+			color: #fff;
+		}
+	}
 
-   &__menuItem{
-      font-size: 22px;
-      line-height: 1.5;
-      transition: all 0.4s ease 0s;
-      display: flex;
-      align-items: center;
-      flex-direction: row; 
-      column-gap: 25px;
-      &:not(:last-child){
-         margin-bottom: 20px;
-      }
-   }
-   &__iconBox{
-      width: 45px;
-      height: 45px;
-      padding: 15px;
-      border-radius: 10px;
-      background-color: #ffffff81;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      &:hover{
-         color: $Dlink_hover;
-         transition: all 0.3s ease;
-      }
-   }
+	&__menuItem {
+		font-size: 22px;
+		line-height: 1.5;
+		transition: all 0.4s ease 0s;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		column-gap: 25px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+	&__iconBox {
+		width: 45px;
+		height: 45px;
+		padding: 15px;
+		border-radius: 10px;
+		background-color: #ffffff81;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		&:hover {
+			color: $Dlink_hover;
+			transition: all 0.3s ease;
+		}
+	}
 
-   &__icon{
-      font-size: 25px;
-   }
+	&__icon {
+		font-size: 25px;
+	}
 
-   &__link{
-      transition: all 0.3s ease 0.1s;
-      &:hover{
-         color: $Dlink_hover;
-         transition: all 0.3s ease;
-         padding-left: 15px;
-      }
-   }
+	&__link {
+		transition: all 0.3s ease 0.1s;
+		&:hover {
+			color: $Dlink_hover;
+			transition: all 0.3s ease;
+			padding-left: 15px;
+		}
+	}
 
-   &__button{
-      display: inline-flex;
-      justify-content: flex-end;
-      align-content: center;
-      padding: 10px;
-
-      button{
-         color: $darkTh_content;
-         font-size: 16px;
-         border-radius: 50%;
-         width: 35px;
-         height: 35px;
-         opacity: 0.9;
-         transition: all 0.4s ease ;
-         &:hover{
-            color: $Dlink_hover;
-            transition: all 0.4s ease;
-            font-size: 18px;
-         }
-      }
-   }
+	&__button {
+		display: inline-flex;
+		justify-content: flex-end;
+		padding: 10px;
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $darkTh_content;
+			font-size: 16px;
+			border-radius: 50%;
+			width: 35px;
+			height: 35px;
+			opacity: 0.9;
+			transition: all 0.4s ease;
+			&:hover {
+				color: $Dlink_hover;
+				transition: all 0.4s ease;
+				font-size: 18px;
+			}
+		}
+	}
 }
-.active{
-   a{color: $Dlink_active;}
+.active {
+	a {
+		color: $Dlink_active;
+	}
 }
