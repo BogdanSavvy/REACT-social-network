@@ -1,35 +1,46 @@
 import { Field, Form } from 'react-final-form';
 import style from './Login.module.scss';
+import { Input } from '../common/FormControls/FormControls';
+import {
+	composeValidators,
+	ultimateMinLength,
+	required,
+} from '../../Validators/validators';
 
 let onSubmit = formData => {
 	console.log(formData);
 };
 
 const LoginForm = props => {
+	const minLengthToPass6 = ultimateMinLength(6);
+
 	return (
 		<Form onSubmit={onSubmit}>
 			{props => (
 				<form onSubmit={props.handleSubmit}>
 					<div>
-						<p>email</p>
+						<label>email</label>
 						<Field
 							name="login"
-							component={'input'}
+							type="email"
+							component={Input}
+							validate={required}
 						/>
 					</div>
 					<div>
-						<p>password</p>
+						<label>password</label>
 						<Field
 							name="password"
-							component={'input'}
+							component={Input}
+							validate={composeValidators(required, minLengthToPass6)}
 						/>
 					</div>
 					<div>
-						<p>rememberMe</p>
+						<label>rememberMe</label>
 						<Field
 							type="checkbox"
 							name="rememberMe"
-							component={'input'}
+							component={Input}
 						/>
 					</div>
 					<button>Login</button>

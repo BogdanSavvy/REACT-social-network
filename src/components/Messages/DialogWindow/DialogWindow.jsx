@@ -40,6 +40,7 @@ const DialogWindow = props => {
 							onSubmit={props.handleSubmit}
 						>
 							<Field
+								placeholder="Type your message..."
 								name="messageField"
 								component={Input}
 								validate={composeValidators(required, maxLengthIs200)}

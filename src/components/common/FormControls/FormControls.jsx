@@ -9,7 +9,6 @@ export const Textarea = ({ input, meta, ...props }) => {
 				{...input}
 				{...props}
 				className={`${style.textarea} ${hasError ? `${style.error}` : ''}`}
-				placeholder="Start typing to create new post..."
 			/>
 		</div>
 	);
@@ -24,7 +23,6 @@ export const Input = ({ input, meta, ...props }) => {
 				{...input}
 				{...props}
 				className={`${style.input} ${hasError ? `${style.error}` : ''}`}
-				placeholder="Type your message..."
 			/>
 		</div>
 	);
