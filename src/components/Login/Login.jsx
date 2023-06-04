@@ -1,62 +1,59 @@
-import { Field, Form } from 'react-final-form';
 import style from './Login.module.scss';
+import { connect } from 'react-redux';
+import { login } from '../../redux/authReducer';
+import { Field, Form } from 'react-final-form';
 import { Input } from '../common/FormControls/FormControls';
 import {
 	composeValidators,
 	ultimateMinLength,
 	required,
 } from '../../Validators/validators';
+import { Navigate } from 'react-router-dom';
 
-let onSubmit = formData => {
-	console.log(formData);
-};
-
-const LoginForm = props => {
-	const minLengthToPass6 = ultimateMinLength(6);
-
-	return (
-		<Form onSubmit={onSubmit}>
-			{props => (
-				<form onSubmit={props.handleSubmit}>
-					<div>
-						<label>email</label>
-						<Field
-							name="login"
-							type="email"
-							component={Input}
-							validate={required}
-						/>
-					</div>
-					<div>
-						<label>password</label>
-						<Field
-							name="password"
-							component={Input}
-							validate={composeValidators(required, minLengthToPass6)}
-						/>
-					</div>
-					<div>
-						<label>rememberMe</label>
-						<Field
-							type="checkbox"
-							name="rememberMe"
-							component={Input}
-						/>
-					</div>
-					<button>Login</button>
-				</form>
-			)}
-		</Form>
-	);
-};
+const MTSP = state => ({
+	isAuth: state.auth.isAuth,
+});
 
 const Login = props => {
+	let onSubmit = formData => {
+		console.log(formData);
+		props.login(formData.email, formData.password, formData.rememberMe);
+	};
+
+	const minLengthToPass6 = ultimateMinLength(6);
+
+	//*Redirecting to home page if authorised
+	if (props.isAuth) return <Navigate to="/" />;
+
 	return (
 		<>
 			<h1 className={`${style.title}`}>LOGIN</h1>
-			<LoginForm />
+			<Form onSubmit={onSubmit}>
+				{props => (
+					<form onSubmit={props.handleSubmit}>
+						<div>
+							<label>Email</label>
+							<Field name="email" type="email" component={Input} validate={required} />
+						</div>
+						<div>
+							<label>Password</label>
+							<Field
+								name="password"
+								type="password"
+								component={Input}
+								validate={composeValidators(required, minLengthToPass6)}
+							/>
+						</div>
+						<div>
+							<label>RememberMe</label>
+							<Field name="rememberMe" type="checkbox" component={Input} />
+						</div>
+						<button>Login</button>
+					</form>
+				)}
+			</Form>
 		</>
 	);
 };
 
-export default Login;
+export default connect(MTSP, { login })(Login);

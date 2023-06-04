@@ -21,10 +21,7 @@ const NavBar = props => {
 	};
 
 	return (
-		<nav
-			ref={navEl}
-			className={`${style.nav}`}
-		>
+		<nav ref={navEl} className={`${style.nav}`}>
 			<ul className={`${style.nav__menuList}`}>
 				<li className={`${style.nav__menuItem}`}>
 					<NavLink
@@ -32,17 +29,10 @@ const NavBar = props => {
 						to="/"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faHouse}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faHouse} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="/"
-					>
+					<NavLink className={`${style.nav__link}`} to="/">
 						Home
 					</NavLink>
 				</li>
@@ -52,17 +42,10 @@ const NavBar = props => {
 						to="/news"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faNewspaper}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faNewspaper} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="/news"
-					>
+					<NavLink className={`${style.nav__link}`} to="/news">
 						News
 					</NavLink>
 				</li>
@@ -72,17 +55,10 @@ const NavBar = props => {
 						to="/messages"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faEnvelope}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faEnvelope} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="/messages"
-					>
+					<NavLink className={`${style.nav__link}`} to="/messages">
 						Messages
 					</NavLink>
 				</li>
@@ -92,17 +68,10 @@ const NavBar = props => {
 						to="/music"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faMusic}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faMusic} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="/music"
-					>
+					<NavLink className={`${style.nav__link}`} to="/music">
 						Music
 					</NavLink>
 				</li>
@@ -112,17 +81,10 @@ const NavBar = props => {
 						to="/groups"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faUsersLine}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faUsersLine} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="groups"
-					>
+					<NavLink className={`${style.nav__link}`} to="groups">
 						Group`s
 					</NavLink>
 				</li>
@@ -132,17 +94,10 @@ const NavBar = props => {
 						to="/users"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faHandshake}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faHandshake} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="users"
-					>
+					<NavLink className={`${style.nav__link}`} to="users">
 						Users
 					</NavLink>
 				</li>
@@ -152,26 +107,16 @@ const NavBar = props => {
 						to="/settings"
 						style={({ isActive }) => {
 							return { color: isActive ? '#0163cc' : 'white' };
-						}}
-					>
-						<FontAwesomeIcon
-							className={`${style.nav__icon}`}
-							icon={faGears}
-						/>
+						}}>
+						<FontAwesomeIcon className={`${style.nav__icon}`} icon={faGears} />
 					</NavLink>
-					<NavLink
-						className={`${style.nav__link}`}
-						to="settings"
-					>
+					<NavLink className={`${style.nav__link}`} to="settings">
 						Settings
 					</NavLink>
 				</li>
 			</ul>
 			<div className={`${style.nav__button}`}>
-				<button
-					ref={navEl}
-					onClick={navOpen}
-				>
+				<button ref={navEl} onClick={navOpen}>
 					<FontAwesomeIcon icon={faChevronRight} />
 				</button>
 			</div>

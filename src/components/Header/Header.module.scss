@@ -6,7 +6,15 @@
 	left: 0;
 	background-color: $darkTh_content;
 	z-index: 100000;
-
+	&__login {
+		color: $darkTh_txt;
+		font-size: 20px;
+		transition: all 0.3s ease;
+		&:hover {
+			transition: all 0.3s ease;
+			color: $Dlink_hover;
+		}
+	}
 	&__container {
 		height: 100px;
 		display: flex;
@@ -22,7 +30,7 @@
 		line-height: 1.5;
 		letter-spacing: 1px;
 		a {
-			color: #fff;
+			color: $darkTh_txt;
 		}
 		span {
 			font-weight: 700;
@@ -108,7 +116,18 @@
 }
 
 .miniProfile {
-	z-index: 2;
+	z-index: 4;
+	button {
+		font-size: 18px;
+		background: transparent;
+		color: $darkTh_txt;
+		transition: all 0.3s ease;
+		&:hover {
+			color: $Dlink_hover;
+			transition: all 0.3s ease;
+			padding-top: 2px;
+		}
+	}
 	&__avatar {
 		img {
 			width: 50px;
@@ -129,4 +148,43 @@
 		}
 		font-size: 16px;
 	}
+}
+
+.profileModal {
+	position: absolute;
+	top: -100px;
+	left: 17px;
+	transition: top 0.2s ease-in;
+	text-align: center;
+	font-size: 16px;
+	padding: 20px 40px;
+	background-color: $darkTh_content;
+	&__link {
+		margin-bottom: 15px;
+		a {
+			color: $darkTh_txt;
+			font-weight: 600;
+			&:hover {
+				color: $Dlink_hover;
+			}
+		}
+	}
+	&__logout {
+		color: #919191;
+		cursor: pointer;
+		&:hover {
+			color: $Llink_hover;
+			text-decoration: underline;
+		}
+	}
+}
+.open {
+	top: 70px;
+	transition: top 0.3s ease-in;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }

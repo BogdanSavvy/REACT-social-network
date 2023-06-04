@@ -4,6 +4,7 @@ import MiniProfile from './MiniProfile/MiniProfile';
 import Search from './Search/Search';
 
 import style from './Header.module.scss';
+import { NavLink } from 'react-router-dom';
 
 const Header = props => {
 	return (
@@ -12,7 +13,13 @@ const Header = props => {
 				<Logo />
 				<Search />
 				<Notification />
-				{props.isAuth ? <MiniProfile name={props.login} /> : 'Login'}
+				{props.isAuth ? (
+					<MiniProfile logout={props.logout} name={props.login} />
+				) : (
+					<NavLink className={style.header__login} to="/login">
+						Login
+					</NavLink>
+				)}
 			</div>
 		</header>
 	);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { authMe } from '../../redux/authReducer';
+import { authMe, logout } from '../../redux/authReducer';
 
 import Header from './Header';
 
@@ -23,4 +23,4 @@ const MTSP = state => {
 	};
 };
 
-export default connect(MTSP, { authMe })(HeaderContainer);
+export default connect(MTSP, { authMe, logout })(HeaderContainer);

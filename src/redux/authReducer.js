@@ -17,7 +17,6 @@ const authReducer = (state = initalState, action) => {
 				//! ==> stateCopy
 				...state,
 				...action.data,
-				isAuth: true,
 			};
 		default:
 			return state;
@@ -25,16 +24,32 @@ const authReducer = (state = initalState, action) => {
 };
 
 //*_____"Action Creators"_____
-export const authUser = (email, userId, login) => ({
+export const authUser = (email, userId, login, isAuth) => ({
 	type: SET_USER_DATA,
-	data: { email, userId, login },
+	data: { email, userId, login, isAuth },
 });
 
 export const authMe = () => dispatch => {
 	authApi.me().then(data => {
 		if (data.resultCode === 0) {
 			let { email, id, login } = data.data;
-			dispatch(authUser(email, id, login));
+			dispatch(authUser(email, id, login, true));
+		}
+	});
+};
+
+export const login = (email, password, rememberMe) => dispatch => {
+	authApi.login(email, password, rememberMe).then(data => {
+		if (data.resultCode === 0) {
+			dispatch(authMe());
+		}
+	});
+};
+
+export const logout = () => dispatch => {
+	authApi.logout().then(data => {
+		if (data.resultCode === 0) {
+			dispatch(authMe(null, null, null, false));
 		}
 	});
 };
