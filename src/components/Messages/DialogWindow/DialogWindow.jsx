@@ -14,12 +14,7 @@ import {
 
 const DialogWindow = props => {
 	let newMessage = props.sentMessagesData.map(el => (
-		<SentMessage
-			key={el.id}
-			message={el.message}
-			id={el.id}
-			sender={el.sender}
-		/>
+		<SentMessage key={el.id} message={el.message} id={el.id} sender={el.sender} />
 	));
 
 	let sendMessage = values => {
@@ -35,10 +30,7 @@ const DialogWindow = props => {
 			<div className={`${style.dialogWindow__input}`}>
 				<Form onSubmit={sendMessage}>
 					{props => (
-						<form
-							className={`${style.dialogWindow__form}`}
-							onSubmit={props.handleSubmit}
-						>
+						<form className={`${style.dialogWindow__form}`} onSubmit={props.handleSubmit}>
 							<Field
 								placeholder="Type your message..."
 								name="messageField"

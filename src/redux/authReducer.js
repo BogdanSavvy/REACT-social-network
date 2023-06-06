@@ -49,7 +49,7 @@ export const login = (email, password, rememberMe) => dispatch => {
 export const logout = () => dispatch => {
 	authApi.logout().then(data => {
 		if (data.resultCode === 0) {
-			dispatch(authMe(null, null, null, false));
+			dispatch(authUser(null, null, null, false));
 		}
 	});
 };

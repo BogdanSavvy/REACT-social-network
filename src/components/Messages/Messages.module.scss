@@ -142,8 +142,9 @@
 		flex-direction: row;
 		align-items: center;
 		column-gap: 20px;
+		input,
 		div {
-			width: 100%;
+			width: 97%;
 		}
 	}
 	&__sent {
@@ -195,13 +196,16 @@
 		}
 		button {
 			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 18px;
 			right: 15px;
-			font-size: 16px;
+			font-size: 19px;
 			color: $darkTh_txt;
 			text-align: center;
-			padding: 18px;
 			background-color: #ce2a7c;
-			border-radius: 40%;
+			border-radius: 50%;
 			transition: all 0.3s ease-in-out;
 			&:hover {
 				filter: brightness(1.2);

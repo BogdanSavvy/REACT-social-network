@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import {
@@ -7,14 +8,13 @@ import {
 	updateProfileStatus,
 } from '../../redux/profileReducer';
 import { useParams } from 'react-router-dom';
-import React from 'react';
 import UserProfile from './UserProfile';
 
 class UserProfileContainer extends React.Component {
 	componentDidMount() {
 		let profId = this.props.router.params.userId;
 		if (!profId) {
-			profId = 28996; //*my profile ID
+			profId = this.props.authorisedProfileId;
 		}
 		this.props.getProfile(profId);
 		this.props.getProfileStatus(profId);
@@ -32,6 +32,7 @@ const MSTP = state => {
 		newPostTxt: state.profileP.newPostTxt,
 		profile: state.profileP.profile,
 		status: state.profileP.status,
+		authorisedProfileId: state.auth.userId,
 	};
 };
 
@@ -39,12 +40,7 @@ const MSTP = state => {
 function withRouter(Component) {
 	function ComponentWithRouterProp(props) {
 		let params = useParams();
-		return (
-			<Component
-				{...props}
-				router={{ params }}
-			/>
-		);
+		return <Component {...props} router={{ params }} />;
 	}
 	return ComponentWithRouterProp;
 }

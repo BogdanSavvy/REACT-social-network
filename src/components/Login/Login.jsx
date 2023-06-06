@@ -16,7 +16,6 @@ const MTSP = state => ({
 
 const Login = props => {
 	let onSubmit = formData => {
-		console.log(formData);
 		props.login(formData.email, formData.password, formData.rememberMe);
 	};
 
@@ -30,12 +29,12 @@ const Login = props => {
 			<h1 className={`${style.title}`}>LOGIN</h1>
 			<Form onSubmit={onSubmit}>
 				{props => (
-					<form onSubmit={props.handleSubmit}>
-						<div>
+					<form className={style.formContainer} onSubmit={props.handleSubmit}>
+						<div className={style.field}>
 							<label>Email</label>
 							<Field name="email" type="email" component={Input} validate={required} />
 						</div>
-						<div>
+						<div className={style.field}>
 							<label>Password</label>
 							<Field
 								name="password"
@@ -44,11 +43,11 @@ const Login = props => {
 								validate={composeValidators(required, minLengthToPass6)}
 							/>
 						</div>
-						<div>
+						<div className={style.checkBox}>
 							<label>RememberMe</label>
 							<Field name="rememberMe" type="checkbox" component={Input} />
 						</div>
-						<button>Login</button>
+						<button className={style.loginBtn}>Login</button>
 					</form>
 				)}
 			</Form>

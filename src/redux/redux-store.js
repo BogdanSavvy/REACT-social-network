@@ -18,5 +18,4 @@ let store = configureStore({
 	reducer: rootReducer,
 	middleware: [thunkMiddleware],
 });
-
 export default store;

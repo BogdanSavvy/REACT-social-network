@@ -1,23 +1,66 @@
+@import '../../scss/null.scss';
 .title {
 	padding-top: 300px;
-	font-size: 75px;
+	font-size: 55px;
 	color: #fff;
 	text-align: center;
 }
-form {
-	font-size: 18;
+.formContainer {
+	font-size: 18px;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+}
+.field {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
 	input {
-		color: #000;
+		width: 450px;
+		font-size: 16px;
+		color: #fff;
+		border-radius: 20px;
+		padding: 13px 50px 13px 20px;
+		background-color: transparent;
+		border: 2px solid #fff;
+		transition: all 0.4s ease;
+		&:focus {
+			border: 2px solid $Dlink_active;
+		}
 	}
 }
-button {
-	display: inline-flex;
+.checkBox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 25px;
+	margin-left: -280px;
+	input {
+		width: 15px;
+		height: 15px;
+	}
 }
-label{
+.loginBtn {
+	display: inline-flex;
+	width: 450px;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	font-size: 18px;
+	background-color: $Dlink_active;
+	color: $darkTh_txt;
+	transition: all 0.3s ease;
+	&:hover {
+		transition: all 0.3s ease;
+		background-color: $Dlink_hover;
+	}
+}
+label {
 	padding: 5px;
 	font-size: 18px;
 }
