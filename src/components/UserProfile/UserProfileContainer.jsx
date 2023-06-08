@@ -7,7 +7,7 @@ import {
 	getProfileStatus,
 	updateProfileStatus,
 } from '../../redux/profileReducer';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import UserProfile from './UserProfile';
 
 class UserProfileContainer extends React.Component {
@@ -21,7 +21,10 @@ class UserProfileContainer extends React.Component {
 	}
 
 	render = () => {
-		return <UserProfile {...this.props} />;
+		let whenToRedirect =
+			!this.props.isAuth && typeof this.props.router.params['userId'] === 'undefined';
+
+		return whenToRedirect ? <Navigate to="/login" /> : <UserProfile {...this.props} />;
 	};
 }
 
@@ -32,6 +35,7 @@ const MSTP = state => {
 		newPostTxt: state.profileP.newPostTxt,
 		profile: state.profileP.profile,
 		status: state.profileP.status,
+		isAuth: state.auth.isAuth,
 		authorisedProfileId: state.auth.userId,
 	};
 };

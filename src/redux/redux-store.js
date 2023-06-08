@@ -6,12 +6,14 @@ import profileReducer from './profileReducer';
 import messagesReducer from './messagesReducer';
 import usersReducer from './usersReducer';
 import authReducer from './authReducer';
+import appReducer from './appReducer';
 
 let rootReducer = combineReducers({
+	app: appReducer,
+	auth: authReducer,
 	profileP: profileReducer,
 	messagesP: messagesReducer,
 	usersP: usersReducer,
-	auth: authReducer,
 });
 
 let store = configureStore({

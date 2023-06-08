@@ -29,8 +29,9 @@ export const authUser = (email, userId, login, isAuth) => ({
 	data: { email, userId, login, isAuth },
 });
 
+//? if we write 'return' before the request, we can return a promise (since any '.then' returns a promise)
 export const authMe = () => dispatch => {
-	authApi.me().then(data => {
+	return authApi.me().then(data => {
 		if (data.resultCode === 0) {
 			let { email, id, login } = data.data;
 			dispatch(authUser(email, id, login, true));
